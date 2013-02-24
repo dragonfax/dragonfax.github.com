@@ -52,7 +52,7 @@ but performing poorly with others.
 
 **As I matured, I chose the right language for the project.**
 
-## Deep in my career
+## Deep into my career
 
 Years later, as I've touched on most major technologies my world view has shifted yet again.
 
