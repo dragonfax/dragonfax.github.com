@@ -4,7 +4,7 @@ title: "What?! No Package Manager!"
 date: 2013-03-10 00:28
 comments: true
 categories: 
-public: false
+published: false
 ---
 
 I don't know how I feel about this recent trend of installing and using software
