@@ -106,7 +106,7 @@ You can start with something as simple as [OptionParser](http://ruby-doc.org/std
 
 Then as you build more code in your scripts you can graduate to a bit more infrastructure with a gem like [Methadone](https://github.com/davetron5000/methadone)
 
-Finally, when you're writing full blown command line applications, with many "internal" commands like "git submodule init <repo", you can ascend to something much more heavy-weight like [GLI](https://github.com/davetron5000/gli)
+Finally, when you're writing full blown command line applications, with many "internal" commands like "git submodule init <repo>", you can ascend to something much more heavy-weight like [GLI](https://github.com/davetron5000/gli)
 
 
 Testing Command Line Apps
