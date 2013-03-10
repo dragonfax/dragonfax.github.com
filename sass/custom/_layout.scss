@@ -22,7 +22,8 @@ $indented-lists: true;
 
 // the extra 'div' is just to increase the specitivity of the selector
 // so that it takes precidence
-div aside.sidebar.thirds section {
-  width: auto;
+@media screen {
+  div aside.sidebar.thirds section {
+    width: auto;
+  }
 }
-
