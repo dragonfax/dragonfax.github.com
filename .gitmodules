@@ -1,3 +1,6 @@
 [submodule "plugin_submodules/stackoverflow"]
 	path = plugin_submodules/stackoverflow
 	url = git://github.com/viggiosoft/stackoverflow-octopress.git
+[submodule "plugin_submodules/gravatar"]
+	path = plugin_submodules/gravatar
+	url = https://github.com/joet3ch/gravatar-octopress
