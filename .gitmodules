@@ -4,6 +4,3 @@
 [submodule "plugin_submodules/gravatar"]
 	path = plugin_submodules/gravatar
 	url = https://github.com/joet3ch/gravatar-octopress
-[submodule "plugin_submodules/twitter_profile"]
-	path = plugin_submodules/twitter_profile
-	url = git://github.com/dharFr/octo-about-me-from-twitter.git
