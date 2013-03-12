@@ -37,3 +37,14 @@ examples
 
     rake tasks
 
+
+also
+
+  using git repos as a package system.
+  and github as a package ditribution system.
+
+
+
+
+
+
