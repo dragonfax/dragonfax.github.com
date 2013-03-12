@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2013/02/24/choose-a-language/</loc>
+        <lastmod>2013-03-12T14:03:18-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2013/02/28/ruby-local/</loc>
+        <lastmod>2013-03-12T14:03:18-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2013/03/07/nesting-pry/</loc>
+        <lastmod>2013-03-12T14:03:18-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://dragonfax.github.com/blog/2013/03/09/creating-command-line-tools-in-ruby/
+        </loc>
+        <lastmod>2013-03-12T14:03:18-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2013/03/12/run-anywhere/</loc>
+        <lastmod>2013-03-12T14:04:43-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/archives/</loc>
+        <lastmod>2013-03-12T14:04:43-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/</loc>
+        <lastmod>2013-03-12T14:04:43-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/robots.txt</loc>
+        <lastmod>2013-03-12T14:03:18-07:00</lastmod>
+    </url>
+</urlset>
