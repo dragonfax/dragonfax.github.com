@@ -1,0 +1,40 @@
+---
+layout: post
+title: "IdeaVim: Bells and Whistles"
+date: 2013-04-11 01:02
+comments: true
+categories: 
+- IdeaVim
+- Vim
+---
+
+### For Whom The Bell Tolls.
+
+As previously mentioned, I use VIM rather heavily, and I have some OCD behaviors when doing so, which includes hitting &lt;escape&gt; a lot. So I like to turn off the bell sounds vi makes on errors and unnecessary commands.
+
+### IdeaVim
+
+I'm also a heavy user of IdeaVim plugin for IntelliJ. I wouldn't be able to use IDEs at all without those plugins that add VI operation modes to the built-in editors.
+
+IdeaVim doesn't document very well how it differs from true VIM. The project owner has taken the philosophy of building the project based on the original VIM documentation, and not the VIM source. So much so that the documentation for the plugin is just the VIM docs copied over. 
+
+Unfortunately they've taken no time to indicate how much of that documented behavior is implemented and how much isn't yet.
+
+### Settings
+
+One important area where VIM and IdeaVim differ is their handling of settings. IdeaVim only supports a small subset of vim commands and settings variables. But it wants to provide some convenience and backwards compatibility for existing VIM users. Their solution is to read your ~/.vimrc anyways. It simply has the behavior of silently ignoring any settings it doesn't understand.
+
+Unfortunately IdeaVim doesn't understand
+
+`:set noerrorbells`
+
+### It Toles for *Thee!*
+
+Fortunately IdeaVim **does** understand
+
+`:set visualbell`
+
+And better yet, it has no implementation for visualbells, so it simply silennces the error bell when you enact this setting. I just had to ensure the visualbell option was in my .vimrc before the noerrorbells option, so the latter would take final effect in real VIM.
+
+
+
