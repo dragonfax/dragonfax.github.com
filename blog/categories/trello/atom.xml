@@ -4,7 +4,7 @@
   <title><![CDATA[Category: trello | Den of Antiquity]]></title>
   <link href="http://dragonfax.github.com/blog/categories/trello/atom.xml" rel="self"/>
   <link href="http://dragonfax.github.com/"/>
-  <updated>2013-05-06T17:39:13-07:00</updated>
+  <updated>2013-05-06T17:58:37-07:00</updated>
   <id>http://dragonfax.github.com/</id>
   <author>
     <name><![CDATA[Jason Stillwell]]></name>
@@ -20,34 +20,31 @@
     <id>http://dragonfax.github.com/blog/2013/05/06/trello</id>
     <content type="html"><![CDATA[<h2>The Search for Spock</h2>
 
-<p>I'm always looking for better ways to organizing my life and improving my personal productivity. One tool thats popped up in several discussion is Trello. I know a few people using it, as a flexible online board for managing their workload, both professionally and personally. It seems like a great idea to try to work this into my own arsenal and see if its the godsend all the hype leads me to believe.</p>
+<p>I'm always looking for better ways to organizing my life and improving my personal productivity. One tool that has popped up in several discussion is Trello. I know a few people using it as a flexible online board for managing their workload, both professionally and personally. It seems like a great idea to work this into my own arsenal and see if its the godsend all the hype leads me to believe.</p>
 
-<p>After a little research and toying around, I did find it particularly flexible, but I also found that most examples on the web use Trello in the same way, with the same pattern of usage.</p>
+<p>After a little research and toying around I did find it particularly flexible. But I also found that most examples on the web use Trello in the exact same way with the same pattern of usage.</p>
 
 <h2>"Trello", by Trello</h2>
 
-<p>Trello provides the expected help documentation, describing the features, how to find them, adding components, and work with the widgets in the application.</p>
+<p>Trello provides the expected help documentation, describing the features, how to find them, add elements, and work with the widgets in the application.</p>
 
-<p>On the other hand, what they don't provide is specific usage patterns.  They don't describe workflows or methods to use the product for various ends. Instead leaving that up to other online examples or for the user to figure it out on his own.</p>
+<p>On the other hand what they don't provide is specific usage patterns.  They don't describe workflows or methods to use the product for various ends. Instead leaving that up to other online examples or for the user to figure it out on his/her own.</p>
 
-<p>I've seen this before with online products and its always a point of annoyance for me.  While I understand leaving things open ended so that users can find their own ways to take advantage of the product, and not pidgin-hole it into one niche. Not leaving product held back by preconceptions of what a it should be or how it should be used.</p>
+<p>I've seen this before with online products and its always a point of annoyance for me.  While I understand leaving things open-ended so that users can find their own ways to take advantage of the product, and not pidgin-hole it into one niche.</p>
 
-<p>But, by not giving clear instructions on how some people use it, or how you think it <strong>could</strong> be used for new users early on, you just make it difficult for users to get into the service, in the first place.</p>
+<p>But by not giving clear instructions or even just examples on how some people use it, or how you think it <strong>could</strong> be used for new users early on, you just make it difficult for users to get into the service in the first place.</p>
 
-<p>Twitter has the same issue. They refuse to clearly define the service and how it should be used.  And its wasted, as those who find new ways to use tools won't be deterred by the predefinition of its use.  i.e. The hashtag would still have been invented, whether it was the Twitter docs or not.</p>
+<p>Twitter has the same issue. They refuse to clearly define the service and how it should be used.  And its a waste, as those who find new ways to use tools won't be deterred by the predefinition of its use.  i.e. The hashtag would still have been invented, whether it was in the Twitter docs or not.</p>
 
 <h3>Vocabulary</h3>
 
-<p>Lets go over some Trello vocabulary quickly, or at least what they define for users. Teaching you how to use Trello is outside of the scope of this post, so I'm just going to review the terms, not describe them.</p>
+<p>Lets go over some Trello vocabulary quickly, or at least what they define for users. Teaching you how to use Trello is outside of the scope of this post, so I'm just going to review the terms.</p>
 
 <ul>
-<li><strong>Board</strong>
-Groups Lists together.</li>
+<li><strong>Board</strong> - Groups Lists together.</li>
 <li><strong>List</strong> (of cards)</li>
-<li><strong>Card</strong>
-Groups everything else together, a description with any number of <strong>comments</strong> and <strong>checklists</strong>.</li>
-<li><strong>Checklist</strong>
-Works like a "Todo" list.</li>
+<li><strong>Card</strong> - Groups everything else together, a description with any number of <strong>comments</strong> and <strong>checklists</strong>.</li>
+<li><strong>Checklist</strong> - Works like a "Todo" list.</li>
 </ul>
 
 
@@ -87,9 +84,7 @@ Works like a "Todo" list.</li>
 
 <p>The pattern I see most often used online for Trello is a simple board->workflow pattern, where a <strong>board</strong> represents one "workflow" which may have several "steps" within it. In this case each "step" is represented by a <strong>list</strong>.</p>
 
-<p>In this system, the cards represent work items that are running through the "workflow". They rest in the "list" that pertains to the step in the workflow that they currently reside.</p>
-
-<p>This might be similar to a tool used for scrum tracking.</p>
+<p>In this system, the cards represent work items that are running through the "workflow". They rest in the "list" that pertains to the step in the workflow where they currently reside.  This might be similar to a tool used for scrum tracking.</p>
 
 <ul>
 <li><strong>board</strong> -> "workflow" or process</li>
@@ -98,7 +93,7 @@ Works like a "Todo" list.</li>
 </ul>
 
 
-<p>Here the details within the card are used for describing and tracking the item or project that's running through the "workflow".</p>
+<p>Here, the details within the card are used for describing and tracking the item or project that's running through the "workflow".</p>
 
 <p><img src="/images/posts/2013-05-06-trello_examples_khan_academy.png">_</p>
 
@@ -106,11 +101,11 @@ Works like a "Todo" list.</li>
 
 <h2>Other Patterns</h2>
 
-<p>I do see a few other patterns in use but they are rare.</p>
+<p>I do see a few other patterns in use but they're rare.</p>
 
 <h3>Categorized List of "Things"</h3>
 
-<p>Using the <strong>board</strong> as a single list, but with categories within that list.  Each <strong>card</strong> being one of the "things" that the <strong>board</strong> is listing.  And the different <strong>lists</strong> within the <strong>board</strong> are the categories.</p>
+<p>This pattern uses the <strong>board</strong> as a single list of items, but with categories within that list.  Each <strong>card</strong> being one of the "things" that the <strong>board</strong> is listing.  And the different <strong>lists</strong> within the <strong>board</strong> are the categories.</p>
 
 <p>Usually in this case the title of the <strong>card</strong> is all that's needed to describe the "thing".  And the comments within the <strong>cards</strong> are simply a running commentary from various users on the "thing" itself.</p>
 
@@ -122,19 +117,22 @@ Works like a "Todo" list.</li>
 
 <h2>Missing Features</h2>
 
-<p>After trying to use Trello for my own todo list management I found it rather lacking (for my own purposes). I'm still going to search for ways to use it for project planning and managing current work.</p>
+<p>After trying to use Trello for my own todo list management I found it rather lacking (for my own purposes, that is). I'm still going to search for ways to use it for project planning and managing current work.</p>
 
-<p>My habit it to use a large a powerful todo list (toodledo) for tracking most of my work backlog. Even if I were to organize all my backlog in the form of boards, lists, and cards, I'd be missing out of important searching/sorting/categorization features that come along with the simple relational table model that online todo lists use.</p>
+<p>My habit it to use a large a powerful todo list (toodledo) for tracking most of my work backlog. Even if I were to organize all my backlog in the form of boards, lists, and cards, I'd be missing important searching/sorting/categorization features that come along with the simple relational table model that online todo lists use.</p>
 
 <ul>
-<li><p>Merging and sorting all checklists in a board.
-  Gather all checklists on a board into one super checklist to see what I should be working on immediately.
+<li><p>Merging and sorting all checklists in a board.</p>
+
+<p>  Gather all checklists on a board into one super checklist to see what I should be working on immediately.
   Without having to dig around through cards and lists for checklists.
   This would be even more useful across boards.</p></li>
-<li><p>Additional checklist details.
-  Such as tagging checklist items with labels, and including more info for each individual checklist item.</p></li>
-<li><p>Full-Text Search, across all text
-  It wasn't too hard to find text elements that are not included in a Trello search. This is a little surprising.</p></li>
+<li><p>Additional checklist details.</p>
+
+<p>  Such as tagging checklist items with labels, and including more info for each individual checklist item.</p></li>
+<li><p>Full-Text Search, across all text</p>
+
+<p>  It wasn't too hard to find text elements that are not included in a Trello search. This is a little surprising.</p></li>
 </ul>
 
 
