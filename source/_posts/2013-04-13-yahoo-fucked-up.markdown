@@ -5,7 +5,6 @@ date: 2013-04-13 14:57
 comments: true
 categories: 
 - rant
-published: false
 ---
 
 Note: be warned, rant ahead.
