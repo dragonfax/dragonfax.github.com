@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "yahoo fucked up"
+title: "Yahoo, Ya Fucked Up"
 date: 2013-04-13 14:57
 comments: true
 categories: 
@@ -10,34 +10,46 @@ published: false
 
 Note: be warned, rant ahead.
 
-when I start up my web browser
-and I find that my homepage is now yahoo
-and mwhen I type a search it searches on yahoo
-the a yahoo search widget is added to my toolbar
+The Incident
+----
 
-and then I have to look up how to change the default search
-then I succesfully do this.
-and test it
+My homepage is now yahoo. A site I never use, never have used, never will use.
 
-yet after resarch the search engine is back to yahoo.
+My default search is now Yahoo. Again, a service I will never use. (even more so now)
+
+An ugly and useless yahoo search widget is added to my toolbar. It takes up precious real-estate.
 
 
-of course I'm annoyed by whatever third party production
-I installed, and did this without making it obvious it was
-going to do this.
+Worse, these changes seem to be permanent. Or at least damn close to it. After various fiddling and config settings, most of this remains. I'm unable to correct the hacking that was done to my computer.
 
-but I'm mostly angry at you yahoo.
+Furthermore this takes up precious time, searching, fixing, searching some more.
 
-because the way I see, it you paid someone to fuck up mysystem.
-and to fuck it up bad.
-to ruin my workflows
-to slow me down
-to force me to spend an hour trying to fix it.
-you paid someone to do this to me.
-you fucked up bad yahoo.
-becuase you paid someone to fuck up my system.
+The Culprit
+----
+
+Of course this was was all done by some third-party extension or product I don't recall installing. I probably missed some tiny little button somewhere tha says, effectively, "Please don't fuck up my computer."
+
+But its all too late for that to matter now. The damage is already done.
+
+The Blame
+----
+
+But who I'm really angry at is Yahoo.  The way I see it, Yahoo paid someone to fuck up my computer. And I take that personally.
+
+They paid someone to break my computer, and waste my time trying to fix it. And they paid alot
+considering how hard it is to undo this mess.
+
+They wanted to make absolutely sure that a good portion of my afternoon was ruined, correcting
+this dubochery.
 
 
-Yahoo, why did you pay someone to fuck up my system?
+The Plea
+----
+
+What did I do do to you, Yahoo?  Why would you do this to me?
+
+Was a lark? a laugh?  Is it some sort of revenge? Did I scowl at you in the parking lot?  Did I promise to call, and not follow through?
+
+Yahoo, why did you pay someone to fuck up my computer?
 
 
