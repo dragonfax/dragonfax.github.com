@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>run anywhere - Den of Antiquity</title>
+  <title>I'm just more comfortable in VI - Den of Antiquity</title>
   <meta name="author" content="Jason Stillwell">
 
   
-  <meta name="description" content=" ">
+  <meta name="description" content="I&#8217;ve been using Evernote for taking notes for a while now. But I really miss taking notes in VIM. History I&#8217;m a heavy VIM user. I use it &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dragonfax.github.com/blog/2013/03/12/run-anywhere">
+  <link rel="canonical" href="http://dragonfax.github.com/blog/2013/04/10/comfortable-vim">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Den of Antiquity" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Run Anywhere</h1>
+      <h1 class="entry-title">I'm Just More Comfortable in VI</h1>
     
     
       <p class="meta">
@@ -96,18 +96,56 @@
   
 
 
-<time datetime="2013-03-12T14:04:00-07:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+<time datetime="2013-04-10T10:54:00-07:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><div><script src='https://gist.github.com/5146987.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
+<div class="entry-content"><p>I&#8217;ve been using Evernote for taking notes for a while now. But I really miss taking notes in VIM.</p>
 
+<h3>History</h3>
 
+<p>I&#8217;m a heavy VIM user. I use it for coding, through and though. So much so, that I use VIM-style editor wrapper plugins IDEs such as Eclipse and IntelliJ. Otherwise I find normal &#8216;editors&#8217; clunky and un-usable.</p>
 
+<p>When it comes to coding I&#8217;m clearly more productive, and happy in a VI like environment, with command modes, regular expressions, and no need for a mouse or arrow keys. It only made sense that I&#8217;d use VIM for taking notes and tracking my work.</p>
+
+<p>But the pull of Evernote to manage all that non-coding work was very strong.  The convenience of having notes online, available on every platform including mobile and web, is just something I couldn&#8217;t resist.</p>
+
+<h3>My Solution</h3>
+
+<p>I&#8217;ve been working on an Evernote Command Line Client in ruby for a little while now.</p>
+
+<p><a href="http://github.com/dragonfax/rnote">Rnote</a></p>
+
+<p>Its not yet ready for prime time, yet. Its missing the final touches. But its far enough along for me to use for my own daily note-taking.</p>
+
+<p>The real driving force behind this project was to allow me to take notes using VIM, but still backed by Evernote.</p>
+
+<p>I can fire up:</p>
+
+<p><code>$ rnote edit "note title"</code></p>
+
+<p>And rnote will pull down the note, convert it to text, and open it in a copy of VIM.  Then it watches the file and saves it back to Evernote every time I save the file in my editor.</p>
+
+<p>Returning to VIM just feels right.</p>
+
+<h3>Realization</h3>
+
+<p>The interesting thing I found, when returning to VIM after a long absense, was that I&#8217;m less afraid of change in the VIM world. Its not just a matter of simple productvity via keypress count and typing speed. But there&#8217;s apprehension when I&#8217;m working in an editor that&#8217;s buried in manyl layers of disparate applications.</p>
+
+<p>When working in a text area in a browsoer, or in an editor embedded in a desktop app, there are several layers on top of that editor. Each providing their own &#8216;modes&#8217; and shortscuts and commands. Each taking priority over the other for different types of input. And each capable of changing the your entire world in the middle of an editing session, with one bad keypress.</p>
+
+<p>If I fat finger a typing sequence in some custom editor, anything can happen. And the results, I&#8217;ve found, can be unexpected and incomprehensible. I&#8217;ve had experiences where the cursor leaps to a random location in the text, drops a few lines from the text, and starts adding new characters after breaking the formatting that was already there. Other situations have seen my input leap to another document, and start making changes there. And then there is the worse case scenerio of the window just closing altogether, lossing of editor history, and without any sort of save.</p>
+
+<p>VIM is an environment I can predict. And its only one environment providing the UI.  No matter what happens, I know all I have to do is hit &#8216;u&#8217; and magically any bad typing sequence is completely undone. And best of all, if I did type something wrong, I probably know what it was from the effects that occured. Because VIM has a consice and regular interface that hasn&#8217;t changed over the years, and doesn&#8217;t change between nvironments.</p>
+
+<p>Of course, I lose WYSIWYG formatting (do we still use that word?), such as bold, italic, and font sizes.  But I don&#8217;t really miss them.  And I get back indentation, a powerful organization tool. Just ask the python guys.</p>
+
+<h3>Plans</h3>
+
+<p>I&#8217;m planning to add markdown support, so that I cna have the best of both worlds: pure text editing, but also allow for some formatting. I&#8217;m already used to markdown elsewhere in the web, such as octopress and github.</p>
 </div>
 
 
@@ -130,7 +168,7 @@
   
 
 
-<time datetime="2013-03-12T14:04:00-07:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+<time datetime="2013-04-10T10:54:00-07:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time>
       
 
 
@@ -138,7 +176,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2013/03/12/run-anywhere/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2013/03/12/run-anywhere/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2013/04/10/comfortable-vim/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2013/04/10/comfortable-vim/" >Tweet</a>
   
   
   
@@ -147,10 +185,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/03/09/creating-command-line-tools-in-ruby/" title="Previous Post: Creating Command Line Tools in Ruby">&laquo; Creating Command Line Tools in Ruby</a>
+        <a class="basic-alignment left" href="/blog/2013/03/12/run-anywhere/" title="Previous Post: run anywhere">&laquo; run anywhere</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/04/10/comfortable-vim/" title="Next Post: I'm just more comfortable in VI">I'm just more comfortable in VI &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/04/11/ideavim/" title="Next Post: IdeaVim: Bells and Whistles">IdeaVim: Bells and Whistles &raquo;</a>
       
     </p>
   </footer>
@@ -257,8 +295,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://dragonfax.github.com/blog/2013/03/12/run-anywhere/';
-        var disqus_url = 'http://dragonfax.github.com/blog/2013/03/12/run-anywhere/';
+        var disqus_identifier = 'http://dragonfax.github.com/blog/2013/04/10/comfortable-vim/';
+        var disqus_url = 'http://dragonfax.github.com/blog/2013/04/10/comfortable-vim/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>run anywhere - Den of Antiquity</title>
+  <title>IdeaVim: Bells and Whistles - Den of Antiquity</title>
   <meta name="author" content="Jason Stillwell">
 
   
-  <meta name="description" content=" ">
+  <meta name="description" content="For Whom The Bell Tolls. As previously mentioned, I use VIM rather heavily, and I have some OCD behaviors when doing so, which includes hitting &lt; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dragonfax.github.com/blog/2013/03/12/run-anywhere">
+  <link rel="canonical" href="http://dragonfax.github.com/blog/2013/04/11/ideavim">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Den of Antiquity" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Run Anywhere</h1>
+      <h1 class="entry-title">IdeaVim: Bells and Whistles</h1>
     
     
       <p class="meta">
@@ -96,18 +96,40 @@
   
 
 
-<time datetime="2013-03-12T14:04:00-07:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+<time datetime="2013-04-11T01:02:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><div><script src='https://gist.github.com/5146987.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
+<div class="entry-content"><h3>For Whom The Bell Tolls.</h3>
 
+<p>As previously mentioned, I use VIM rather heavily, and I have some OCD behaviors when doing so, which includes hitting &lt;escape&gt; a lot. So I like to turn off the bell sounds vi makes on errors and unnecessary commands.</p>
 
+<h3>IdeaVim</h3>
 
+<p>I&#8217;m also a heavy user of IdeaVim plugin for IntelliJ. I wouldn&#8217;t be able to use IDEs at all without those plugins that add VI operation modes to the built-in editors.</p>
+
+<p>IdeaVim doesn&#8217;t document very well how it differs from true VIM. The project owner has taken the philosophy of building the project based on the original VIM documentation, and not the VIM source. So much so that the documentation for the plugin is just the VIM docs copied over.</p>
+
+<p>Unfortunately they&#8217;ve taken no time to indicate how much of that documented behavior is implemented and how much isn&#8217;t yet.</p>
+
+<h3>Settings</h3>
+
+<p>One important area where VIM and IdeaVim differ is their handling of settings. IdeaVim only supports a small subset of vim commands and settings variables. But it wants to provide some convenience and backwards compatibility for existing VIM users. Their solution is to read your ~/.vimrc anyways. It simply has the behavior of silently ignoring any settings it doesn&#8217;t understand.</p>
+
+<p>Unfortunately IdeaVim doesn&#8217;t understand</p>
+
+<p><code>:set noerrorbells</code></p>
+
+<h3>It Toles for <em>Thee!</em></h3>
+
+<p>Fortunately IdeaVim <strong>does</strong> understand</p>
+
+<p><code>:set visualbell</code></p>
+
+<p>And better yet, it has no implementation for visualbells, so it simply silennces the error bell when you enact this setting. I just had to ensure the visualbell option was in my .vimrc before the noerrorbells option, so the latter would take final effect in real VIM.</p>
 </div>
 
 
@@ -130,15 +152,21 @@
   
 
 
-<time datetime="2013-03-12T14:04:00-07:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+<time datetime="2013-04-11T01:02:00-07:00" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ideavim/'>IdeaVim</a>, <a class='category' href='/blog/categories/vim/'>Vim</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2013/03/12/run-anywhere/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2013/03/12/run-anywhere/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2013/04/11/ideavim/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2013/04/11/ideavim/" >Tweet</a>
   
   
   
@@ -147,10 +175,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/03/09/creating-command-line-tools-in-ruby/" title="Previous Post: Creating Command Line Tools in Ruby">&laquo; Creating Command Line Tools in Ruby</a>
+        <a class="basic-alignment left" href="/blog/2013/04/10/comfortable-vim/" title="Previous Post: I'm just more comfortable in VI">&laquo; I'm just more comfortable in VI</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/04/10/comfortable-vim/" title="Next Post: I'm just more comfortable in VI">I'm just more comfortable in VI &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/05/06/trello/" title="Next Post: A little more Trello in my life">A little more Trello in my life &raquo;</a>
       
     </p>
   </footer>
@@ -257,8 +285,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://dragonfax.github.com/blog/2013/03/12/run-anywhere/';
-        var disqus_url = 'http://dragonfax.github.com/blog/2013/03/12/run-anywhere/';
+        var disqus_identifier = 'http://dragonfax.github.com/blog/2013/04/11/ideavim/';
+        var disqus_url = 'http://dragonfax.github.com/blog/2013/04/11/ideavim/';
         var disqus_script = 'embed.js';
       
     (function () {

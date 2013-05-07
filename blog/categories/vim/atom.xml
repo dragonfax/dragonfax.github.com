@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Vim | Den of Antiquity]]></title>
+  <link href="http://dragonfax.github.com/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://dragonfax.github.com/"/>
+  <updated>2013-05-06T17:39:13-07:00</updated>
+  <id>http://dragonfax.github.com/</id>
+  <author>
+    <name><![CDATA[Jason Stillwell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[IdeaVim: Bells and Whistles]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/04/11/ideavim/"/>
+    <updated>2013-04-11T01:02:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/04/11/ideavim</id>
+    <content type="html"><![CDATA[<h3>For Whom The Bell Tolls.</h3>
+
+<p>As previously mentioned, I use VIM rather heavily, and I have some OCD behaviors when doing so, which includes hitting &lt;escape&gt; a lot. So I like to turn off the bell sounds vi makes on errors and unnecessary commands.</p>
+
+<h3>IdeaVim</h3>
+
+<p>I'm also a heavy user of IdeaVim plugin for IntelliJ. I wouldn't be able to use IDEs at all without those plugins that add VI operation modes to the built-in editors.</p>
+
+<p>IdeaVim doesn't document very well how it differs from true VIM. The project owner has taken the philosophy of building the project based on the original VIM documentation, and not the VIM source. So much so that the documentation for the plugin is just the VIM docs copied over.</p>
+
+<p>Unfortunately they've taken no time to indicate how much of that documented behavior is implemented and how much isn't yet.</p>
+
+<h3>Settings</h3>
+
+<p>One important area where VIM and IdeaVim differ is their handling of settings. IdeaVim only supports a small subset of vim commands and settings variables. But it wants to provide some convenience and backwards compatibility for existing VIM users. Their solution is to read your ~/.vimrc anyways. It simply has the behavior of silently ignoring any settings it doesn't understand.</p>
+
+<p>Unfortunately IdeaVim doesn't understand</p>
+
+<p><code>:set noerrorbells</code></p>
+
+<h3>It Toles for <em>Thee!</em></h3>
+
+<p>Fortunately IdeaVim <strong>does</strong> understand</p>
+
+<p><code>:set visualbell</code></p>
+
+<p>And better yet, it has no implementation for visualbells, so it simply silennces the error bell when you enact this setting. I just had to ensure the visualbell option was in my .vimrc before the noerrorbells option, so the latter would take final effect in real VIM.</p>
+]]></content>
+  </entry>
+  
+</feed>
