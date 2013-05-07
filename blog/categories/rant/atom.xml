@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rant | Den of Antiquity]]></title>
+  <link href="http://dragonfax.github.com/blog/categories/rant/atom.xml" rel="self"/>
+  <link href="http://dragonfax.github.com/"/>
+  <updated>2013-05-06T18:21:28-07:00</updated>
+  <id>http://dragonfax.github.com/</id>
+  <author>
+    <name><![CDATA[Jason Stillwell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Yahoo, Ya Fucked Up]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/04/13/yahoo-fucked-up/"/>
+    <updated>2013-04-13T14:57:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/04/13/yahoo-fucked-up</id>
+    <content type="html"><![CDATA[<p>Note: be warned, rant ahead.</p>
+
+<h2>The Incident</h2>
+
+<p>My homepage is now yahoo. A site I never use, never have used, never will use.</p>
+
+<p>My default search is now Yahoo. Again, a service I will never use. (even more so now)</p>
+
+<p>An ugly and useless yahoo search widget is added to my toolbar. It takes up precious real-estate.</p>
+
+<p>Worse, these changes seem to be permanent. Or at least damn close to it. After various fiddling and config settings, most of this remains. I'm unable to correct the hacking that was done to my computer.</p>
+
+<p>Furthermore this takes up precious time, searching, fixing, searching some more.</p>
+
+<h2>The Culprit</h2>
+
+<p>Of course this was was all done by some third-party extension or product I don't recall installing. I probably missed some tiny little button somewhere tha says, effectively, "Please don't fuck up my computer."</p>
+
+<p>But its all too late for that to matter now. The damage is already done.</p>
+
+<h2>The Blame</h2>
+
+<p>But who I'm really angry at is Yahoo.  The way I see it, Yahoo paid someone to fuck up my computer. And I take that personally.</p>
+
+<p>They paid someone to break my computer, and waste my time trying to fix it. And they paid alot
+considering how hard it is to undo this mess.</p>
+
+<p>They wanted to make absolutely sure that a good portion of my afternoon was ruined, correcting
+this dubochery.</p>
+
+<h2>The Plea</h2>
+
+<p>What did I do do to you, Yahoo?  Why would you do this to me?</p>
+
+<p>Was a lark? a laugh?  Is it some sort of revenge? Did I scowl at you in the parking lot?  Did I promise to call, and not follow through?</p>
+
+<p>Yahoo, why did you pay someone to fuck up my computer?</p>
+]]></content>
+  </entry>
+  
+</feed>
