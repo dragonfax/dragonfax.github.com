@@ -14,36 +14,33 @@ categories:
 The Search for Spock
 ----
 
-I'm always looking for better ways to organizing my life and improving my personal productivity. One tool thats popped up in several discussion is Trello. I know a few people using it, as a flexible online board for managing their workload, both professionally and personally. It seems like a great idea to try to work this into my own arsenal and see if its the godsend all the hype leads me to believe.
+I'm always looking for better ways to organizing my life and improving my personal productivity. One tool that has popped up in several discussion is Trello. I know a few people using it as a flexible online board for managing their workload, both professionally and personally. It seems like a great idea to work this into my own arsenal and see if its the godsend all the hype leads me to believe.
 
-After a little research and toying around, I did find it particularly flexible, but I also found that most examples on the web use Trello in the same way, with the same pattern of usage.
+After a little research and toying around I did find it particularly flexible. But I also found that most examples on the web use Trello in the exact same way with the same pattern of usage.
 
 
 "Trello", by Trello
 -----
 
-Trello provides the expected help documentation, describing the features, how to find them, adding components, and work with the widgets in the application.
+Trello provides the expected help documentation, describing the features, how to find them, add elements, and work with the widgets in the application.
 
-On the other hand, what they don't provide is specific usage patterns.  They don't describe workflows or methods to use the product for various ends. Instead leaving that up to other online examples or for the user to figure it out on his own.
+On the other hand what they don't provide is specific usage patterns.  They don't describe workflows or methods to use the product for various ends. Instead leaving that up to other online examples or for the user to figure it out on his/her own.
 
-I've seen this before with online products and its always a point of annoyance for me.  While I understand leaving things open ended so that users can find their own ways to take advantage of the product, and not pidgin-hole it into one niche. Not leaving product held back by preconceptions of what a it should be or how it should be used.
+I've seen this before with online products and its always a point of annoyance for me.  While I understand leaving things open-ended so that users can find their own ways to take advantage of the product, and not pidgin-hole it into one niche.
 
-But, by not giving clear instructions on how some people use it, or how you think it **could** be used for new users early on, you just make it difficult for users to get into the service, in the first place.
+But by not giving clear instructions or even just examples on how some people use it, or how you think it **could** be used for new users early on, you just make it difficult for users to get into the service in the first place.
 
-Twitter has the same issue. They refuse to clearly define the service and how it should be used.  And its wasted, as those who find new ways to use tools won't be deterred by the predefinition of its use.  i.e. The hashtag would still have been invented, whether it was the Twitter docs or not.
+Twitter has the same issue. They refuse to clearly define the service and how it should be used.  And its a waste, as those who find new ways to use tools won't be deterred by the predefinition of its use.  i.e. The hashtag would still have been invented, whether it was in the Twitter docs or not.
 
 
 ### Vocabulary
 
-Lets go over some Trello vocabulary quickly, or at least what they define for users. Teaching you how to use Trello is outside of the scope of this post, so I'm just going to review the terms, not describe them.
+Lets go over some Trello vocabulary quickly, or at least what they define for users. Teaching you how to use Trello is outside of the scope of this post, so I'm just going to review the terms.
 
-* **Board**
-  Groups Lists together.
+* **Board** - Groups Lists together.
 * **List** (of cards)
-* **Card**
-  Groups everything else together, a description with any number of **comments** and **checklists**.
-* **Checklist**
-  Works like a "Todo" list.
+* **Card** - Groups everything else together, a description with any number of **comments** and **checklists**.
+* **Checklist** - Works like a "Todo" list.
 
 ### Hierarchy
 
@@ -63,15 +60,13 @@ Board = Process/Workflow
 
 The pattern I see most often used online for Trello is a simple board->workflow pattern, where a **board** represents one "workflow" which may have several "steps" within it. In this case each "step" is represented by a **list**.
 
-In this system, the cards represent work items that are running through the "workflow". They rest in the "list" that pertains to the step in the workflow that they currently reside.
-
-This might be similar to a tool used for scrum tracking.
+In this system, the cards represent work items that are running through the "workflow". They rest in the "list" that pertains to the step in the workflow where they currently reside.  This might be similar to a tool used for scrum tracking.
 
 * **board** -> "workflow" or process
 * **list** -> "step" within the "workflow"
 * **card** -> item (project/task/feature/workload) running through the "workflow"
 
-Here the details within the card are used for describing and tracking the item or project that's running through the "workflow".
+Here, the details within the card are used for describing and tracking the item or project that's running through the "workflow".
 
 {% img /images/posts/2013-05-06-trello_examples_khan_academy.png %}_
 
@@ -80,11 +75,11 @@ A notable feature in this pattern is that **cards** are often moved from **list*
 Other Patterns
 -----
 
-I do see a few other patterns in use but they are rare.
+I do see a few other patterns in use but they're rare.
 
 ### Categorized List of "Things"
 
-Using the **board** as a single list, but with categories within that list.  Each **card** being one of the "things" that the **board** is listing.  And the different **lists** within the **board** are the categories.
+This pattern uses the **board** as a single list of items, but with categories within that list.  Each **card** being one of the "things" that the **board** is listing.  And the different **lists** within the **board** are the categories.
 
 Usually in this case the title of the **card** is all that's needed to describe the "thing".  And the comments within the **cards** are simply a running commentary from various users on the "thing" itself.
 
@@ -98,19 +93,22 @@ Notably, in this pattern, **cards** are regularly added to **lists**, but never 
 Missing Features
 ----
 
-After trying to use Trello for my own todo list management I found it rather lacking (for my own purposes). I'm still going to search for ways to use it for project planning and managing current work. 
+After trying to use Trello for my own todo list management I found it rather lacking (for my own purposes, that is). I'm still going to search for ways to use it for project planning and managing current work.
 
-My habit it to use a large a powerful todo list (toodledo) for tracking most of my work backlog. Even if I were to organize all my backlog in the form of boards, lists, and cards, I'd be missing out of important searching/sorting/categorization features that come along with the simple relational table model that online todo lists use.
+My habit it to use a large a powerful todo list (toodledo) for tracking most of my work backlog. Even if I were to organize all my backlog in the form of boards, lists, and cards, I'd be missing important searching/sorting/categorization features that come along with the simple relational table model that online todo lists use.
 
 * Merging and sorting all checklists in a board.
+
     Gather all checklists on a board into one super checklist to see what I should be working on immediately.
     Without having to dig around through cards and lists for checklists.
     This would be even more useful across boards.
 
 * Additional checklist details.
+
     Such as tagging checklist items with labels, and including more info for each individual checklist item.
 
 * Full-Text Search, across all text
+
     It wasn't too hard to find text elements that are not included in a Trello search. This is a little surprising.
 
 
