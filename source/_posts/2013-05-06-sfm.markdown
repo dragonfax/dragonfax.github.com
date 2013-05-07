@@ -1,0 +1,64 @@
+---
+layout: post
+title: "Source Film Maker"
+date: 2013-05-06 19:17
+comments: true
+categories: 
+published: false
+---
+
+I like to guess at how things are developed.
+or how I might develop it.
+
+here is a guess at how the source filmmaker works
+
+first we have the issue that 
+
+* this is all based on a game engine
+not a traditional computer animation system.
+so we have a system optimized and simplified for running a vidoe game/FPS.
+this implies a lot.
+
+maps loaded entirely into memory
+bone animations
+  merged
+not one big mesh
+screengraph at the core
+limited details on the models in the world
+  low poly models
+
+"late project story changes"
+
+physics build into the map and models.s
+physical simulation
+along with all the various levels (tracks) of data added.
+
+capture motion
+insert that motion into a character, in another session
+model motion from scratch
+  (bones I think)
+  which ean create motion and edit it later.
+
+? can you do arbitrary model mesh hacking later? or is it only bones and faces that can be done
+
+
+the big question, is how to add all of these features to what is originally optimized to be a game
+without turning the whole thing into a beast.
+making it a full animation system.
+building a new product
+re-engineering it around a different core idiom.
+i.e. hwo to easily add these features to what we, mostly, already have in the game engine
+
+
+? how demo's use to be done
+  recording and playback of a game.
+
+
+
+
+
+
+
+
+
+
