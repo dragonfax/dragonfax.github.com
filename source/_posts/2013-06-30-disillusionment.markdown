@@ -1,0 +1,27 @@
+---
+layout: post
+title: "disillusionment"
+date: 2013-06-30 20:48
+comments: true
+categories: 
+- giving
+---
+
+### Disillusionment as a Service
+
+Listening to a friend talk a little bit about her own trouble getting involved in charity work and social change organizations, reminded me of how hard it was for me to get into the regular practice of "Giving".
+
+The biggest thing I fought against was the simple idea that my little bit couldn't possibly make a difference.  And that going out there and helping was just to make me feel better, in a conceited sort of way.  I had to get past that, and see that every bit does count.
+
+"Disillusionment in our ability to actually effect any real change."  Its a big problem that people fight with today, especially the youth, when it comes to getting involved in politics, volunteering, donating to charity organizations.
+
+
+### Visualization is the Bane to Disillusionment
+
+We need to find a way to see how your bit of change (literal or figurative) combines with that of others.  Not just for one or two charities at a time, but with all organizations. To show you that you really are making a difference, even just your little bit.  Because it gets added to your friends little bits, and everyone else's little its.  This helps people to visualize the impact of their change.
+
+Its the same mentality you see in a demonstration.  You get see the power of people coming together.  And reminded your not alone here.  You can make change when you all come together.
+
+This is something thats not easily seen with the systems in place today.  And visualizing would make it easy to believe.
+
+
