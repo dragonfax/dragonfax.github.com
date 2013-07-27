@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: gist | Den of Antiquity]]></title>
+  <link href="http://dragonfax.github.com/blog/categories/gist/atom.xml" rel="self"/>
+  <link href="http://dragonfax.github.com/"/>
+  <updated>2013-07-27T11:14:56-07:00</updated>
+  <id>http://dragonfax.github.com/</id>
+  <author>
+    <name><![CDATA[Jason Stillwell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Make pre-commit Hook Default]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/06/23/make-pre-commit-hook-default/"/>
+    <updated>2013-06-23T22:25:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/06/23/make-pre-commit-hook-default</id>
+    <content type="html"><![CDATA[<p><div><script src='https://gist.github.com/5847823.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[run anywhere]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/03/12/run-anywhere/"/>
+    <updated>2013-03-12T14:04:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/03/12/run-anywhere</id>
+    <content type="html"><![CDATA[<p><div><script src='https://gist.github.com/5146987.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

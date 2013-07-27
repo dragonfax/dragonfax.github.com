@@ -4,7 +4,7 @@
   <title><![CDATA[Den of Antiquity]]></title>
   <link href="http://dragonfax.github.com/atom.xml" rel="self"/>
   <link href="http://dragonfax.github.com/"/>
-  <updated>2013-05-06T18:21:28-07:00</updated>
+  <updated>2013-07-27T11:14:56-07:00</updated>
   <id>http://dragonfax.github.com/</id>
   <author>
     <name><![CDATA[Jason Stillwell]]></name>
@@ -12,6 +12,114 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[legislature]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/06/30/legislature/"/>
+    <updated>2013-06-30T23:45:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/06/30/legislature</id>
+    <content type="html"><![CDATA[<h1>Coding and Legislature</h1>
+
+<p>I&#8217;ve never understood why we don&#8217;t employ standard software engineering practices when creating laws.</p>
+
+<ul>
+<li>Comments, Documentation, Readable Code</li>
+<li>Version Control</li>
+<li>Boilerplate and DRY</li>
+<li>Refactoring</li>
+<li>Modularity</li>
+<li>Code Reviews</li>
+<li>Beta Testing</li>
+<li>Use Cases, Case Scenarios, Feature Testing</li>
+<li>User Experience and Interface Design</li>
+</ul>
+
+
+<h3>Documentation</h3>
+
+<p>Clearly, written laws not meant to be understood by laymen.  That&#8217;s okay though, we have compilers that translate our English code into binary form.</p>
+
+<p>Now I&#8217;m not saying write laws as a form of code, or even pseudo code. Thats a bit extreme.  But readable code is considered to be goal, not a detriment.  When we can&#8217;t write legible code, we add comments to explain the purpose of the line or stanza.  We&#8217;ll even document the code and its entire processes externally elsewhere, to help others follow along with our intentions.</p>
+
+<p>Often we&#8217;ll take the extra step of designing the process first, before any code is written.  Using English and obtaining agreement from all concerns parties on the &#8220;design&#8221; of the process before starting the actual implementation.</p>
+
+<p>With this implementation kept separate from the design and intention, we can obtain agreement on the &#8220;goals&#8221; of said process.  And if we can&#8217;t reach an agreement on the implementation of the process then it turns out we really didn&#8217;t have agreement on the design. Or the design wasn&#8217;t clear enough to begin with.</p>
+
+<h3>Design Patterns and Refactoring</h3>
+
+<p>When code gets hard to understand we employ various maneuvers to keep it readable, understandable, and maintainable.</p>
+
+<p>We break off pieces of the code into other projects, other files.  Abstracting and refactoring the commonalities, breaking out the patterns, and rewriting the code into something more concise, that conveys just the notion it was meant to.</p>
+
+<h3>Version Control and Code Reviews</h3>
+
+<p>Our &#8220;code review&#8221; process today in the law making process is well known to be terrible. Many laws and versions of laws are never inspected by all the necessary law makers before making it into the books.</p>
+
+<p>We tend to employ simple version control techniques to follow the changes made to code over time. Pull request are an idea way to implement Code Reviews to ensure every change is heavily vetted before its made live.</p>
+
+<h3>Testing, Testing, Testing</h3>
+
+<p>We test a lot in software engineering. We find ways to verify the behavior of a piece of code before it does live, or more importantly, verify that we haven&#8217;t improperly altered the previous behavior of code after we&#8217;ve changed it.</p>
+
+<p>Review laws and apply them, experimentally, against previously recorded and vetted case scenarios.  Existing people, real or fictitious, who embody the traits effected by these laws.  Do they effect people they shouldn&#8217;t.  And can we somehow prove that they actually effect the change they desire to make?</p>
+
+<p>Couldn&#8217;t we have a single state or section of the country where new laws are tried out experimentally before they pass for the entire country?</p>
+
+<h3>Human Experience</h3>
+
+<ul>
+<li>Can a normal person understand the law, its purpose, its effects?</li>
+<li>Does it seem nonsensical, convoluted to everyone other than the author?</li>
+<li>Can an average person understand what to do to live by that law, and to avoid breaking it.</li>
+<li>Finally, does it improve or reduce the happiness in a persons life or break our fundamental freedoms and human rights?</li>
+</ul>
+
+
+<h3>Wrap Up</h3>
+
+<p>There&#8217;s a general analogy here between Code and Law. A think there&#8217;s more similarity than difference between them.</p>
+
+<p>Now this is, of course, a very immature proposal.  You know they say that when all you have is a hammer, every problem looks like a nail.  And, full disclosure, I am a Software Engineer, after all.</p>
+
+<p>But I suppose there are probably some carpenters out there that think driving a nail into the head of every representative would be a great way to solve all of our legal problems.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[disillusionment]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/06/30/disillusionment/"/>
+    <updated>2013-06-30T20:48:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/06/30/disillusionment</id>
+    <content type="html"><![CDATA[<h3>Disillusionment as a Service</h3>
+
+<p>Listening to a friend talk a little bit about her own trouble getting involved in charity work and social change organizations, reminded me of how hard it was for me to get into the regular practice of &#8220;Giving&#8221;.</p>
+
+<p>The biggest thing I fought against was the simple idea that my little bit couldn&#8217;t possibly make a difference.  And that going out there and helping was just to make me feel better, in a conceited sort of way.  I had to get past that, and see that every bit does count.</p>
+
+<p>&#8220;Disillusionment in our ability to actually effect any real change.&#8221;  Its a big problem that people fight with today, especially the youth, when it comes to getting involved in politics, volunteering, donating to charity organizations.</p>
+
+<h3>Visualization is the Bane to Disillusionment</h3>
+
+<p>We need to find a way to see how your bit of change (literal or figurative) combines with that of others.  Not just for one or two charities at a time, but with all organizations. To show you that you really are making a difference, even just your little bit.  Because it gets added to your friends little bits, and everyone else&#8217;s little its.  This helps people to visualize the impact of their change.</p>
+
+<p>Its the same mentality you see in a demonstration.  You get see the power of people coming together.  And reminded your not alone here.  You can make change when you all come together.</p>
+
+<p>This is something thats not easily seen with the systems in place today.  And visualizing would make it easy to believe.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Make pre-commit Hook Default]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/06/23/make-pre-commit-hook-default/"/>
+    <updated>2013-06-23T22:25:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/06/23/make-pre-commit-hook-default</id>
+    <content type="html"><![CDATA[<div><script src='https://gist.github.com/5847823.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A little more Trello in my life]]></title>
