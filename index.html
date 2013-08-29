@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Stillwell">
 
   
-  <meta name="description" content="Coding and Legislature I&#8217;ve never understood why we don&#8217;t employ standard software engineering practices when creating laws. Comments, &hellip;">
+  <meta name="description" content=" ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,86 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/28/migrating-from-toodledo-to-asana/">Migrating From Toodledo to Asana</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-28T18:38:00-07:00" pubdate data-updated="true">Aug 28<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div><script src='https://gist.github.com/6373376.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/04/install-perl/">Install Perl</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-04T17:55:00-07:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div><script src='https://gist.github.com/6152760.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -675,233 +755,6 @@ this dubochery.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/09/creating-command-line-tools-in-ruby/">Creating Command Line Tools in Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-09T19:48:00-08:00" pubdate data-updated="true">Mar 9<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>A Beginners Guide</h2>
-
-<p>I use RubyMine without doing any rails and doing just what you ask. I write a lot of simple scripts, and large applications, both often usable from a command line.</p>
-
-<p>I still organize my code into a &#8216;project directory&#8217;. And point RM at that directory. Instead of just working entirely in a file, and trying to point RM at the file alone. This seems to be what IDE&#8217;s prefer. This lets RM create its <code>.idea</code> directory to hold all of its project related settings.</p>
-
-<p>This may mean that some projects consist of nothing more than a directory (for the project) and a single file in that directory (the single script which is really the only content in that project).</p>
-
-<h2>Benefits of a Project Directory</h2>
-
-<p>You&#8217;ll soon find you add more files to any project anyways. Both additional coding and various utilities which are part of the great benefit of ruby.</p>
-
-<ul>
-<li>gem</li>
-<li>rake</li>
-<li>tests</li>
-</ul>
-
-
-<p>The <code>project directory</code> pattern, also lets you version the code with popular VCS such as git, and even upload to social coding sites like github.</p>
-
-<h2>Project Setup</h2>
-
-<p>I don&#8217;t bother with any sort of &#8220;project type&#8221;. In fact I don&#8217;t create projects from with RubyMine at all. I just create a directory, and then open that directory with RM (whether from the File Menu, or via the &#8220;mine&#8221; command line tool that RM installs).</p>
-
-<p><code>project/</code></p>
-
-<p>Of course <code>project</code> isn&#8217;t the real name of the project, or the directory I create, I&#8217;m just using it as a generic name here. I would actually name the directory (and project) after the scripts or subject matter of the work they do.</p>
-
-<p>NOTE: <em>currently there is a bug in the <code>mine</code> command in RM 5 where it won&#8217;t open a second project window.</em></p>
-
-<p>Obviously if this is a project that includes any command line scripts I&#8217;ll put those in a <code>bin</code> directory, just for organization purposes. I don&#8217;t like to clutter the root project directory with all sorts of things. There are too many tools that <em>require</em> their settings files in the project root, so the fewer the better.</p>
-
-<p><code>project/bin/</code></p>
-
-<p>Like I said, various other utilities prefer their settings files in the project root, so you may find yourself using some of them.</p>
-
-<pre><code>project/Gemfile
-project/Rakefile
-project/project.gemspec
-project/README.md
-project/.rdoc_options
-...
-</code></pre>
-
-<p>As soon as I have some automated testing for the scripts (which I admit isn&#8217;t immediate) I put all test code under a <code>test</code> directory, but I further categorize those according to the scope of the tests or how often I would run them during development. And I&#8217;ll go so far as to add quck Rake tasks that are just aliases for the commands necessary to run the tests. So I dont&#8217; have to remember which test runner, or type the full paths each time.</p>
-
-<pre><code>project/test/
-project/test/unit/
-project/test/unit/some_component_test.rb
-project/test/integration/
-</code></pre>
-
-<p>Finally, as the project grows, and I add more scripts or want to reuse some of the code within external projects, I&#8217;ll add a <code>lib</code> directory, and use some standard practices for how to organize that.</p>
-
-<pre><code>project/lib/
-project/lib/project.rb
-</code></pre>
-
-<p>And as the project continues to grow and get more complicated, more organization of the content is required, after a little refactoring. Note the <code>cmd</code> directory to contain the actual top-level code of various workflows a particular script can go through.</p>
-
-<pre><code>project/lib/project/
-project/lib/project/other_stuff.rb
-project/lib/project/cmd/
-project/lib/project/cmd/one_command.rb
-project/lib/project/cmd/another_command.rb
-</code></pre>
-
-<p>Of course the original <code>project.rb</code> &#8216;requires&#8217; all of these lib files. Ruby loads pretty fast, so I don&#8217;t bother too much with managing dependencies between the ruby files within the same project. Its really all about code readability.</p>
-
-<h2>Better Command Line Apps</h2>
-
-<p>There is nothing wrong with starting with a single script file and writing minimal boiler plate coding. And thats probably the best way to start.</p>
-
-<pre><code>#!/usr/bin/env ruby
-
-=begin
-
-this is a script blah which does whatever
-
-EXAMPLE
-
-$ script &lt;options&gt; &lt;arguments
-
-=end
-
-def main(args)
-  whatever
-end
-
-main(ARGV)
-exit(0)
-</code></pre>
-
-<p>But writing even better command line apps in ruby is pretty easy. There are popular gems which handle a lot of the infrastructure for you.</p>
-
-<p>You can start with something as simple as <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/optparse/rdoc/OptionParser.html">OptionParser</a></p>
-
-<p>Then as you build more code in your scripts you can graduate to a bit more infrastructure with a gem like <a href="https://github.com/davetron5000/methadone">Methadone</a></p>
-
-<p>Finally, when you&#8217;re writing full blown command line applications, with many &#8220;internal&#8221; commands like &#8220;git submodule init <repo>&#8221;, you can ascend to something much more heavy-weight like <a href="https://github.com/davetron5000/gli">GLI</a></p>
-
-<h2>Testing Command Line Apps</h2>
-
-<p>Unit testing is the pretty much the same, no matter what type of application your writing. You&#8217;re not using real services or combining components, but just isolating the internal components and using them in a purely internal manner. So not much changes there for command line tools.</p>
-
-<p>But when it comes to integration or full command-line testing of my scripts, I&#8217;m actually a big fan of <code>cucumber/aruba</code>. I&#8217;m not big on TDD, I&#8217;m a bit too pragmatic for that. But for command line tools, the series of use cases is already laid out pretty plainly in the set of options available. Even for interactive commands this makes a series of <code>feature</code> files conveniently double as documentation for the tool.</p>
-
-<pre><code>Feature:
-  Create and manipulate notes in Evernote.
-
-  Background:
-    Given I am logged in as me
-    And I have 0 notes
-
-  Scenario: Show note
-    Given that I have 1 note named "foo" with content "bar"
-    When I run `rnote show note --title "foo"`
-    Then the output should contain "bar"
-
-  Scenario: Show note, from multiple notes
-    Given that I have 2 notes named "foo"
-    When I run `rnote show note --title "foo"` interactively
-    And I type "1"
-    Then the output should contain "foo"
-</code></pre>
-
-<h2>Installation</h2>
-
-<p>As for installation and packaging for your scripts, so that they can be shared and reused by the rest of the world, look no further than the same &#8216;gem&#8217; utility that you&#8217;ve already been using all along in ruby for depenencies.</p>
-
-<p>The <code>gemspec</code> you create when writing a new gem to share, can be told about your scripts and other command line utilities. It will then wrap them up with the rest of your code, install them in a good location, and even fix up the PATH so the user can find them when the time comes.</p>
-
-<p>In fact this works so well, your gem can be composed of nothing but these <code>bin</code> scripts. With no other re-usable code included.</p>
-
-<p><a href="https://github.com/dragonfax/cat-dog">cat-dog</a> is a harmless little gem I whipped up as an example for something else. It contains no lib directory at all and no other ruby other than a single command line script.</p>
-
-<h2>Ruby Without Rails</h2>
-
-<p>I&#8217;ve run into a lot of Rails developers who aren&#8217;t cognisant of what <em>is</em> Rails and what <em>is</em> ruby. i.e. what you&#8217;re left with when you remove the Rails. Obviously the server and templating, databasing, MVC are all gone, as are a portion of convenience methods added to every-day objects.</p>
-
-<p>The goods new is that you&#8217;re still left with quite a lot. And if you find you miss something, its easy to add it back in with by including a gem or two. For instance, if you enjoy using an ORM like active-record it can be included back into your application, without rails, with little fuss.</p>
-
-<pre><code>require 'activerecord'
-</code></pre>
-
-<h2>Full Featured RubyMine</h2>
-
-<p>Finally, using RubyMine features more heavily during development. Everything available when working with rails is available for command line applications.</p>
-
-<p>You can run your commands from RM and use its debugger just the same as rails.
-Just like any IDE you can set up &#8220;run&#8221; profiles with the arguments you want to test the script on, and run or debug the script through the IDE. Personally, I never use a command-line debugger. If I need to fire up a debugger to troubleshoot some issue, then I&#8217;ll launch the program in an IDE. The benefits of an IDE debugger with &#8220;heads-up&#8221; display of all the pertinent details, and visually following the script through execution, is just irreplaceable.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/07/nesting-pry/">Nesting Pry</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-07T01:49:00-08:00" pubdate data-updated="true">Mar 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div><script src='https://gist.github.com/5113407.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -927,6 +780,14 @@ Just like any IDE you can set up &#8220;run&#8221; profiles with the arguments y
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/28/migrating-from-toodledo-to-asana/">migrating from toodledo to asana</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/04/install-perl/">install perl</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/30/legislature/">legislature</a>
       </li>
     
@@ -936,14 +797,6 @@ Just like any IDE you can set up &#8220;run&#8221; profiles with the arguments y
     
       <li class="post">
         <a href="/blog/2013/06/23/make-pre-commit-hook-default/">Make pre-commit Hook Default</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/06/trello/">A little more Trello in my life</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/13/yahoo-fucked-up/">Yahoo, Ya Fucked Up</a>
       </li>
     
   </ul>

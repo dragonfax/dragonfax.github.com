@@ -4,7 +4,7 @@
   <title><![CDATA[Den of Antiquity]]></title>
   <link href="http://dragonfax.github.com/atom.xml" rel="self"/>
   <link href="http://dragonfax.github.com/"/>
-  <updated>2013-07-30T18:43:15-07:00</updated>
+  <updated>2013-08-28T18:39:27-07:00</updated>
   <id>http://dragonfax.github.com/</id>
   <author>
     <name><![CDATA[Jason Stillwell]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[migrating from toodledo to asana]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/08/28/migrating-from-toodledo-to-asana/"/>
+    <updated>2013-08-28T18:38:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/08/28/migrating-from-toodledo-to-asana</id>
+    <content type="html"><![CDATA[<div><script src='https://gist.github.com/6373376.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[install perl]]></title>
+    <link href="http://dragonfax.github.com/blog/2013/08/04/install-perl/"/>
+    <updated>2013-08-04T17:55:00-07:00</updated>
+    <id>http://dragonfax.github.com/blog/2013/08/04/install-perl</id>
+    <content type="html"><![CDATA[<div><script src='https://gist.github.com/6152760.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[legislature]]></title>
