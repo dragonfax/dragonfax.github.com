@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Choosing a Technology - Den of Antiquity</title>
+  <title>Context IOC - Den of Antiquity</title>
   <meta name="author" content="Jason Stillwell">
 
   
-  <meta name="description" content="How I choose to work has changed over the years, naturally.
-Learning new technologies and techniques.
-New hammers and tools to put on my belt. An &hellip;">
+  <meta name="description" content="I&#8217;d been doing this for a years, but had no idea there was a name for it. For me it came out of unit testing UIs. I found my widget classes &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ New hammers and tools to put on my belt. An &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dragonfax.github.com/blog/2013/02/24/choose-a-language">
+  <link rel="canonical" href="http://dragonfax.github.com/blog/2011/03/18/context-ioc">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Den of Antiquity" type="application/atom+xml">
@@ -82,7 +80,7 @@ New hammers and tools to put on my belt. An &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Choosing a Technology</h1>
+      <h1 class="entry-title">Context IOC</h1>
     
     
       <p class="meta">
@@ -98,79 +96,129 @@ New hammers and tools to put on my belt. An &hellip;">
   
 
 
-<time datetime="2013-02-24T02:32:00-08:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
+<time datetime="2011-03-18T17:40:00-07:00" pubdate data-updated="true">Mar 18<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>How I choose to work has changed over the years, naturally.
-Learning new technologies and techniques.
-New hammers and tools to put on my belt.</p>
+<div class="entry-content"><div class='post'>
+I&#8217;d been doing this for a years, but had no idea there was a name for it.  For me it came out of unit testing UIs.  I found my widget classes would have a lot of dependenciees.  But they&#8217;d only end up using each dependency for a one or two small things each.  It seems a shame to pass in the whole object just for that.  Also this left me with alot to mock in my unit tests.
+<p/>
 
-<p>An important part of this was how I went about
-choosing what technologies to associate myself with.
-I didn&rsquo;t just let people set things down in front of me, and choose my paths for me.
-I constantly researched and pro-actively vetted technological choices.
-Its been a constant daily regimine.</p>
+  So with a quick interface, I found I could declare the dependencies to a much finer grain of details.  It just seemed like a good way to decouple objects.  It makes writing unit tests fast because each class clearly states exactly what its going to use in its dependencies.  And when you change one thing in the code, static analysis tells you everything that is affected by it with far fewer false positives.
+<p/>
 
-<p>A notable area of focus for programmers is the choice a programming language to use for any given peice of code.
-And this serves, ideally, as a great example to show how these patterns have changed over the years.</p>
+<h2>Practices, maybe not &#8220;Best&#8221;</h2>
+<p/>
 
-<p>Let me describe this in 3 phases.</p>
+<ul>
+<li>
+I&#8217;ve been naming the interfaces &#8216;Dao&#8217; because that just seemed to make sense at the time.  I may start using &#8216;Context&#8217; now.
+  </li>
 
-<h2>When I was young</h2>
+<li>
+I found that embeding the interface, nested inside the class that used it, seemed like good information architecture.  I know alot of people dont&#8217; like nesting classes and interfaces.  But it avoids a lot of clutter in the packages, as I&#8217;ll often have a ton of these interfaces, one for every class.
+  </li>
 
-<p>When I was a new programmer, my focus was entirely on what language seemed best for me.</p>
+<li>
+Outside of tests, I never create a whole class that does nothing but implement one of these Dao interfaces.  The methods in the Dao came out of something that the class needed from another class (a dependency). So the Dao interface just turned out to be extra interfaces implemented by the dependency class. Not defining the dependency class, but rather performing some duck-typing for us.
+  </li>
+</ul>
+<p/>
 
-<p>Not simply what matched my world view,
-but also what forced me to absorb new ideas and concepts.
-What allowed for my personal productivity, but also my personal growth.</p>
+Here is a quick example of what a class might look like that uses such an interface to declare its dependencies.
+<p/>
 
-<p>Also, at this stage it was all about what the &ldquo;best langugae&rdquo; was.
-As opinionated as I was, I never considered adding a &ldquo;for me&rdquo; to the end of that
-statement to better qualify it as purely a personal journey.
-I was in a world of absolutes, and languages were something I could qualitatively compare.</p>
+<pre class="brush: java">
+  public class SomeWidget {
+ 
+    public interface Dao {
+      void setSomeValue(SomeValue value);
+      SomeOtherValue getSomeOtherValue();
+      void doThis();
+      void doThat();
+      void saveYourWork();
+      void requestExitOfApplication( String reason );
+      void notifyCamelHairListeners( CamelHairEvent event);
+    }
 
-<p><strong>When I was young, I chose the best language for myself.</strong></p>
+    private Dao dao;
 
-<h2>As I matured</h2>
+    public SomeWidget(Dao dao) {
+      this.dao = dao;
 
-<p>As I matured and gained in experience and languages,
-I grew to see that there was no superior choice, across the board.
-Different tools are simply better at different jobs.</p>
+      // add various widgets this one.
+      // which call on the Dao to do the work behind them.
+      ...
+    }
 
-<p>Its not a good carpenter that judges all of his work should be done with a hammer.
-But to apply the hammer to the nails and the saw to the wood.</p>
+  }
 
-<p>Learning a language was just pre-emptive maneuver to ensure I could make the right choice
-for each task that came up. And I knew that choice would change from job to job.
-Each languaging becoming a table of pros and cons, with some lending to certain techniques
-but performing poorly with others.</p>
 
-<p><strong>As I matured, I chose the right language for the project.</strong></p>
+  // and when testing
+  public class SomeWidgetDaoMock implements SomeWidget.Dao {
+    ...
+  }
+</pre>
+<p/>
 
-<h2>Deep into my career</h2>
 
-<p>Years later, as I&rsquo;ve touched on most major technologies my world view has shifted yet again.</p>
+  The methods defined in these Daos usually wouldn&#8217;t be return actual dependencies.  Instead they would contain the abstract methods that the class needed from those dependencies.
+<p/>
 
-<p>Truth be told, you can do pretty much anything with any programming language.</p>
+  An exception I make is for some higher level Daos in an application.  When one dao interface implementor may need to act as a factory to create the dependencies.
+<p/>
 
-<p>Yes, there are still pros and cons to languages, and language agnostic techniques as well.
-There are differences in availablity and quality of 3rd party libraries and even in the communities
-that follow them.</p>
+<h2>Composition</h2>
+<p/>
 
-<p>But what it really comes down to is not how <em>I&rsquo;m</em> going to use the language,
-Or even how the project is going to use the language.
-But, rather, how the people are going to use the language.</p>
+  For building up the Doas in your large application you have many choices such as composiing Daos from sub interfaces or using Dao factories ( Daos just for retrieving other Daos ).
+<p/>
+<pre class="brush: java">
+  public class Application {
 
-<p>Those team-members I have to work with now.
-Those developers that may have to maintain this code in the future.
-Those engineers that may have to make other technology decisions based
-on the content of the projects and work I do.</p>
+    // you only need to define one of these 2 interfaces
 
-<p><strong> As a Late-Career Software Engineer, I make the choice based on the people, team, and company. </strong></p>
+    // sub interface Dao
+    public interface SubInterfaceDao implements SomeWidget.Dao {
+    }
+
+
+    // Dao factory
+    public interface FactoryDao {
+
+      public SomeWidget.Dao getSomeWidgetDao();
+
+    }
+
+
+    // rest of application
+    ...
+
+  }
+
+
+  // The choice isn't hard. If you use one style, you can still use the other one on the fly.
+  // another common choice during testing.
+  public class ConfusedApplicationDao implements Application.FactoryDao, SomeWidget.Dao {
+
+    public SomeWidget.Dao getSomeWidgetDao() {
+      return this;
+    }
+
+  }
+</pre>
+<p/></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Sandeep</div>
+<div class='content'>
+Thanks for the information<br /><br /><a href="http://extreme-java.blogspot.com" rel="nofollow">http://extreme-java.blogspot.com</a></div>
+</div>
+</div>
 </div>
 
 
@@ -193,21 +241,15 @@ on the content of the projects and work I do.</p>
   
 
 
-<time datetime="2013-02-24T02:32:00-08:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
+<time datetime="2011-03-18T17:40:00-07:00" pubdate data-updated="true">Mar 18<span>th</span>, 2011</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/programming/'>Programming</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2013/02/24/choose-a-language/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2013/02/24/choose-a-language/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2011/03/18/context-ioc/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2011/03/18/context-ioc/" >Tweet</a>
   
   
   
@@ -216,20 +258,14 @@ on the content of the projects and work I do.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/06/02/git-gitorious/" title="Previous Post: Git & Gitorious">&laquo; Git & Gitorious</a>
+        <a class="basic-alignment left" href="/blog/2011/03/14/minimizing-hibernate-schema-complexity/" title="Previous Post: Minimizing Hibernate Schema Complexity">&laquo; Minimizing Hibernate Schema Complexity</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/02/28/ruby-local/" title="Next Post: ruby local">ruby local &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2011/06/02/git-gitorious/" title="Next Post: Git & Gitorious">Git & Gitorious &raquo;</a>
       
     </p>
   </footer>
 </article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
 
 </div>
 
@@ -325,10 +361,7 @@ on the content of the projects and work I do.</p>
       var disqus_shortname = 'denofantiquity';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://dragonfax.github.com/blog/2013/02/24/choose-a-language/';
-        var disqus_url = 'http://dragonfax.github.com/blog/2013/02/24/choose-a-language/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

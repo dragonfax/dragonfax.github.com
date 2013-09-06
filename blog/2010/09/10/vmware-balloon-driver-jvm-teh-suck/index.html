@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Choosing a Technology - Den of Antiquity</title>
+  <title>VMWare + Balloon Driver + JVM = teh suck - Den of Antiquity</title>
   <meta name="author" content="Jason Stillwell">
 
   
-  <meta name="description" content="How I choose to work has changed over the years, naturally.
-Learning new technologies and techniques.
-New hammers and tools to put on my belt. An &hellip;">
+  <meta name="description" content="I missed the memory talk at VMWorld.&nbsp; I passed it by for some API related sessions.&nbsp; One of my coworkers suggested I go to it and I should &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ New hammers and tools to put on my belt. An &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dragonfax.github.com/blog/2013/02/24/choose-a-language">
+  <link rel="canonical" href="http://dragonfax.github.com/blog/2010/09/10/vmware-balloon-driver-jvm-teh-suck">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Den of Antiquity" type="application/atom+xml">
@@ -82,7 +80,7 @@ New hammers and tools to put on my belt. An &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Choosing a Technology</h1>
+      <h1 class="entry-title">VMWare + Balloon Driver + JVM = Teh Suck</h1>
     
     
       <p class="meta">
@@ -98,79 +96,27 @@ New hammers and tools to put on my belt. An &hellip;">
   
 
 
-<time datetime="2013-02-24T02:32:00-08:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
+<time datetime="2010-09-10T14:50:00-07:00" pubdate data-updated="true">Sep 10<span>th</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>How I choose to work has changed over the years, naturally.
-Learning new technologies and techniques.
-New hammers and tools to put on my belt.</p>
-
-<p>An important part of this was how I went about
-choosing what technologies to associate myself with.
-I didn&rsquo;t just let people set things down in front of me, and choose my paths for me.
-I constantly researched and pro-actively vetted technological choices.
-Its been a constant daily regimine.</p>
-
-<p>A notable area of focus for programmers is the choice a programming language to use for any given peice of code.
-And this serves, ideally, as a great example to show how these patterns have changed over the years.</p>
-
-<p>Let me describe this in 3 phases.</p>
-
-<h2>When I was young</h2>
-
-<p>When I was a new programmer, my focus was entirely on what language seemed best for me.</p>
-
-<p>Not simply what matched my world view,
-but also what forced me to absorb new ideas and concepts.
-What allowed for my personal productivity, but also my personal growth.</p>
-
-<p>Also, at this stage it was all about what the &ldquo;best langugae&rdquo; was.
-As opinionated as I was, I never considered adding a &ldquo;for me&rdquo; to the end of that
-statement to better qualify it as purely a personal journey.
-I was in a world of absolutes, and languages were something I could qualitatively compare.</p>
-
-<p><strong>When I was young, I chose the best language for myself.</strong></p>
-
-<h2>As I matured</h2>
-
-<p>As I matured and gained in experience and languages,
-I grew to see that there was no superior choice, across the board.
-Different tools are simply better at different jobs.</p>
-
-<p>Its not a good carpenter that judges all of his work should be done with a hammer.
-But to apply the hammer to the nails and the saw to the wood.</p>
-
-<p>Learning a language was just pre-emptive maneuver to ensure I could make the right choice
-for each task that came up. And I knew that choice would change from job to job.
-Each languaging becoming a table of pros and cons, with some lending to certain techniques
-but performing poorly with others.</p>
-
-<p><strong>As I matured, I chose the right language for the project.</strong></p>
-
-<h2>Deep into my career</h2>
-
-<p>Years later, as I&rsquo;ve touched on most major technologies my world view has shifted yet again.</p>
-
-<p>Truth be told, you can do pretty much anything with any programming language.</p>
-
-<p>Yes, there are still pros and cons to languages, and language agnostic techniques as well.
-There are differences in availablity and quality of 3rd party libraries and even in the communities
-that follow them.</p>
-
-<p>But what it really comes down to is not how <em>I&rsquo;m</em> going to use the language,
-Or even how the project is going to use the language.
-But, rather, how the people are going to use the language.</p>
-
-<p>Those team-members I have to work with now.
-Those developers that may have to maintain this code in the future.
-Those engineers that may have to make other technology decisions based
-on the content of the projects and work I do.</p>
-
-<p><strong> As a Late-Career Software Engineer, I make the choice based on the people, team, and company. </strong></p>
+<div class="entry-content"><div class='post'>
+I missed the memory talk at VMWorld.&nbsp; I passed it by for some API related sessions.&nbsp; One of my coworkers suggested I go to it and I should have listened to him.<br /><br />Something that&#8217;s popped up recently is the fact that memory reclamation using the balloon driver fails miserably when used in conjunction with a JVM.<br /><ul>
+<li><a href="http://communities.vmware.com/blogs/drummonds/2009/09/09/love-your-balloon-driver">http://communities.vmware.com/blogs/drummonds/2009/09/09/love-your-balloon-driver</a></li>
+<li><a href="http://www.vmware.com/files/pdf/perf-vsphere-memory_management.pdf">http://www.vmware.com/files/pdf/perf-vsphere-memory_management.pdf</a></li>
+</ul>
+<br />These articles put the blame squarely on Java&#8217;s garbage collection.&nbsp; The latter pointing out that the garbage collect will scan all the process&#8217;s memory making paging a JVM heap worse than paging most applications.<br /><br />I&#8217;d like to see some poeple that know more about JVM memory internals and garbage collection as well as VMWare weigh in on this as well.&nbsp; With virtual machines being the basis of cloud initiatives, and future collocation platforms, this kind of issue is only going to get more prevalent.<br /><br />Currently, the only solution is have admins take a closer role in managing the JVM memory footprint at the same time as the VMWare VM memory reservations.<br /><br />I&#8217;m not a fan of the maximum heap size setting in the JVM either.&nbsp; But there are arguments for and against it being require in the JVMs style of garbage collection.<br /></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Ben</div>
+<div class='content'>
+Hi Jason,<br /><br />I&#39;m the dev lead on the EM4J project that was spoken about at VMWorld. You&#39;re right to surmise that the JVM has a problem with regular ballooning. At it&#39;s most simple, the problem is that the JVM doesn&#39;t give memory back to the operating system and thus always ends up consuming it&#39;s high watermark memory, even if there&#39;s plenty of free space in the heap. Since the balloon driver can only reclaim memory from the OS, these two models are basically incompatible. The result is that it&#39;s fiendishly difficult to predict when regular ballooning is safe and the consequences of getting it wrong are severe (due to GC characteristics as you state). Hence the current best practice of using memory reservations.<br /><br />I&#39;m putting together a series of YouTube clips to explain this whole area in more detail. Hopefully these will be helpful. First one is up now: http://www.youtube.com/watch?v=kyz7J-FQUSM</div>
+</div>
+</div>
 </div>
 
 
@@ -193,21 +139,15 @@ on the content of the projects and work I do.</p>
   
 
 
-<time datetime="2013-02-24T02:32:00-08:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
+<time datetime="2010-09-10T14:50:00-07:00" pubdate data-updated="true">Sep 10<span>th</span>, 2010</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/programming/'>Programming</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2013/02/24/choose-a-language/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2013/02/24/choose-a-language/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2010/09/10/vmware-balloon-driver-jvm-teh-suck/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2010/09/10/vmware-balloon-driver-jvm-teh-suck/" >Tweet</a>
   
   
   
@@ -216,20 +156,14 @@ on the content of the projects and work I do.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/06/02/git-gitorious/" title="Previous Post: Git & Gitorious">&laquo; Git & Gitorious</a>
+        <a class="basic-alignment left" href="/blog/2010/09/10/alex-maier-and-i-in-front-of-blogger/" title="Previous Post: Fighting the Good Fight">&laquo; Fighting the Good Fight</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/02/28/ruby-local/" title="Next Post: ruby local">ruby local &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2010/09/16/splunk-high-level-view-in-layers/" title="Next Post: Splunk: A high level view... in layers">Splunk: A high level view... in layers &raquo;</a>
       
     </p>
   </footer>
 </article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
 
 </div>
 
@@ -325,10 +259,7 @@ on the content of the projects and work I do.</p>
       var disqus_shortname = 'denofantiquity';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://dragonfax.github.com/blog/2013/02/24/choose-a-language/';
-        var disqus_url = 'http://dragonfax.github.com/blog/2013/02/24/choose-a-language/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

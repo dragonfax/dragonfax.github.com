@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Minimizing Hibernate Schema Complexity - Den of Antiquity</title>
+  <meta name="author" content="Jason Stillwell">
+
+  
+  <meta name="description" content="In my applications I persist a lot of structured data into the database.
+Hibernate and other ORMs are great at making this easy to do.
+One problem &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dragonfax.github.com/blog/2011/03/14/minimizing-hibernate-schema-complexity">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Den of Antiquity" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39145059-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Den of Antiquity</a></h1>
+  
+    <h2>Dusting off old ideas and passing them off as new.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:dragonfax.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Minimizing Hibernate Schema Complexity</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-14T00:34:00-07:00" pubdate data-updated="true">Mar 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+In my applications I persist a lot of structured data into the database.
+Hibernate and other ORMs are great at making this easy to do.
+One problem is that they tend to map the entire object structure to rigidly structured database fields and tables.
+Quite often that&#8217;s just overkill.
+<p/>
+
+<h2>Strings as a black box datatype</h2>
+
+  Take strings for instance.
+  A <b>VARCHAR</b> makes perfect sense if you know the string will always be less than, say, 30 characters.
+  Even if your not going to use that string field in a where clause, ever.
+  <p/>
+
+  But if you won&#8217;t know the max size the string will be for every instance,
+  or it could be a very large string and you&#8217;re never going to use it in a search,
+  then your fine using a <b>LOB</b> column to store that string.
+<p/>
+
+  Modern ORMs will even read/write the whole string value into/out from the <b>LOB</b> column for you.
+  Or give you the <b>CLOB</b> instance itself for better performance, whichever you prefer.
+<p/>
+
+  I&#8217;ve experienced many DBAs that don&#8217;t like the use of <b>LOB</b> columns. But I&#8217;ve never understood that, as this is exactly the purpose that LOB columns were meant to solve. The storage of arbitrary data in the database, no different than in a file, without any sort of internal random access, indexing, or searching. A Blackbox-column to the database server, if you will.
+<p/>
+
+
+<h2>Complicated Object Graphs</h2>
+
+  Worse is when you have classes with lots of field and subobjects.
+  This can get messy, even if they&#8217;re just value objects.
+<p/>
+
+  The multiple tables, table hierarchies, link tables, and huge column lists that can result,
+  while entirely valuable for some classes, are just overkill for others.
+  Especially when you won&#8217;t be indexing, searching or retrieving individually, any of those fields/rows/objects.
+<p/>
+
+<h2>Persisting Serialized Classes</h2>
+ 
+  ORMs can persist a whole instance into one field.
+  They do so using serialization of some form or another to turn the instance into flat data like a byte array.
+  Then this data can be persisted as a <b>BLOB</b> value.
+<p/>
+
+  In the case of Hibernate, its as simple as marking a reference (non primitive) field with <b>@Lob</b>, just as with the strings.
+  But in this case, by default, Hibernate will use the standard java serialization mechanism.
+  Which some would take exception *cough* to.
+<p/>
+
+  You can provide your own serialization mechanism of course.
+  I&#8217;m not sure how to do this across the board for hibernate.
+  But my solution is just to create a custom hibernate <b>UserType</b> implementation.
+  Then I can mark the fields with this custom <b>UserType</b>, that I want stores as non-entities.
+<p/>
+
+  This is surprisingly easy.
+
+<h2>XML</h2>
+  For the serialization format, I chose XML.
+  There are a number of good XML serializers for java objects.
+  Some even work well on arbitrary classes, though you shouldn&#8217;t be putting just any classes in your databases columns.
+<p/>
+
+  I use XML because its easy to;
+  <ul>
+    <li>
+    read, when debugging
+    </li>
+    <li>
+    manipulate if need be
+    </li>
+    <li>
+    migrate, on object structure changes
+    </li>
+  </ul>
+<p/>
+
+  I chose xstream as my serializer because;
+  <ul>
+    <li>
+    * its easy to setup and use.
+    </li>
+    <li>
+    * it maps most classes automatically
+    </li>
+    <li>
+    * is extremely flexible
+    </li>
+  </ul>
+<p/>
+
+<h2>Persisting Exceptions</h2>
+
+  Another reason we went with xstream, is that in some cases we serialize exceptions, for debugging and posterity.
+  This can be an whole mess by itself.
+  So I needed something that could serialize most arbitrary classes, without configuration.
+  As you never know whats going to pop up in an instance field in an exception class/cause hierarchy.
+<p/>
+
+  But at the same time I didn&#8217;t want to use different serialization solutions, one for exceptions and another for my real data classes.
+<p/>
+
+  I&#8217;ll leave out the discussion about how to deal with bad/unserializable exception classes *cough oracle cough*.
+  Truth be told, we&#8217;re phasing out persisting exceptions after all. Which is just common sense.
+  <p/>
+
+
+There are other good serialization libraries out there, though.
+<p/>
+
+<h2>Lob compression</h2>
+
+  Another discussion I&#8217;m leaving out is the compression of the string XML <b>CLOB</b> data into a binary <b>LOB</b>.
+  Which we do as an easy space saving measure.
+  But once you&#8217;ve got the hibernate <b>UserType</b> setup, something like this is rather academic.
+<p/>
+
+<h2>Whole Entity Serialization</h2>
+  I&#8217;ve considered serializing the whole entity to one field.
+  Only pulling out specially annotated fields into individual table columns for indexing and searching.
+<p/>
+
+  But this doesn&#8217;t seem easy, let alone a good idea.
+  That would leave you with redundant data, broken out into non-LOB columns and serialized in the LOB column at the same time.
+  Which could lead to bugs.
+  And the implementation of this would be complicated to begin with.
+<p/>
+
+<h2>Metadata Objects</h2>
+
+  Its possible to cajole all your non-column fields into one Metadata object.
+  So that they can be serialized into one LOB column in the table for your entity.
+  But I find this is also overdoing it.
+<p/>
+
+  Databases can have multiple LOB columns per table. Having a few instead of just one isn&#8217;t going to have a major impact.
+  I just design my classes naturally, and only resort to special Metadata objects like this in rare situation.
+  Say, when I have a <b>TON</b> of fields in a class, and I won&#8217;t be using them in SQL.
+<p/>
+
+  That may mean a few other primitive fields get columns of their own, as well.
+
+<p/>
+
+<h2>Nitty Gritty</h2>
+
+Lets get down to some code then.
+Its pretty straight forward, if you check the javadocs for the hibernate <b>UserType</b>.
+<p/>
+
+Of course <b>Serializer</b> is my singleton class providing the chosen
+serialization mechanism.
+<p/>
+
+<pre class="brush: java">
+public class XMLUserType implements UserType {
+
+  @Override
+  public int[] sqlTypes() {
+    return new int[]{ java.sql.Types.CLOB };
+  }
+
+  @Override
+  public Class&lt;Serializable&gt; returnedClass() {
+    return Serializable.class;
+  }
+
+  @Override
+  public boolean isMutable() {
+    return true;
+  }
+
+  @Override
+  public Object deepCopy(Object value) {
+    return Serializer.deserialize(Serializer.serialize((Serializable) value));
+  }
+
+  @Override
+  public Serializable disassemble(Object value) {
+    return (Serializable) value;
+  }
+  @Override
+  public Object assemble(Serializable cached, Object owner) {
+    return cached;
+  }
+
+  @Override
+  public Object replace(Object original, Object target, Object owner){
+    return deepCopy(original);
+  }
+
+  @Override
+  public boolean equals(Object x, Object y) {
+    if (x == null ) {
+      return y == null;
+    }
+    else {
+      return x.equals(y);
+    }
+  }
+
+  @Override
+  public int hashCode(Object x) {
+    return x.hashCode();
+  }
+
+  @Override
+  public Object nullSafeGet(ResultSet rs, String[] names, Object owner) throws HibernateException, SQLException {
+      String columnName = names[0];
+
+    try {
+
+        Reader stream = rs.getCharacterStream(columnName);
+
+        if ( stream == null )
+          return null;
+
+      // slurp reader to string.
+      StringBuilder buffer = new StringBuilder();
+      char[] c = new char[1024];
+      int numRead = 0;
+      while ( ( numRead = stream.read(c) ) != -1 ) {
+        buffer.append(c, 0, numRead);
+      }
+      stream.close();
+
+        return Serializer.deserialize(buffer.toString());
+
+    } catch (IOException e) {
+      throw new HibernateException("IOException while reading clob",e);
+    }
+    
+  } 
+
+
+  @Override
+  public void nullSafeSet(PreparedStatement st, Object value, int index) throws HibernateException, SQLException {
+
+    if( value == null ) {
+      st.setNull( index, sqlTypes()[0] );
+      return;
+    }
+   
+    String xmlString = Serializer.serialize((Serializable) value);
+
+    Reader reader = new StringReader(xmlString);
+    st.setCharacterStream(index, reader, xmlString.length());
+  }
+ 
+}
+</pre>
+
+
+<p/>
+
+<h2>notes</h2>
+
+<ul>
+
+<li>
+You can followup the equals() and hashcode() implementations by comparing the serialized data as well.
+This might make sense in some cases, if the serialized form is simpler than the runtime form of your objects.
+This can happen with lots of transient fields.
+
+</li>
+
+<li>
+Oracle can put <b>LOB</b>s inlined in the table row data. When the lob is less than 4k.
+You&#8217;ll want to be certain whether its doing it in your table or not. In case that blows up row size.
+</li>
+
+</ul></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Jason Stillwell</div>
+<div class='content'>
+Good idea. I also understand YAML is popular.<br /><br />Do Java&lt;-&gt; JSON serializers handle cyclic reference in the object graph well?</div>
+</div>
+<div class='comment'>
+<div class='author'>Toi</div>
+<div class='content'>
+If I have to do that, I will, personally, choose JSON over XML.</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Stillwell</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-14T00:34:00-07:00" pubdate data-updated="true">Mar 14<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2011/03/14/minimizing-hibernate-schema-complexity/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2011/03/14/minimizing-hibernate-schema-complexity/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/03/11/programmers-are-people-too/" title="Previous Post: Programmers are People Too">&laquo; Programmers are People Too</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/03/18/context-ioc/" title="Next Post: Context IOC">Context IOC &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+    <a href="images/utters.jpg"><img src='images/utters.jpg'></a>
+</section>
+
+<section>
+  <h1>Stack Overflow</h1>
+  <a href="http://stackoverflow.com/users/92694/dragonfax"><img src="http://stackoverflow.com/users/flair/92694.png" width="208" height="58" alt="profile for dragonfax at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for dragonfax at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/28/migrating-from-toodledo-to-asana/">Migrating From Toodledo to Asana</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/04/install-perl/">Install Perl</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/legislature/">Legislature</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/disillusionment/">Disillusionment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/23/make-pre-commit-hook-default/">Make Pre-commit Hook Default</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/dragonfax">@dragonfax</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'dragonfax',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/dragonfax" data-widget-id="310735837098819584">Tweets by @dragonfax</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Stillwell -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'denofantiquity';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

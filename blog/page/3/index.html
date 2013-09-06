@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Den of Antiquity</title>
+  <meta name="author" content="Jason Stillwell">
+
+  
+  <meta name="description" content="I explain Splunk to my team using a layered approach. 1. Full-Text Search&#8230; of the world Start with a full text search engine.&nbsp; But put &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dragonfax.github.com/blog/page/3">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Den of Antiquity" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39145059-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Den of Antiquity</a></h1>
+  
+    <h2>Dusting off old ideas and passing them off as new.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:dragonfax.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/16/splunk-high-level-view-in-layers/">Splunk: A High Level View&#8230; In Layers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-16T16:09:00-07:00" pubdate data-updated="true">Sep 16<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I explain Splunk to my team using a layered approach.<br />
+<dl>
+<dt>1. <b>Full-Text Search</b>&#8230; <b>of the world</b></dt>
+<dd><br />
+Start with a full text search engine.&nbsp; But put _everything_ we have into it.
+
+<br />
+<ul>
+<li>logs ( host and application )</li>
+<li>configuration files (change management)</li>
+<li>stats (system performance, monitoring)</li>
+<li>alerts (snmp, emails, anything automated)</li>
+<li>reports</li>
+<li>emails</li>
+<li>bugs, tickets, issue and tracker systems</li>
+<li>documentation, wikis, and maybe even source code</li>
+</ul>
+&nbsp; <br />
+This is immediately useful in small ways, and is a common practice at large companies anyways.&nbsp; At least for documentation, wikis, tickets.&nbsp; To search for details related to a host when working on a problem ticket, or fixing bugs.<br />
+<br /></dd>
+<dt>2. <b>Records</b></dt>
+<dd><br />
+Give that full text search engine a knowledge of the &#8216;record&#8217; structure within all those files.&nbsp; Thus when you search, it can give you just the relevant records from the file.&nbsp; But it can also display records in context or the entire file if desired.<br />
+<br />
+This also lets you restrict search by records, or by transactions made of groups of records, making more powerful searches possible.<br />
+<br /></dd>
+<dt>3. <b>Fields</b></dt>
+<dd><br />
+Make it cognizant of the &#8216;fields&#8217; present in those records.&nbsp; This is obviously useful for narrowing queries, as well as sorting, and displaying only relevant info.&nbsp; But these fields are flexible, and resolved in a lazy fashion.&nbsp; They can be different; per file, per record, per search.&nbsp; Furthermore they don&#8217;t require the heavy project overhead of schema and datamining planning.&nbsp; The lazy resolution of fields becomes a powerful tool when combined with step #4.<br />
+<br /></dd>
+<dt>4. <b>Powerful Expression language</b></dt>
+<dd><br />
+<br />
+Building upon all the structure of records and fields, and the lazy resolution of structure to allow all sorts of complicated processing and data manipulation: splitting, mutating, joining datasets.&nbsp; Not just searching through records, but also data munging, to generate new data and then perform further searches on that.<br />
+<br /></dd>
+<dt>5. <b>Powerful User Interface</b>.</dt>
+<dd><br />
+<ul>
+<li>a CLI with autocompletion</li>
+<li>intuitive record/field browsing</li>
+<li>automatically populated one-click drilldowns</li>
+<li>graphing/visualisation</li>
+<li>default dashboards automatically populated with commonly used searches and keywords.</li>
+<li>custom dashboards</li>
+</ul>
+<br /></dd>
+<dt>6. <b>Zeroconf</b></dt>
+<dd><br />
+Splunk detects most of the details and configuration itself.&nbsp; With heavy heuristics that do the right thing most of the time.&nbsp; But can be overridden in the cases they don&#8217;t, or just for further control.<br />
+<br />
+The only place you need to do some forethought is some capacity planning.<br />
+<br /></dd><dd></dd>
+<dt>7. <b>Scalability</b></dt>
+<dd><br />
+And finally, wrap this all up into a componentized architecture so that it scales well, and you can scale just the components that you need to.&nbsp; Whether that be for capacity, or for performance.<br />
+<br /></dd>
+</dl>
+If this sounds like some heavy propaganda, it is.&nbsp; I&#8217;ve already replaced a number our tools with Splunk at the core. Which is working out great.<br />
+<br />
+Eventually we found that alot of the stuff we were generating and then feeding into Splunk, can be generated more conveniently by Splunk itself.&nbsp; Furthermore replacing alot of homebrew code with more robust, flexible and easier to maintain Splunk applications.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/10/vmware-balloon-driver-jvm-teh-suck/">VMWare + Balloon Driver + JVM = Teh Suck</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-10T14:50:00-07:00" pubdate data-updated="true">Sep 10<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I missed the memory talk at VMWorld.&nbsp; I passed it by for some API related sessions.&nbsp; One of my coworkers suggested I go to it and I should have listened to him.<br /><br />Something that&#8217;s popped up recently is the fact that memory reclamation using the balloon driver fails miserably when used in conjunction with a JVM.<br /><ul>
+<li><a href="http://communities.vmware.com/blogs/drummonds/2009/09/09/love-your-balloon-driver">http://communities.vmware.com/blogs/drummonds/2009/09/09/love-your-balloon-driver</a></li>
+<li><a href="http://www.vmware.com/files/pdf/perf-vsphere-memory_management.pdf">http://www.vmware.com/files/pdf/perf-vsphere-memory_management.pdf</a></li>
+</ul>
+<br />These articles put the blame squarely on Java&#8217;s garbage collection.&nbsp; The latter pointing out that the garbage collect will scan all the process&#8217;s memory making paging a JVM heap worse than paging most applications.<br /><br />I&#8217;d like to see some poeple that know more about JVM memory internals and garbage collection as well as VMWare weigh in on this as well.&nbsp; With virtual machines being the basis of cloud initiatives, and future collocation platforms, this kind of issue is only going to get more prevalent.<br /><br />Currently, the only solution is have admins take a closer role in managing the JVM memory footprint at the same time as the VMWare VM memory reservations.<br /><br />I&#8217;m not a fan of the maximum heap size setting in the JVM either.&nbsp; But there are arguments for and against it being require in the JVMs style of garbage collection.<br /></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Ben</div>
+<div class='content'>
+Hi Jason,<br /><br />I&#39;m the dev lead on the EM4J project that was spoken about at VMWorld. You&#39;re right to surmise that the JVM has a problem with regular ballooning. At it&#39;s most simple, the problem is that the JVM doesn&#39;t give memory back to the operating system and thus always ends up consuming it&#39;s high watermark memory, even if there&#39;s plenty of free space in the heap. Since the balloon driver can only reclaim memory from the OS, these two models are basically incompatible. The result is that it&#39;s fiendishly difficult to predict when regular ballooning is safe and the consequences of getting it wrong are severe (due to GC characteristics as you state). Hence the current best practice of using memory reservations.<br /><br />I&#39;m putting together a series of YouTube clips to explain this whole area in more detail. Hopefully these will be helpful. First one is up now: http://www.youtube.com/watch?v=kyz7J-FQUSM</div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/10/alex-maier-and-i-in-front-of-blogger/">Fighting the Good Fight</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-10T14:42:00-07:00" pubdate data-updated="true">Sep 10<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Alex Maier and I in front of the &#8220;Blogger Lounge&#8221; at VMWorld in San Francisco.
+
+I told her I was a blogger, but I don&#8217;t think she believed me.<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/_vX6wLJaOFc0/TIqlxTtZNnI/AAAAAAAAAB8/piT5V7rsphQ/s1600/IMG_20100901_161539.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/_vX6wLJaOFc0/TIqlxTtZNnI/AAAAAAAAAB8/piT5V7rsphQ/s320/IMG_20100901_161539.jpg" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/_vX6wLJaOFc0/TIql_mICAjI/AAAAAAAAACM/Oo7NIwl45p0/s1600/IMG_20100901_161526.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/_vX6wLJaOFc0/TIql_mICAjI/AAAAAAAAACM/Oo7NIwl45p0/s320/IMG_20100901_161526.jpg" /></a></div></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/19/never-create-runtimeexception/">Never Create a RuntimeException</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-19T15:54:00-07:00" pubdate data-updated="true">Aug 19<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Don&#8217;t worry, this isn&#8217;t a post about &#8220;checked exceptions&#8221;.<br />
+<br />
+Of course the post-title isn&#8217;t an iron-clad rule, but you really don&#8217;t have any excuse to have the following code in your application.<br />
+<br />
+<pre class="brush: java">
+throw new RuntimeException("innocuous message");
+</pre>
+<br />
+<br />
+You can catch them, and throw them again if caught.&nbsp; But <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">RuntimeException</span> is just meant to be a super class for you to extend from for your own exceptions.&nbsp; In any error situation, there is always a more application exception class that already exists. Or you can consider creating one for your app.<br />
+<br />
+If the issue is with something passed into the method, you can always throw the very popular <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">IllegalArgumentException</span>.&nbsp; Or, In the absolute worst case, you can always just throw a new <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">IllegalStateException</span>(), as that&#8217;s the most generic <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">RuntimeException</span>.<br />
+<br />
+There are even handy libraries to replace your state and argument checking boiler plate code.&nbsp; See <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Preconditions </span>from Google Guava (formerly google collections), which is far more readable.
+
+<br />
+<pre class="brush: java">
+import static com.google.common.base.Preconditions.*;
+
+public Object getCachedValue(Identifier id) { 
+    checkNotNull(id);
+    Object value = cache.get(id);
+    checkState("id not cached",value != null);
+    return value;
+}
+</pre>
+<br />
+Even in test code, you could probably throw an <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">AssertionException </span>instead, if your not using<br />
+asserts to test the state anyways.<br />
+<br />
+A personal favorite of mine is <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">UnsupportedOperationException</span>, instead of a custom <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">UnimplementedFeatureException</span>.&nbsp; Whenever code tries to do something that isn&#8217;t _supposed_ to work (yet).&nbsp; Because, frankly, I&#8217;m quite often lazy, or just too busy to write everything at the start.<br />
+<br />
+Furthermore, when you create your own <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">RuntimeException</span>s, consider sub-classing <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">IllegalStateException </span>or some other reasonable exception.&nbsp; These super-classes, while adding no functionality, give hints to other developers about the intrinsic meaning behind these new exception their seeing.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Marian</div>
+<div class='content'>
+That is one fascist thinking, I&#39;d say :D</div>
+</div>
+<div class='comment'>
+<div class='author'>pholser</div>
+<div class='content'>
+Right on. IMO, Throwable, Exception, RuntimeException, and Error needed to be made abstract.</div>
+</div>
+<div class='comment'>
+<div class='author'>Marian</div>
+<div class='content'>
+Thanks for the opinion. <br />But I still do not see any point in subclassing RuntimeException. Does it help anything except for the code to look prettier? Unchecked XYZMySpecialException may in my experience create much more confusion than simple RuntimeException. You may end up with your junior programmers simply catching and ignoring everything subclassed from Exception in that piece of code. Or make them attracted to throw them in other places it was supposed to be thrown.<br />That it was designed just to be subclassed? Who says? Would not it be abstract then?<br />The only point of subclassing unchecked exception is to provide some extra information for the exposed class/method&#39;s user. Unless you are trying to collect some runtime statistics everyone needs to look at the exception message anyway.<br />I do throw IllegalArgumentException-s in case an input argument is wrong. But that is the only small sacrifice I am willing to take with this. Any RuntimeException should in my view represent a truly exceptional and and unexpected situation. And which should really not happen in production.<br />Your arguments, in my opinion, go well for checked exceptions. Throwing whose has its non-academic purpose in production code too.</div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/19/conferences/">Conferences</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-19T02:23:00-07:00" pubdate data-updated="true">Aug 19<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I have trouble learning anything at conferences.
+Though, I&#8217;ve only been to a few. This is a retelling of what I told one of the Splunk people at their conference. 
+Its starts with; 
+
+<br />
+<blockquote>
+&#8220;I&#8217;m probably just not the right type of person for conferences.&#8221;
+</blockquote>
+Don&#8217;t get me wrong. Their conference was great. 
+But I&#8217;m one of the few people in the world that actually reads documentation&#8230; thoroughly. And Splunk is _very_ well documented. Better than most applications.
+<br />
+<br />
+Furthermore I read blogs, lots of them. 
+From that I not only gain the technical knowledge of &#8216;cans&#8217; and &#8216;cannots&#8217; but also use-cases, user experiences, corner cases, best practices and odd behavior.
+<br />
+<br />
+Most sessions at conferences, end up being rehashes of what I&#8217;ve already read. With only a few small new tidbits in the entire hour or hour and a half. 
+<br />
+<br />
+Furthermore, I&#8217;m not a swag type of person. And usually if I was interested in talking with a company regarding their products, I would already have done so. Instead of waiting until I can meet them face-to-face in a exhibit hall.
+<br />
+<br />
+I&#8217;ll probably be at VMWorld in SF, and at Strangeloop, in St. Louis.
+Before then, I&#8217;m hoping someone will chime in and tell me what I&#8217;m doing wrong</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/18/google-wave/">Google Wave</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-18T16:54:00-07:00" pubdate data-updated="true">Aug 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Everyone seems to have an opinion on this one.&nbsp; Now that Google Wave has been put in the can, its getting some revived press.&nbsp; I&#8217;ve never understood the mysticism assigned to it.&nbsp; It seems rather straightforward to me.&nbsp; Its just a collaborative document edting system.&nbsp; Conceptually you could think of it as just another wiki.<br />
+<br />
+<h4>
+
+
+
+
+
+
+
+
+Wiki</h4>
+<ul>
+<li>&nbsp;Users can edit it, including editing what the previous users added.</li>
+<li>&nbsp;history is kept and can be inspected through the UI</li>
+</ul>
+<br />
+&nbsp; It adds a realtime editing feature, where you can see others making changes to the document live.&nbsp; Whether thats an important feature or not is left in the open.&nbsp; The realtime editing is nice, but I&#8217;ve rarely seen it helpful in online collaboration.&nbsp; Besides I don&#8217;t think thats part of the design of their protocol, its just a feature of their front-end implementation.<br />
+<br />
+&nbsp; The one situation it has been helpful is when you&#8217;re<br />
+<ul>
+<li>&nbsp;working on a specific document, like a requirmenets doc,</li>
+<li>&nbsp;with other people,</li>
+<li>&nbsp;who your in other realtime communication with, such as over chat, voice or in person.</li>
+</ul>
+<br />
+<br />
+&nbsp; Notification or &#8220;adding people&#8221; to the wave, is no different from getting email notifications when someone edits a wiki page your following or have previously edited.<br />
+<br />
+<h4>
+
+
+
+
+
+
+Email</h4>
+<ul>
+<li>The documents are like &#8220;threads&#8221;.</li>
+<li>You get notified of additions/changes to the thread.</li>
+</ul>
+<br />
+&nbsp; Its good replacement for long threads.&nbsp; Long meandering threads would quickly get policed back onto track.&nbsp; Because of the constant presence of the full history, and the editable nature of the full thread.&nbsp; But again, this is the case for any wiki.<br />
+<br />
+&nbsp; In the spirit of email, the backend presents it as a decentralized repository.&nbsp; Allowing integration and distribution with other repos.&nbsp; Thats a new concept for online collaboration systems, but it never branched out for them. With Google as the only provider.<br />
+<br />
+<h4>
+
+Chat</h4>
+<br/>
+&nbsp; Its not a chat system.&nbsp; I never understood this comparison.&nbsp; That would be too random, off-topic, long term.&nbsp; It would quickly become more of a &#8216;history&#8217; of the chat, than an actual chat.&nbsp; And keeping it on topic without constant editing of all the history would be impossible.<br />
+<br />
+<h4>
+
+Conclusion</h4>
+<br/>
+I did think it was a good idea.&nbsp; I love wiki&#8217;s, online collaboration, and collective intelligence of any kind.&nbsp; Perhaps, if they had provided some of the other front-ends instead of their complicated &#8220;wave&#8221; UI, it would have seen more wide-spread use.<br />
+<h5>
+
+
+
+Email</h5>
+<ul>
+<li>receive updates as regular emails, possibly containing context as a &#8216;fake threaed&#8217;</li>
+<li>reply with reponses that get inserted appropriately back into the document.</li>
+</ul>
+<h5>
+
+
+Wiki</h5>
+<ul>
+<li>static html of each wave</li>
+<li>editing the document in a normal wiki fashion.</li>
+</ul></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/05/01/swing-extreme-testing/">Swing Extreme Testing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-01T06:40:00-07:00" pubdate data-updated="true">May 1<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://www.amazon.com/gp/product/1847194826?ie=UTF8&amp;tag=rambl01-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1847194826" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://1.bp.blogspot.com/_vX6wLJaOFc0/S9ws_SJBf2I/AAAAAAAAABE/1wIolwYQ4Kw/s320/41nRdTi-9IL._SL160_.jpg" /></a><img alt="" border="0" class=" ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod ilqhqjiyxovacaacomod zqzvbfckczwlzgqfllos zqzvbfckczwlzgqfllos" height="1" src="http://www.assoc-amazon.com/e/ir?t=rambl01-20&amp;l=as2&amp;o=1&amp;a=1847194826" style="border: medium none ! important; margin: 0px ! important;" width="1" /></div>
+I&#8217;ll admit, I hadn&#8217;t read any books on UI testing before. But I have an understanding of the difficulties in it from my own failed attempts, as well as the various blog posts I&#8217;ve read over the years. Like many I just chalked it up to too hard to do well.<br />
+<br />
+Fortunately, this book was a big help as a first step.&nbsp; The techniques it suggests are simple and helpful. And show that UI testing doesn&#8217;t have to be a complete beast. <br />
+<br />
+I agree with most other reviews though. The custom unit testing system was overkill.
+But the real-world scenarios used to present the tests where good and easy to read. They weren&#8217;t presented as the long, detailed case studies that many testing books make the mistake of doing.<br />
+<br />
+If you&#8217;re looking for a first book on UI testing, its a good choice. And the patterns can be applied to UI frameworks and languages other than Java Swing.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    
+<section>
+    <a href="images/utters.jpg"><img src='images/utters.jpg'></a>
+</section>
+
+<section>
+  <h1>Stack Overflow</h1>
+  <a href="http://stackoverflow.com/users/92694/dragonfax"><img src="http://stackoverflow.com/users/flair/92694.png" width="208" height="58" alt="profile for dragonfax at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for dragonfax at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/28/migrating-from-toodledo-to-asana/">Migrating From Toodledo to Asana</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/04/install-perl/">Install Perl</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/legislature/">Legislature</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/disillusionment/">Disillusionment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/23/make-pre-commit-hook-default/">Make Pre-commit Hook Default</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/dragonfax">@dragonfax</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'dragonfax',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/dragonfax" data-widget-id="310735837098819584">Tweets by @dragonfax</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Stillwell -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'denofantiquity';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

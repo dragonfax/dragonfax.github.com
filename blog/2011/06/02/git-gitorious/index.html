@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Git & Gitorious - Den of Antiquity</title>
+  <meta name="author" content="Jason Stillwell">
+
+  
+  <meta name="description" content="I&#8217;m trying to promote code sharing and code review and open source ideas, internally at my company. I setup a copy of gitorious on our &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dragonfax.github.com/blog/2011/06/02/git-gitorious">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Den of Antiquity" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39145059-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Den of Antiquity</a></h1>
+  
+    <h2>Dusting off old ideas and passing them off as new.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:dragonfax.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Git & Gitorious</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-02T18:02:00-07:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+I&#8217;m trying to promote code sharing and code review and open source ideas, internally at my company. I setup a copy of gitorious on our intranet and we&#8217;re starting to commit projects into it.
+<p>
+
+I whipped up a quick overview of Git and Gitorious to share with my coworkers to make them more comfortable with the systems and get them started. Its not entirely technically accurate but it reflects how I view the systems.
+<p>
+
+
+
+
+<style type="text/css"><!--
+.wiki-content h1, .wiki-content h2 {
+ border-bottom: 1px solid #919699;
+ margin-top: 1em;
+ margin-bottom: 1em;
+}
+.wiki-content p {
+ margin-bottom: 1em;
+}
+--></style>
+
+
+
+<div class="wiki-content">
+
+<div>
+<ul>
+    <li><a href='#GitandGitorious-Gitorious'>Gitorious</a></li>
+<ul>
+    <li><a href='#GitandGitorious-GitoriousElements'>Gitorious Elements</a></li>
+<ul>
+    <li><a href='#GitandGitorious-Users'>Users</a></li>
+    <li><a href='#GitandGitorious-Teams'>Teams</a></li>
+    <li><a href='#GitandGitorious-Projects'>Projects</a></li>
+    <li><a href='#GitandGitorious-Repositories'>Repositories</a></li>
+</ul>
+    <li><a href='#GitandGitorious-gettingstarted'>getting started</a></li>
+    <li><a href='#GitandGitorious-WebAccesstoRepositories'>Web Access to Repositories</a></li>
+    <li><a href='#GitandGitorious-AccessControl'>Access Control</a></li>
+<ul>
+    <li><a href='#GitandGitorious-Projects'>Projects</a></li>
+    <li><a href='#GitandGitorious-Repositories'>Repositories</a></li>
+</ul>
+    <li><a href='#GitandGitorious-CodeReviewandForkbasedDevelopment'>Code Review and Fork-based Development</a></li>
+<ul>
+    <li><a href='#GitandGitorious-CloningRepos'>Cloning Repos</a></li>
+    <li><a href='#GitandGitorious-MergeRequests'>Merge-Requests</a></li>
+</ul>
+</ul>
+    <li><a href='#GitandGitorious-Git'>Git</a></li>
+<ul>
+    <li><a href='#GitandGitorious-DVCSvsVCS'>DVCS vs VCS</a></li>
+<ul>
+    <li><a href='#GitandGitorious-%22Traditional%22versioncontrol%2CorVCS'>&#8220;Traditional&#8221; version control, or VCS</a></li>
+    <li><a href='#GitandGitorious-TheNewWay%2Corthe%22D%22inDVCS'>The New Way, or the &#8220;D&#8221; in DVCS</a></li>
+</ul>
+    <li><a href='#GitandGitorious-Everyonehasarepo'>Everyone has a repo</a></li>
+    <li><a href='#GitandGitorious-Eachrepoisdifferent.'>Each repo is different.</a></li>
+    <li><a href='#GitandGitorious-HashesasaGUID'>Hashes as a GUID</a></li>
+    <li><a href='#GitandGitorious-DVCSCommandsandConcepts'>DVCS Commands and Concepts</a></li>
+<ul>
+    <li><a href='#GitandGitorious-TheOld'>The Old</a></li>
+    <li><a href='#GitandGitorious-TheNew'>The New</a></li>
+</ul>
+    <li><a href='#GitandGitorious-ForSubversionUsers'>For Subversion Users</a></li>
+    <li><a href='#GitandGitorious-AdvancedConcepts'>Advanced Concepts</a></li>
+<ul>
+    <li><a href='#GitandGitorious-TheIndex'>The Index</a></li>
+    <li><a href='#GitandGitorious-layers'>layers</a></li>
+<ul>
+    <li><a href='#GitandGitorious-EfficientBlobStorage'>Efficient Blob Storage</a></li>
+    <li><a href='#GitandGitorious-BlobDatabase'>Blob Database</a></li>
+    <li><a href='#GitandGitorious-FileSystemTrees'>File System Trees</a></li>
+    <li><a href='#GitandGitorious-HistoryGraph'>History Graph</a></li>
+    <li><a href='#GitandGitorious-OtherVCSMetadata'>Other VCS Metadata</a></li>
+</ul>
+    <li><a href='#GitandGitorious-HistoryEditingandAmending'>History Editing and Amending</a></li>
+</ul>
+</ul>
+</ul></div>
+
+<h1><a name="GitandGitorious-Gitorious"></a>Gitorious</h1>
+
+
+
+<p>Gitorious is web-based project and repository management software.  It just lets us create multiple repos and manage them into projects, teams and whatnot.</p>
+
+
+<div class='panelMacro'><table class='warningMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'></td><td><b>Warning: All Code Public</b><br />All code uploaded to the site is visible to everyone within the corporate network. So scrub code for passwords and other credentials before uploading.</td></tr></table></div>
+
+
+<h2><a name="GitandGitorious-GitoriousElements"></a>Gitorious Elements</h2>
+
+<p>There are only 4 different major types of &#8220;things&#8221; in Gitorious.</p>
+
+<ul>
+ <li>Users</li>
+ <li>Teams</li>
+ <li>Projects</li>
+ <li>Repositories</li>
+</ul>
+
+
+<h3><a name="GitandGitorious-Users"></a>Users</h3>
+
+<p>You and me. Just create your account. Don&#8217;t forget to add an ssh key after you login so you can upload code.</p>
+
+<h3><a name="GitandGitorious-Teams"></a>Teams</h3>
+
+<p>This is just a group of users. A user can be in many teams at once. These teams are just logical units to give access to whole projects and repositories at once. Without having specify individual members. Projects can also be &#8216;owned&#8217; by a team instead of just a user.</p>
+
+<h3><a name="GitandGitorious-Projects"></a>Projects</h3>
+
+<p>Projects can be owned by teams or by users. Its just a place to group your repositories into. You may have a project for each repo. Or put a couple related repos in the same project.</p>
+
+<p>Each project also gets its own mini wiki, which is not full features but convenient for small documentation, project and repo descriptions. And the project&#8217;s mini-wiki is versioned using git.</p>
+
+<p>When you create a repo, it has to be created in an existing project. Which is just good practice anyways. But when you clone a repo, it has no project associated with it (for convenience as well).</p>
+
+<h3><a name="GitandGitorious-Repositories"></a>Repositories</h3>
+
+<p>git repositories. This is the nitty gritty. Its where the source actually goes. There are some good-practices outlined further below on how to decide what goes in a repository.</p>
+
+<p>gitorious provides several methods for access to the repository. The 2 methods we have enabled are <b>ssh</b> and <b>git-protocol</b>. The git protocol has no authentication mechanism so it provides read-only access to the repo. The ssh protocol uses a public key you upload to gitorious, to authenticate you and allow for read/write access to your repos (but only your repos).</p>
+
+
+<h2><a name="GitandGitorious-gettingstarted"></a>getting started</h2>
+
+<p>1. Create an account</p>
+
+<p>The site isn&#8217;t connected to LDAP so you&#8217;ll have to create your account manually. No email verification is required though, you can log in immediately.</p>
+
+<p>2. Join or create any useful teams.</p>
+
+<p>This is optional. You don&#8217;t need to be on a team in Gitorious to us the site to its fullest. But teams allow you to give write permission to your projects and repos to multiple people easily. It also acts as a useful form of organization.</p>
+
+<p>3. Create projects and repos</p>
+
+<p>Generally you&#8217;ll create a repo for each app you want to share the source for. And you may create a project for it as well. But you may create multiple repos in the same project if or put multiple applications/source trees in the same repo. Its your personal preference.</p>
+
+<p>4. Share your code.</p>
+
+<p>You can upload your code to your repositories. Remember to clone the gitorious repo first using the ssh url, and to upload an ssh public key so you can get write access to your repo.</p>
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'></td><td><b>Create Away</b><br />All objects and metadata can be easily remove or replaces so feel free to create them with recless abandon.<br/>
+We can always split projects and repos later, or move other things around.</td></tr></table></div>
+
+<h2><a name="GitandGitorious-WebAccesstoRepositories"></a>Web Access to Repositories</h2>
+
+<p>As any decent source repository management site, gitorious provides a simple web-based repository browser, so that you can browse the repository without having to clone it first. You can also browse the history of the repo.</p>
+
+<h2><a name="GitandGitorious-AccessControl"></a>Access Control</h2>
+
+<div class='panelMacro'><table class='warningMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'></td><td><b>Warning: All Code Public</b><br />All code uploaded to the site is visible to everyone within the corporate network. So scrub code for passwords and other credentials before uploading.</td></tr></table></div>
+
+<h3><a name="GitandGitorious-Projects"></a>Projects</h3>
+
+<p>You can set who can edit and write to projects. You can add teams or individuals to a project.</p>
+
+<h3><a name="GitandGitorious-Repositories"></a>Repositories</h3>
+
+<p>You can assign teams and individuals in 3 different capacities when it comes to repositories.</p>
+<ul>
+ <li>Commiters</li>
+ <li>Reviewers</li>
+ <li>Administrators</li>
+</ul>
+
+
+<p>Users and teams can be assigned any combination of these 3 roles for a repository. Commiters can update changes to the git repository. Reviewers can manipulate merge-requests. And administrators can edit the repo metadata in gitorious.</p>
+
+<h2><a name="GitandGitorious-CodeReviewandForkbasedDevelopment"></a>Code Review and Fork-based Development</h2>
+
+<h3><a name="GitandGitorious-CloningRepos"></a>Cloning Repos</h3>
+
+<p>Just as you can use the 2 methods described further above to download/clone git repos to your local machine. You can also request that gitorious clone the repo for you in gitorious. Doing this, it can track metadata about the repo relationships and enable some more advanced features, such as watching repos and performing merge-requests.</p>
+
+<h3><a name="GitandGitorious-MergeRequests"></a>Merge-Requests</h3>
+
+<p>This is an advanced feature, but it bares mentioning. If you have a repo in gitorious cloned from another repo also in gitorious, and you&#8217;d like to submit your changes to be pushed up the line back to the origin of the source. You can submit a merge requests, and the original authors can work with you in a simple form of code-review.</p>
+
+
+<h1><a name="GitandGitorious-Git"></a>Git</h1>
+
+
+<p>This isn&#8217;t a tutorial on using Git. Its just a overview of the DVCS, the concepts there-in, and how DVCS differ from traditional VCS. You can find a great deal of presentations, tutorials, and documentation online for git which will better serve your needs if your trying to get started using it.</p>
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'></td><td><b>Git Parlance</b><br />git documentation and proponents use alot of lexicon that they pretend describe new concepts in version control. When in actually they are just refering to concepts that have existed in VCS for decades but are simply for flexible now with the advent of DVCS. I&#8217;ll try to point out when I&#8217;m using this vocabulary.</td></tr></table></div>
+
+<h2><a name="GitandGitorious-DVCSvsVCS"></a>DVCS vs VCS</h2>
+
+<h3><a name="GitandGitorious-%22Traditional%22versioncontrol%2CorVCS"></a>&#8220;Traditional&#8221; version control, or VCS</h3>
+
+<p>ala subversion or CVS.</p>
+
+<ul>
+ <li>centralized authoritative location for the source code. defined by both owners, and the software.</li>
+ <li>client and server are seperate entities.</li>
+</ul>
+
+
+<h3><a name="GitandGitorious-TheNewWay%2Corthe%22D%22inDVCS"></a>The New Way, or the &#8220;D&#8221; in DVCS</h3>
+
+<p>ala git or mercurial</p>
+
+<p>The &#8220;D&#8221; refers to &#8220;decentralized&#8221; version control.</p>
+
+<ul>
+ <li>no central authoritative location. defined by the software.</li>
+ <li>the authoritative location for the source defined only by convention.</li>
+ <li>no difference between client and server. we&#8217;ll just call it a &#8220;client&#8221; here though.</li>
+</ul>
+
+
+<p>This means that the software and internals of the VCS are designed so there is no enforcement about who controls the source.<br/>
+Everyone working on the source is equal (in the eyes of the VCS). This includes the location that the team defines as the authoritative (canon) location for the source code.</p>
+
+<p>Its still common to have a central repository even in DVCS. Where the team members submit their final code changes to. But the benefits come in having the VCS designed around not mandating a central location.</p>
+
+<h2><a name="GitandGitorious-Everyonehasarepo"></a>Everyone has a repo</h2>
+
+<p>In traditional VCS the user usually gets just the minimal amount of data required to work on the code at the moment.</p>
+
+<p>When they pull a &#8220;working copy&#8221; of the source tree, they get just the branch they need. And they get just the subtree that they need of that branch. They usually don&#8217;t get any history in their &#8220;working copy&#8221;, just the immediately files and HEAD version. All of the other details are easily accessible from the central server if needed for a complex operation.</p>
+
+<p>In git, the &#8220;repository&#8221; and the &#8220;working directory&#8221; are one in the same. When you get a working copy from some other repo. Your just copying the entire repository to a new local one. And that repository becomes your working copy. The files are ready to be worked with. All the history and other VCS details are hidden in a .git subdirectory.</p>
+
+<p>This may seem a rather heavy-weight operation, but at the same time, in git, you tend to create smaller repositories. Unlike traditional VCS where you put all your projects and applications in the same repo. In git you&#8217;ll create a separate repo for each project or application. So the size remains manageable. Furthermore, in git, while you can&#8217;t clone just a subtree of a repo, you can clone only a single branch or subset of the repos branches. In fact its quite common just to clone the single branch your interested in&#8230; say the &#8220;master&#8221; branch (same thing as &#8220;trunk&#8221; in svn or cvs).</p>
+
+
+<p>If your working on the code in several locations, each location will actually be a separate repo. Possibly with a different set of branches in it.</p>
+
+<p>This is another important concept in git. Even though we all have a repo for the project, the repos are not identical. And they don&#8217;t need to be.</p>
+
+<h2><a name="GitandGitorious-Eachrepoisdifferent."></a>Each repo is different.</h2>
+
+<p>This is not just because we have our own private changes in our repo, that we haven&#8217;t yet shared with others. But each repo also <ins>knows</ins> its a different one from all the others. This is how we keep from stepping on each others toes when we are all working on similar branches/code. git knows that Marks &#8220;master&#8221; branch is actually a different branch than Sue&#8217;s &#8220;master&#8221; branch. And you have to address them as such if you really want to work with both in the same operation.</p>
+
+<h2><a name="GitandGitorious-HashesasaGUID"></a>Hashes as a GUID</h2>
+
+<p>To deal with the issues of multiple repos, git tracks everything in the repo using secure message digests (hashes) of their content. This acts as a good GUID for these objects so that no matter where they came from or when, if they&#8217;re identical, then it can identify them as such. This also makes comparing objects faster. The system uses this for files, directories, and history as well.</p>
+
+<p>Unfortunately there are a few gotchas to keep in mind with this. For instance the same source tree can results from 2 different histories. So that can cause some complications, when deciding who&#8217;s history is more useful to keep around. But most users don&#8217;t have to worry about that at the beginning.</p>
+
+<h2><a name="GitandGitorious-DVCSCommandsandConcepts"></a>DVCS Commands and Concepts</h2>
+
+<h3><a name="GitandGitorious-TheOld"></a>The Old</h3>
+
+<p>Generally DVCS work the same as VCS and you&#8217;ll see similar commands and concepts.</p>
+
+<ul>
+ <li>branch</li>
+ <li>commit</li>
+ <li>log/history</li>
+ <li>diff</li>
+ <li>tag</li>
+</ul>
+
+
+<h3><a name="GitandGitorious-TheNew"></a>The New</h3>
+
+<p>Where DVCS is different tends to be in what it adds on top of the existing VCS. Here are some commands you&#8217;ll find new.</p>
+
+<ul>
+ <li>push</li>
+ <li>pull</li>
+ <li>clone</li>
+ <li>amend</li>
+</ul>
+
+
+<p>But not entirely new. push, pull, and clone are similar to checkout and commit, but between repositories, since there is no separate working copy. And amend is an advance concept you may never use.</p>
+
+<h2><a name="GitandGitorious-ForSubversionUsers"></a>For Subversion Users</h2>
+
+<p>I found this mapping between svn and git commands helpful, when I first switched to using git for some projects.</p>
+
+<p> <span class="nobr"><a href="http://git.or.cz/course/svn.html" class="external-link" rel="nofollow">http://git.or.cz/course/svn.html<sup></sup></a></span></p>
+
+<p>git can also work with svn repos directly. you usually do this by replicating the svn repo into a git repo.<br/>
+then working with the git repo. But you can do bi-directional replication between the two, and continue to use<br/>
+both repos for future versioning, side-by-side.</p>
+
+<p> <span class="nobr"><a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html" class="external-link" rel="nofollow">http://www.kernel.org/pub/software/scm/git/docs/git-svn.html<sup></sup></a></span></p>
+
+<p>It can be a little complicated to use and there are better example workflows of it online as well.</p>
+
+<h2><a name="GitandGitorious-AdvancedConcepts"></a>Advanced Concepts</h2>
+
+<p>Some advanced concepts you don&#8217;t need to understand to use git. but that might be interesting if your going to delve further into git.</p>
+
+<h3><a name="GitandGitorious-TheIndex"></a>The Index</h3>
+
+<p>git commands can work on a staging area for the changeset before its commited to the repository. This staging area is called the <b>index</b>. You can flag files/directories for commital, as your working on the source. And when you do, it will actually copy the state (content) of those files and directories, at that time, into the staging area. Then, later, when you commit, that staging area is what is commited to the repository. not the actual current state of the source tree. This allows or a specifically control partial-source commit.</p>
+
+<p>This can be useful or annoying. I find it the latter, and as such I completely ignore this feature. Instead I use git commands that ignore the staging area and commit the current state of the source tree all or none. automatically commiting changes to any files that were previously commited to the repo, and in some cases even commiting new files to the repo automatically.</p>
+
+<p>But using the commands that work with the index can provide for some more advanced usage of git. Such as performing more fine-grained commit history, or quickly switching to temporary branches for quick fixes, and then switching back to your main work.</p>
+
+<h3><a name="GitandGitorious-layers"></a>layers</h3>
+
+<p>The architecture of git is rather simple and it benefits to understand this when you start using git more heavily. Its effectively composed of a series of layers.</p>
+
+<ol>
+ <li>Efficient Blob Storage</li>
+ <li>Blob Database</li>
+ <li>Filesystem Trees</li>
+ <li>Version History Graphs</li>
+ <li>Other VCS Metadata: branches, tags, head&#8230;</li>
+</ol>
+
+
+<p>I won&#8217;t go into the details of whats stored in the blobs, and the filesystem/version graphs, as there are good presentations online that describe these more effectively.</p>
+
+<h4><a name="GitandGitorious-EfficientBlobStorage"></a>Efficient Blob Storage</h4>
+
+<p>In relational databases, a Binary Large Object (BLOB) is a chunk of arbitrary binary data of arbitrary size.</p>
+
+<p>Git starts with a system that efficiently stores blobs by diffing related/similar blobs, and then compressing them. But the details of this are always hidden to the user as its not necessary to understand them. And every VCS implements such a system anyways.</p>
+
+<h4><a name="GitandGitorious-BlobDatabase"></a>Blob Database</h4>
+
+<p>git then takes these blobs and puts them into a simple relational database of only one table. which contains the blob column and a few columns of metadata.</p>
+
+<p>git uses a hash of the blob as the primary key and provides commands to manipulate the rows of this database directly from the command line. Most users never have to do this but sometimes it can become necessary if the repo becomes corrupt, data is deleted by accident, or someone messes up some advanced command.</p>
+
+<h4><a name="GitandGitorious-FileSystemTrees"></a>File System Trees</h4>
+
+<p>Two types of data git will store in these blobs are files and directories.</p>
+
+<p>How files are stored is obvious; it stores the content in the blob. By hashing the files, you get immediate duplicate reduction.</p>
+
+<p>But to store directories it builds a tree of blobs, one for each directory. The blob contains the list of files and directories in the directory, and their hashes. This makes for a rather efficient storage of directories in the table, as subtrees that don&#8217;t change, never need to be modified or replicated in the database. Furthermore identical subtrees can automatically detected in this manner.</p>
+
+<h4><a name="GitandGitorious-HistoryGraph"></a>History Graph</h4>
+
+<p>Similar to the directories stored in blobs, the system stores in blobs the Directed Acyclic Graphs that comprise history trails for source versions. And by hashing the elements of the history, you get similar benefits to the filesystem storage.</p>
+
+<h4><a name="GitandGitorious-OtherVCSMetadata"></a>Other VCS Metadata</h4>
+
+<p>Finally, on top of all of this, git adds the other CVS metadata required, such as branches and tags, and which version is the HEAD. All in order to round git up into a fully featured modern version control system.</p>
+
+<h3><a name="GitandGitorious-HistoryEditingandAmending"></a>History Editing and Amending</h3>
+
+<p>Since a git repo is really just a kind object or blob relational database, git commands expose that database directly for you to play with. And in fact make it easy to play with the objects and graphs stored in that database. One thing that git allows you to do easily is to modify commits that are already in the database, and to change the history graphs that lead to a particular version of the source tree.</p>
+
+<p>These features are usually avoided because if your not careful you can permanently delete data that&#8217;s in the repository, or worse, surprise someone else who has already cloned the data that your changing.</p>
+
+
+</div></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Jason Stillwell</div>
+<div class='content'>
+Thanks, I&#39;m usually watchful of that, but I wrote this document quickly.</div>
+</div>
+<div class='comment'>
+<div class='author'>AHAntics</div>
+<div class='content'>
+I&#39;d (almost) do a search and replace s/your/you&#39;re/gi <br /><br />You&#39;re is a contraction of &quot;you are&quot; - you&#39;re making a grammatical error and sending it to the team. <br />Your is a possessive pronoun - that repository is yours, not mine.</div>
+</div>
+<div class='comment'>
+<div class='author'>Jason Stillwell</div>
+<div class='content'>
+Feedback is, of course, welcome.</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Stillwell</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-02T18:02:00-07:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2011/06/02/git-gitorious/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2011/06/02/git-gitorious/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/03/18/context-ioc/" title="Previous Post: Context IOC">&laquo; Context IOC</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/02/24/choose-a-language/" title="Next Post: Choosing a Technology">Choosing a Technology &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+    <a href="images/utters.jpg"><img src='images/utters.jpg'></a>
+</section>
+
+<section>
+  <h1>Stack Overflow</h1>
+  <a href="http://stackoverflow.com/users/92694/dragonfax"><img src="http://stackoverflow.com/users/flair/92694.png" width="208" height="58" alt="profile for dragonfax at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for dragonfax at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/28/migrating-from-toodledo-to-asana/">Migrating From Toodledo to Asana</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/04/install-perl/">Install Perl</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/legislature/">Legislature</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/30/disillusionment/">Disillusionment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/23/make-pre-commit-hook-default/">Make Pre-commit Hook Default</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/dragonfax">@dragonfax</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'dragonfax',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/dragonfax" data-widget-id="310735837098819584">Tweets by @dragonfax</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Stillwell -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'denofantiquity';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,6 +1,66 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://dragonfax.github.com/blog/2010/05/01/swing-extreme-testing/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2010/08/18/google-wave/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2010/08/19/conferences/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2010/08/19/never-create-runtimeexception/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://dragonfax.github.com/blog/2010/09/10/alex-maier-and-i-in-front-of-blogger/
+        </loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2010/09/10/vmware-balloon-driver-jvm-teh-suck/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2010/09/16/splunk-high-level-view-in-layers/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://dragonfax.github.com/blog/2011/02/24/spring-java-based-configuration-and/
+        </loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://dragonfax.github.com/blog/2011/03/06/lazy-loading-data-when-component-shows/
+        </loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2011/03/11/programmers-are-people-too/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://dragonfax.github.com/blog/2011/03/14/minimizing-hibernate-schema-complexity/
+        </loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2011/03/18/context-ioc/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dragonfax.github.com/blog/2011/06/02/git-gitorious/</loc>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
+    </url>
+    <url>
         <loc>http://dragonfax.github.com/blog/2013/02/24/choose-a-language/</loc>
         <lastmod>2013-09-06T14:50:57-07:00</lastmod>
     </url>
@@ -60,11 +120,11 @@
     </url>
     <url>
         <loc>http://dragonfax.github.com/blog/archives/</loc>
-        <lastmod>2013-09-06T14:50:57-07:00</lastmod>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
     </url>
     <url>
         <loc>http://dragonfax.github.com/</loc>
-        <lastmod>2013-09-06T14:50:57-07:00</lastmod>
+        <lastmod>2013-09-06T15:17:20-07:00</lastmod>
     </url>
     <url>
         <loc>http://dragonfax.github.com/robots.txt</loc>
