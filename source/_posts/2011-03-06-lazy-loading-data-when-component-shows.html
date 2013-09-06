@@ -1,0 +1,46 @@
+---
+layout: post
+title: "Lazy Loading data when Component Shows"
+date: 2011-03-06T17:46:00-08:00
+---
+
+<div class='post'>
+Sometimes you don't want to load the data for a view, but not until the view is actually being seen by the user. Such as when they click on the tab to expose it.
+<br/>
+<br/>
+This is taken care of automatically in Web UI's because the user simply won't be on the right page yet. Not until they've clicked on the right link or button to take them to the page with that view.
+<br/>
+<br/>
+But I do this a lot in the front-end tier of multi-tier applications (i.e. the desktop UI for a remote backend or database ). Desktop applications tend to have all the views and their code constructed at startup. 
+<br/>
+<br/>
+Waiting for the component to be visible can be a little tricky in Swing. Various events and states can be mis-leading. Other components can think they're visible but actually be obscured. You also don't want to poll for isShowing().
+<br/>
+<br/>
+Here is a skeleton that works well for me.
+
+<pre class="brush: java">
+public class LogPage extends JPanel {
+
+  public LogPage() {
+    
+    LogView logView = new LogView();
+    add(logView);
+  
+    // here we will wait until we are shown to actually load data.
+    addHierarchyListener(new HierarchyListener() {
+      public void hierarchyChanged(HierarchyEvent e) {
+        if ((HierarchyEvent.SHOWING_CHANGED & e.getChangeFlags()) !=0 && isShowing()) {
+          logView.setData(loadDataForView());
+        }
+      }
+    });
+  }
+
+  private data loadDataForView() {
+    ...
+  }
+</pre>
+
+
+No comments on evils of extending JPanel, please. That's not the point of this post.</div>

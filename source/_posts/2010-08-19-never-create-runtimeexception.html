@@ -1,0 +1,58 @@
+---
+layout: post
+title: "Never Create a RuntimeException"
+date: 2010-08-19T15:54:00-07:00
+---
+
+<div class='post'>
+Don't worry, this isn't a post about "checked exceptions".<br />
+<br />
+Of course the post-title isn't an iron-clad rule, but you really don't have any excuse to have the following code in your application.<br />
+<br />
+<pre class="brush: java">
+throw new RuntimeException("innocuous message");
+</pre>
+<br />
+<br />
+You can catch them, and throw them again if caught.&nbsp; But <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">RuntimeException</span> is just meant to be a super class for you to extend from for your own exceptions.&nbsp; In any error situation, there is always a more application exception class that already exists. Or you can consider creating one for your app.<br />
+<br />
+If the issue is with something passed into the method, you can always throw the very popular <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">IllegalArgumentException</span>.&nbsp; Or, In the absolute worst case, you can always just throw a new <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">IllegalStateException</span>(), as that's the most generic <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">RuntimeException</span>.<br />
+<br />
+There are even handy libraries to replace your state and argument checking boiler plate code.&nbsp; See <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Preconditions </span>from Google Guava (formerly google collections), which is far more readable.
+
+<br />
+<pre class="brush: java">
+import static com.google.common.base.Preconditions.*;
+
+public Object getCachedValue(Identifier id) { 
+    checkNotNull(id);
+    Object value = cache.get(id);
+    checkState("id not cached",value != null);
+    return value;
+}
+</pre>
+<br />
+Even in test code, you could probably throw an <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">AssertionException </span>instead, if your not using<br />
+asserts to test the state anyways.<br />
+<br />
+A personal favorite of mine is <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">UnsupportedOperationException</span>, instead of a custom <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">UnimplementedFeatureException</span>.&nbsp; Whenever code tries to do something that isn't _supposed_ to work (yet).&nbsp; Because, frankly, I'm quite often lazy, or just too busy to write everything at the start.<br />
+<br />
+Furthermore, when you create your own <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">RuntimeException</span>s, consider sub-classing <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">IllegalStateException </span>or some other reasonable exception.&nbsp; These super-classes, while adding no functionality, give hints to other developers about the intrinsic meaning behind these new exception their seeing.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Marian</div>
+<div class='content'>
+That is one fascist thinking, I&#39;d say :D</div>
+</div>
+<div class='comment'>
+<div class='author'>pholser</div>
+<div class='content'>
+Right on. IMO, Throwable, Exception, RuntimeException, and Error needed to be made abstract.</div>
+</div>
+<div class='comment'>
+<div class='author'>Marian</div>
+<div class='content'>
+Thanks for the opinion. <br />But I still do not see any point in subclassing RuntimeException. Does it help anything except for the code to look prettier? Unchecked XYZMySpecialException may in my experience create much more confusion than simple RuntimeException. You may end up with your junior programmers simply catching and ignoring everything subclassed from Exception in that piece of code. Or make them attracted to throw them in other places it was supposed to be thrown.<br />That it was designed just to be subclassed? Who says? Would not it be abstract then?<br />The only point of subclassing unchecked exception is to provide some extra information for the exposed class/method&#39;s user. Unless you are trying to collect some runtime statistics everyone needs to look at the exception message anyway.<br />I do throw IllegalArgumentException-s in case an input argument is wrong. But that is the only small sacrifice I am willing to take with this. Any RuntimeException should in my view represent a truly exceptional and and unexpected situation. And which should really not happen in production.<br />Your arguments, in my opinion, go well for checked exceptions. Throwing whose has its non-academic purpose in production code too.</div>
+</div>
+</div>

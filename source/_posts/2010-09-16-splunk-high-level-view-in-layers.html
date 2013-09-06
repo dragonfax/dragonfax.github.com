@@ -1,0 +1,67 @@
+---
+layout: post
+title: "Splunk: A high level view... in layers"
+date: 2010-09-16T16:09:00-07:00
+---
+
+<div class='post'>
+I explain Splunk to my team using a layered approach.<br />
+<dl>
+<dt>1. <b>Full-Text Search</b>... <b>of the world</b></dt>
+<dd><br />
+Start with a full text search engine.&nbsp; But put _everything_ we have into it.
+
+<br />
+<ul>
+<li>logs ( host and application )</li>
+<li>configuration files (change management)</li>
+<li>stats (system performance, monitoring)</li>
+<li>alerts (snmp, emails, anything automated)</li>
+<li>reports</li>
+<li>emails</li>
+<li>bugs, tickets, issue and tracker systems</li>
+<li>documentation, wikis, and maybe even source code</li>
+</ul>
+&nbsp; <br />
+This is immediately useful in small ways, and is a common practice at large companies anyways.&nbsp; At least for documentation, wikis, tickets.&nbsp; To search for details related to a host when working on a problem ticket, or fixing bugs.<br />
+<br /></dd>
+<dt>2. <b>Records</b></dt>
+<dd><br />
+Give that full text search engine a knowledge of the 'record' structure within all those files.&nbsp; Thus when you search, it can give you just the relevant records from the file.&nbsp; But it can also display records in context or the entire file if desired.<br />
+<br />
+This also lets you restrict search by records, or by transactions made of groups of records, making more powerful searches possible.<br />
+<br /></dd>
+<dt>3. <b>Fields</b></dt>
+<dd><br />
+Make it cognizant of the 'fields' present in those records.&nbsp; This is obviously useful for narrowing queries, as well as sorting, and displaying only relevant info.&nbsp; But these fields are flexible, and resolved in a lazy fashion.&nbsp; They can be different; per file, per record, per search.&nbsp; Furthermore they don't require the heavy project overhead of schema and datamining planning.&nbsp; The lazy resolution of fields becomes a powerful tool when combined with step #4.<br />
+<br /></dd>
+<dt>4. <b>Powerful Expression language</b></dt>
+<dd><br />
+<br />
+Building upon all the structure of records and fields, and the lazy resolution of structure to allow all sorts of complicated processing and data manipulation: splitting, mutating, joining datasets.&nbsp; Not just searching through records, but also data munging, to generate new data and then perform further searches on that.<br />
+<br /></dd>
+<dt>5. <b>Powerful User Interface</b>.</dt>
+<dd><br />
+<ul>
+<li>a CLI with autocompletion</li>
+<li>intuitive record/field browsing</li>
+<li>automatically populated one-click drilldowns</li>
+<li>graphing/visualisation</li>
+<li>default dashboards automatically populated with commonly used searches and keywords.</li>
+<li>custom dashboards</li>
+</ul>
+<br /></dd>
+<dt>6. <b>Zeroconf</b></dt>
+<dd><br />
+Splunk detects most of the details and configuration itself.&nbsp; With heavy heuristics that do the right thing most of the time.&nbsp; But can be overridden in the cases they don't, or just for further control.<br />
+<br />
+The only place you need to do some forethought is some capacity planning.<br />
+<br /></dd><dd></dd>
+<dt>7. <b>Scalability</b></dt>
+<dd><br />
+And finally, wrap this all up into a componentized architecture so that it scales well, and you can scale just the components that you need to.&nbsp; Whether that be for capacity, or for performance.<br />
+<br /></dd>
+</dl>
+If this sounds like some heavy propaganda, it is.&nbsp; I've already replaced a number our tools with Splunk at the core. Which is working out great.<br />
+<br />
+Eventually we found that alot of the stuff we were generating and then feeding into Splunk, can be generated more conveniently by Splunk itself.&nbsp; Furthermore replacing alot of homebrew code with more robust, flexible and easier to maintain Splunk applications.</div>

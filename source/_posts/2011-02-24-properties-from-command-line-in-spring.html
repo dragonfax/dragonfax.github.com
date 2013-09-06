@@ -1,0 +1,64 @@
+---
+layout: post
+title: "Properties from command line in Spring"
+date: 2011-02-24T22:41:00-08:00
+published: false
+---
+
+<div class='post'>
+I write alot of command line apps in my java projects, and I use Spring rather heavily.
+
+But I don't like embedding the properties filename in the spring configuration (xml files), and then relying on the classpath (and whomever is managing it) to find and send the right file along. 
+
+I like having the ability to specify or override a default properties file on the command line. That ways I can have different environments specified in different properties files, or switch fileson the fly without having to move real files around or alter the classpath.
+
+There are multiple ways to do this, but my favorite is to use a properperty placeholder. You can construct such a thing programmatically, so that you can insert the property filename dynamically. You can also leave the property placeholder in the xml files, and just programmatically create the Properties file and inject it.
+
+Here's some non-optimal java for building a root context.
+
+
+<pre class="brush: java">
+public static ApplicationContext buildContextForPropertiesFromFile(String propertiesFilename) {
+
+  FileSystemResource fileSystemResource = new FileSystemResource(propertiesFilename);
+  
+  GenericBeanDefinition beanDef = new GenericBeanDefinition();
+  beanDef.setScope("singleton");
+  beanDef.setBeanClass(PropertiesFactoryBean.class);
+  MutablePropertyValues propertyValues = new MutablePropertyValues();
+  propertyValues.addPropertyValue("location", fileSystemResource);
+  beanDef.setPropertyValues(propertyValues);
+  
+  GenericApplicationContext rootContext = new GenericApplicationContext();
+  rootContext.registerBeanDefinition("applicationProperties", beanDef);
+  rootContext.refresh();
+  
+  return rootContext;
+} 
+</pre>
+
+And the associated property-placeholder xml. 
+
+<pre class="brush: xml">
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  <property name="properties" ref="applicationProperties"/>
+</bean>
+</pre>
+
+You can create your real context by using the generated one as a parent.
+
+<pre class="brush: java">
+public static void main(String[] args]) {
+
+  String propertiesFilename = args[0];
+
+  ApplicationContext propertiesContext = buildContextForPropertiesFromClasspath(propertiesFilename);
+                                                                                      ApplicationContext appContext = new ClassPathXmlApplicationContext(new String[]{"beans.xml"}, propertiesContext);
+
+  ...
+
+}
+</pre>
+
+
+I understand you can do this a little cleaner with the new java-based @Configuration.</div>

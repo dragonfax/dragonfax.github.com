@@ -1,0 +1,197 @@
+---
+layout: post
+title: "Software Developers Life Cycle"
+date: 2013-01-19T23:01:00-08:00
+published: false
+---
+
+<div class='post'>
+<br />
+Hmm, I should have saved that title for something regarding work/life balance. Well here we go... prepare to become a Journeyman.<br />
+<br />
+<h4>
+The what, The why, and The wherefore (also the why)</h4>
+<br />
+There are so many concerns when developing applications. How do you balance and compromise the the millions of variables to come out ahead in the technical debt race (the cold war that still gives me nightmares)?<br />
+<br />
+I could come in here and say that what I pour out below is the result of my 2 decades of software engineeing experience but the truth is that would just be a lie.<br />
+<br />
+Thats what great about this field, you're forced to continue learnign constantly. For instnace you have to learn all new technologies every 2 years.<br />
+<br />
+The magic forumla i've found is actually pretty simple. Most major project failures (that didnt' start with lofty undefined goals) I've seen,either my own or others, can be broken down to not following this simple process.<br />
+<br />
+Its quite simple, you follow these steps. But you follow them in this order. Its the order thats vital.<br />
+<b>1. Make it work</b><br />
+<b>2. Make it beautiful</b><br />
+<b>3. Make it performant</b><br />
+<br />
+<br />
+These have to be distinct steps. far and removed away from each other. I'll explain what goes wrog in some of the intermingling further below, but the generalities are pretty basic.<br />
+<br />
+<br />
+<h4>
+repetition is the key to a mans heart</h4>
+<div>
+or</div>
+<h4>
+How I learned to relax and love the expanding outline format</h4>
+I really want to drive the formula home, and also make this point easier to grab for the blog skimmers. So I'm going to go over it 3 times in total in this article. The good news is you've already read the first one above. The second one is immeidately below and just summaries the bullet points details. Then I lay into the hard complete reasoning and lessons behind this philosophy. So feel free to skim away.<br />
+<br />
+<h2>
+Summarizing the Points</h2>
+<h3>
+Making it work</h3>
+<div>
+this is just about getting the code to work. to do the predescribed job.</div>
+<div>
+in any way necessary.</div>
+<div>
+this includes some horrifying patterns as including configuration hard-coded in the source code.</div>
+<div>
+even *gasp* database passwords and deployment hostnames.</div>
+<div>
+<br /></div>
+<div>
+After all, you know you can give the code a quick once-over later and extrapolate that stuff to config files and auto-detection later.</div>
+<div>
+<br /></div>
+<div>
+Don't worry about such things as the best filesystem location for components, the best plugin architecture so that when the app is finish, anyone can modify it easily.</div>
+<div>
+<br /></div>
+<div>
+Sure that stuff is important, but its going to slow you down while you work ont he nitty gritty.</div>
+<div>
+<br /></div>
+<div>
+and the nitty gritty is geting a working system.</div>
+<div>
+<br /></div>
+<h3>
+Make it Beautiful</h3>
+<div>
+Nows the time for the ego-based design.</div>
+<div>
+Throw in all those technologies you love or want to love.</div>
+<div>
+Use that queueing system your sure is just perfect for this backend.</div>
+<div>
+Want the plugin system for 3rd-party modification. Plug away to your hearts content.</div>
+<div>
+Refine and refactor those lovely objects and methods to truly reflect how you envision the&nbsp;</div>
+<div>
+application architecture in your head. Go all naked objects on their ass.. Its ok. I'll wait.</div>
+<div>
+<br /></div>
+<div>
+Chances are you'r going to discover quite a few surprises, even before you got here, about what you _thought_ about this application before phase 1.</div>
+<div>
+But thats ok, we can discuss that later.</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<h3>
+Make it Performant</h3>
+<div>
+Nows the fun part. Sounds boring, but beleive you me, this ends up being one of the most rewarding.</div>
+<div>
+If done right, you find a switch here, an index there that brings application performance up leaps and bounds. Maybe if a few scenerios you thought were obvious, but most imporantly in areas you simply had no idea there'd be an issue.</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<br />
+<br />
+&lt; generalities of not following the process &gt;<br />
+<div>
+<br /></div>
+<br />
+<br />
+<h2>
+<b>The "Too Long" part of TL;DR</b></h2>
+let me drive those points home one more time. this time, explaining more the "why".<br />
+<h3>
+<b>Work</b></h3>
+by any means necessary<br />
+<br />
+<br />
+<br />
+of course there are little obvious bits of performance you throw in from the get-go.<br />
+using this library for a hash implementation, using that set over this other list.<br />
+But even those aren't vital when the data size is small or short term.<br />
+<br />
+just stuff you've learned previously and do automatically now.<br />
+no serious researching or decitions needed then.<br />
+<br />
+<br />
+<h3>
+Beautiful</h3>
+<h3>
+<br /></h3>
+<h3>
+Elegant</h3>
+the designes you originally wanted<br />
+the techniques you wanted to use<br />
+the technologies you thought fit best, or just wanted to learn and jam into here.<br />
+<br />
+you'l lfind alot of them dont' actually fit anymore.<br />
+What you came up with during "make it work" is just fine, or simple already.<br />
+Or there's a simple impedence mismatch between what you originally wanted to do and what it turns out you really have to do.<br />
+<br />
+but again, no major performance concerns.<br />
+<br />
+<br />
+<h3>
+<b>Make it performant</b></h3>
+<br />
+I always feel like a devils advocate briuning thisone up.<br />
+But it been a hard earned lesson<br />
+<br />
+<br />
+profile profile profile<br />
+<br />
+I gaurantee you will have hte bottlenecks wrong.<br />
+that isn't to say the contention points you assumed at the start wont' be contentious.<br />
+they just wont' be until yuou've gotten the real bottlenecks out of the way.<br />
+and some of them you _will_ be dead wrong about.<br />
+<br />
+You see, we're use to thinking of ourselves as smart. Like we understand or can understand everything (given enough time).<br />
+We're also used to simplifying things in our heads. Breaking everything up into models, and components to simulate the world.<br />
+<br />
+The 2 mental processes enforce each other, and unfortunately they lead to very mistaken trust in our own simulations. These simulations never really match up to whats really going on, and we make decisions on them far to oeasily.<br />
+<br />
+What I'm getting at is we're are always so sorely wrong when it comes to designing performant applications. Sure we can get some of the big points right, but we'll always miss so much more under the hood.<br />
+<br />
+There's no replacement for just firing up the app, loading it down and inspecting the system to see whats actually holding up the pipeline. Theres no replacement for looking at call count charts and code hotspots.<br />
+<br />
+But the best part of accepting this fact, is that you get to put this part of development at the end of the product lifecycle. And thus you don't have to compromise on either of the 2 other phases.<br />
+<br />
+You get to have your cake.. and race it in the office cake grand prix too.<br />
+<br />
+<br />
+<br />
+<br />
+<b>the right order</b><br />
+<br />
+you get productivity<br />
+<br />
+you get your beauty, but you get it with performance<br />
+<br />
+if something bad happens. you have a system you can run with if absotluely necessary.<br />
+you get to throw in some performance in your beauty<br />
+but you don't have to sacrifict the beauty and elegance for it.<br />
+You'll find even after performance tuning, you elegance is left intact.<br />
+which means readability, and simple concise structure and design.<br />
+but you've simply added a few shortcuts, or thin layers to fix the non-performant issues in your design.<br />
+this is ideal.<br />
+<br />
+<h3>
+Testing</h3>
+<br />
+Where do tests fit in?<br />
+everywhere<br />
+at least thats for me.<br />
+This is a cross-cutting concern with testing. Your own style decides where test writing or test-based design fits into all of this.</div>

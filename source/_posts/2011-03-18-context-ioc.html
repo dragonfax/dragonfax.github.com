@@ -1,0 +1,122 @@
+---
+layout: post
+title: "Context IOC"
+date: 2011-03-18T17:40:00-07:00
+---
+
+<div class='post'>
+I'd been doing this for a years, but had no idea there was a name for it.  For me it came out of unit testing UIs.  I found my widget classes would have a lot of dependenciees.  But they'd only end up using each dependency for a one or two small things each.  It seems a shame to pass in the whole object just for that.  Also this left me with alot to mock in my unit tests.
+<p/>
+
+  So with a quick interface, I found I could declare the dependencies to a much finer grain of details.  It just seemed like a good way to decouple objects.  It makes writing unit tests fast because each class clearly states exactly what its going to use in its dependencies.  And when you change one thing in the code, static analysis tells you everything that is affected by it with far fewer false positives.
+<p/>
+
+<h2>Practices, maybe not "Best"</h2>
+<p/>
+
+<ul>
+<li>
+I've been naming the interfaces 'Dao' because that just seemed to make sense at the time.  I may start using 'Context' now.
+  </li>
+
+<li>
+I found that embeding the interface, nested inside the class that used it, seemed like good information architecture.  I know alot of people dont' like nesting classes and interfaces.  But it avoids a lot of clutter in the packages, as I'll often have a ton of these interfaces, one for every class.
+  </li>
+
+<li>
+Outside of tests, I never create a whole class that does nothing but implement one of these Dao interfaces.  The methods in the Dao came out of something that the class needed from another class (a dependency). So the Dao interface just turned out to be extra interfaces implemented by the dependency class. Not defining the dependency class, but rather performing some duck-typing for us.
+  </li>
+</ul>
+<p/>
+
+Here is a quick example of what a class might look like that uses such an interface to declare its dependencies.
+<p/>
+
+<pre class="brush: java">
+  public class SomeWidget {
+ 
+    public interface Dao {
+      void setSomeValue(SomeValue value);
+      SomeOtherValue getSomeOtherValue();
+      void doThis();
+      void doThat();
+      void saveYourWork();
+      void requestExitOfApplication( String reason );
+      void notifyCamelHairListeners( CamelHairEvent event);
+    }
+
+    private Dao dao;
+
+    public SomeWidget(Dao dao) {
+      this.dao = dao;
+
+      // add various widgets this one.
+      // which call on the Dao to do the work behind them.
+      ...
+    }
+
+  }
+
+
+  // and when testing
+  public class SomeWidgetDaoMock implements SomeWidget.Dao {
+    ...
+  }
+</pre>
+<p/>
+
+
+  The methods defined in these Daos usually wouldn't be return actual dependencies.  Instead they would contain the abstract methods that the class needed from those dependencies.
+<p/>
+
+  An exception I make is for some higher level Daos in an application.  When one dao interface implementor may need to act as a factory to create the dependencies.
+<p/>
+
+<h2>Composition</h2>
+<p/>
+
+  For building up the Doas in your large application you have many choices such as composiing Daos from sub interfaces or using Dao factories ( Daos just for retrieving other Daos ).
+<p/>
+<pre class="brush: java">
+  public class Application {
+
+    // you only need to define one of these 2 interfaces
+
+    // sub interface Dao
+    public interface SubInterfaceDao implements SomeWidget.Dao {
+    }
+
+
+    // Dao factory
+    public interface FactoryDao {
+
+      public SomeWidget.Dao getSomeWidgetDao();
+
+    }
+
+
+    // rest of application
+    ...
+
+  }
+
+
+  // The choice isn't hard. If you use one style, you can still use the other one on the fly.
+  // another common choice during testing.
+  public class ConfusedApplicationDao implements Application.FactoryDao, SomeWidget.Dao {
+
+    public SomeWidget.Dao getSomeWidgetDao() {
+      return this;
+    }
+
+  }
+</pre>
+<p/></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Sandeep</div>
+<div class='content'>
+Thanks for the information<br /><br /><a href="http://extreme-java.blogspot.com" rel="nofollow">http://extreme-java.blogspot.com</a></div>
+</div>
+</div>

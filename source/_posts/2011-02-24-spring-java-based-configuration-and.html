@@ -1,0 +1,50 @@
+---
+layout: post
+title: "Spring Java-based Configuration and main()"
+date: 2011-02-24T22:31:00-08:00
+---
+
+<div class='post'>
+I used the java-based @Configuration, new in Spring 3, to embed my spring bean configuration right into my main() class.<br />
+<br />
+Of course I could also embed the bean configuration into the code by 
+programmatically constructing the beanfactory/applicationcontext. But 
+coding that is very ugly and wordy. Boilerplate ridden, if you will.<br />
+<br />
+<pre class="brush: java">@Configuration
+@ImportResource({
+  "some-property-defintitions.xml",
+  "some-beans.xml"
+})
+public class MockRpcGui {
+
+  /* add last minute beans to fill out dependendencies, or mock them (hurr hurr) */
+  @Bean
+  GuiService guiService() {
+    return new DummyGuiService();
+  }
+
+
+  public static void main(String[] args) {
+
+    AnnotationConfigApplicationContext javaConfigContext = new AnnotationConfigApplicationContext();
+    javaConfigContext.register(MockRpcGui.class);
+    javaConfigContext.refresh();
+
+    GUI gui = BeanFactoryUtils.beanOfTypeIncludingAncestors(javaConfigContext, GUI.class);
+    gui.start();
+    javaConfigContext.close();
+  }
+
+}
+
+
+</pre>
+In my projects I tend to have a large volume of command line programs and other dev programs that start up only subsets of the entire project. Which means a lot of nested (imported) bean xml files.<br />
+<br />
+Scanning never worked out well for me. I'd have many implementations of the same interface and for each subset I'd only want to use one. Plus loading all those other beans, even if it didn't cause any issues, would be slow and bulky. I made due by combining xml files with annotations. So the xml files only had to have dummy <br />
+&lt;bean class="blah"/&gt; definitions, and the rest of the details were embedded in the javacode of each bean.<br />
+<br />
+There is somethign asthemtic about having the bean configs represent subsets or whole applications, and having a main() class that just contains the one final trigger to start off the whole mess.<br />
+<br />
+<br /></div>

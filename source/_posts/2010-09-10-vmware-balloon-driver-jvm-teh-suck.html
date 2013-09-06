@@ -1,0 +1,20 @@
+---
+layout: post
+title: "VMWare + Balloon Driver + JVM = teh suck"
+date: 2010-09-10T14:50:00-07:00
+---
+
+<div class='post'>
+I missed the memory talk at VMWorld.&nbsp; I passed it by for some API related sessions.&nbsp; One of my coworkers suggested I go to it and I should have listened to him.<br /><br />Something that's popped up recently is the fact that memory reclamation using the balloon driver fails miserably when used in conjunction with a JVM.<br /><ul>
+<li><a href="http://communities.vmware.com/blogs/drummonds/2009/09/09/love-your-balloon-driver">http://communities.vmware.com/blogs/drummonds/2009/09/09/love-your-balloon-driver</a></li>
+<li><a href="http://www.vmware.com/files/pdf/perf-vsphere-memory_management.pdf">http://www.vmware.com/files/pdf/perf-vsphere-memory_management.pdf</a></li>
+</ul>
+<br />These articles put the blame squarely on Java's garbage collection.&nbsp; The latter pointing out that the garbage collect will scan all the process's memory making paging a JVM heap worse than paging most applications.<br /><br />I'd like to see some poeple that know more about JVM memory internals and garbage collection as well as VMWare weigh in on this as well.&nbsp; With virtual machines being the basis of cloud initiatives, and future collocation platforms, this kind of issue is only going to get more prevalent.<br /><br />Currently, the only solution is have admins take a closer role in managing the JVM memory footprint at the same time as the VMWare VM memory reservations.<br /><br />I'm not a fan of the maximum heap size setting in the JVM either.&nbsp; But there are arguments for and against it being require in the JVMs style of garbage collection.<br /></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Ben</div>
+<div class='content'>
+Hi Jason,<br /><br />I&#39;m the dev lead on the EM4J project that was spoken about at VMWorld. You&#39;re right to surmise that the JVM has a problem with regular ballooning. At it&#39;s most simple, the problem is that the JVM doesn&#39;t give memory back to the operating system and thus always ends up consuming it&#39;s high watermark memory, even if there&#39;s plenty of free space in the heap. Since the balloon driver can only reclaim memory from the OS, these two models are basically incompatible. The result is that it&#39;s fiendishly difficult to predict when regular ballooning is safe and the consequences of getting it wrong are severe (due to GC characteristics as you state). Hence the current best practice of using memory reservations.<br /><br />I&#39;m putting together a series of YouTube clips to explain this whole area in more detail. Hopefully these will be helpful. First one is up now: http://www.youtube.com/watch?v=kyz7J-FQUSM</div>
+</div>
+</div>
