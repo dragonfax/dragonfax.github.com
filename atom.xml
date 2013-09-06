@@ -4,7 +4,7 @@
   <title><![CDATA[Den of Antiquity]]></title>
   <link href="http://dragonfax.github.com/atom.xml" rel="self"/>
   <link href="http://dragonfax.github.com/"/>
-  <updated>2013-08-28T18:43:17-07:00</updated>
+  <updated>2013-09-06T14:53:10-07:00</updated>
   <id>http://dragonfax.github.com/</id>
   <author>
     <name><![CDATA[Jason Stillwell]]></name>
@@ -46,7 +46,7 @@
     <id>http://dragonfax.github.com/blog/2013/06/30/legislature</id>
     <content type="html"><![CDATA[<h1>Coding and Legislature</h1>
 
-<p>I&#8217;ve never understood why we don&#8217;t employ standard software engineering practices when creating laws.</p>
+<p>I&rsquo;ve never understood why we don&rsquo;t employ standard software engineering practices when creating laws.</p>
 
 <ul>
 <li>Comments, Documentation, Readable Code</li>
@@ -63,13 +63,13 @@
 
 <h3>Documentation</h3>
 
-<p>Clearly, written laws not meant to be understood by laymen.  That&#8217;s okay though, we have compilers that translate our English code into binary form.</p>
+<p>Clearly, written laws not meant to be understood by laymen.  That&rsquo;s okay though, we have compilers that translate our English code into binary form.</p>
 
-<p>Now I&#8217;m not saying write laws as a form of code, or even pseudo code. Thats a bit extreme.  But readable code is considered to be goal, not a detriment.  When we can&#8217;t write legible code, we add comments to explain the purpose of the line or stanza.  We&#8217;ll even document the code and its entire processes externally elsewhere, to help others follow along with our intentions.</p>
+<p>Now I&rsquo;m not saying write laws as a form of code, or even pseudo code. Thats a bit extreme.  But readable code is considered to be goal, not a detriment.  When we can&rsquo;t write legible code, we add comments to explain the purpose of the line or stanza.  We&rsquo;ll even document the code and its entire processes externally elsewhere, to help others follow along with our intentions.</p>
 
-<p>Often we&#8217;ll take the extra step of designing the process first, before any code is written.  Using English and obtaining agreement from all concerns parties on the &#8220;design&#8221; of the process before starting the actual implementation.</p>
+<p>Often we&rsquo;ll take the extra step of designing the process first, before any code is written.  Using English and obtaining agreement from all concerns parties on the &ldquo;design&rdquo; of the process before starting the actual implementation.</p>
 
-<p>With this implementation kept separate from the design and intention, we can obtain agreement on the &#8220;goals&#8221; of said process.  And if we can&#8217;t reach an agreement on the implementation of the process then it turns out we really didn&#8217;t have agreement on the design. Or the design wasn&#8217;t clear enough to begin with.</p>
+<p>With this implementation kept separate from the design and intention, we can obtain agreement on the &ldquo;goals&rdquo; of said process.  And if we can&rsquo;t reach an agreement on the implementation of the process then it turns out we really didn&rsquo;t have agreement on the design. Or the design wasn&rsquo;t clear enough to begin with.</p>
 
 <h3>Design Patterns and Refactoring</h3>
 
@@ -79,17 +79,17 @@
 
 <h3>Version Control and Code Reviews</h3>
 
-<p>Our &#8220;code review&#8221; process today in the law making process is well known to be terrible. Many laws and versions of laws are never inspected by all the necessary law makers before making it into the books.</p>
+<p>Our &ldquo;code review&rdquo; process today in the law making process is well known to be terrible. Many laws and versions of laws are never inspected by all the necessary law makers before making it into the books.</p>
 
 <p>We tend to employ simple version control techniques to follow the changes made to code over time. Pull request are an idea way to implement Code Reviews to ensure every change is heavily vetted before its made live.</p>
 
 <h3>Testing, Testing, Testing</h3>
 
-<p>We test a lot in software engineering. We find ways to verify the behavior of a piece of code before it does live, or more importantly, verify that we haven&#8217;t improperly altered the previous behavior of code after we&#8217;ve changed it.</p>
+<p>We test a lot in software engineering. We find ways to verify the behavior of a piece of code before it does live, or more importantly, verify that we haven&rsquo;t improperly altered the previous behavior of code after we&rsquo;ve changed it.</p>
 
-<p>Review laws and apply them, experimentally, against previously recorded and vetted case scenarios.  Existing people, real or fictitious, who embody the traits effected by these laws.  Do they effect people they shouldn&#8217;t.  And can we somehow prove that they actually effect the change they desire to make?</p>
+<p>Review laws and apply them, experimentally, against previously recorded and vetted case scenarios.  Existing people, real or fictitious, who embody the traits effected by these laws.  Do they effect people they shouldn&rsquo;t.  And can we somehow prove that they actually effect the change they desire to make?</p>
 
-<p>Couldn&#8217;t we have a single state or section of the country where new laws are tried out experimentally before they pass for the entire country?</p>
+<p>Couldn&rsquo;t we have a single state or section of the country where new laws are tried out experimentally before they pass for the entire country?</p>
 
 <h3>Human Experience</h3>
 
@@ -103,7 +103,7 @@
 
 <h3>Wrap Up</h3>
 
-<p>There&#8217;s a general analogy here between Code and Law. A think there&#8217;s more similarity than difference between them.</p>
+<p>There&rsquo;s a general analogy here between Code and Law. A think there&rsquo;s more similarity than difference between them.</p>
 
 <p>Now this is, of course, a very immature proposal.  You know they say that when all you have is a hammer, every problem looks like a nail.  And, full disclosure, I am a Software Engineer, after all.</p>
 
@@ -118,15 +118,15 @@
     <id>http://dragonfax.github.com/blog/2013/06/30/disillusionment</id>
     <content type="html"><![CDATA[<h3>Disillusionment as a Service</h3>
 
-<p>Listening to a friend talk a little bit about her own trouble getting involved in charity work and social change organizations, reminded me of how hard it was for me to get into the regular practice of &#8220;Giving&#8221;.</p>
+<p>Listening to a friend talk a little bit about her own trouble getting involved in charity work and social change organizations, reminded me of how hard it was for me to get into the regular practice of &ldquo;Giving&rdquo;.</p>
 
-<p>The biggest thing I fought against was the simple idea that my little bit couldn&#8217;t possibly make a difference.  And that going out there and helping was just to make me feel better, in a conceited sort of way.  I had to get past that, and see that every bit does count.</p>
+<p>The biggest thing I fought against was the simple idea that my little bit couldn&rsquo;t possibly make a difference.  And that going out there and helping was just to make me feel better, in a conceited sort of way.  I had to get past that, and see that every bit does count.</p>
 
-<p>&#8220;Disillusionment in our ability to actually effect any real change.&#8221;  Its a big problem that people fight with today, especially the youth, when it comes to getting involved in politics, volunteering, donating to charity organizations.</p>
+<p>&ldquo;Disillusionment in our ability to actually effect any real change.&rdquo;  Its a big problem that people fight with today, especially the youth, when it comes to getting involved in politics, volunteering, donating to charity organizations.</p>
 
 <h3>Visualization is the Bane to Disillusionment</h3>
 
-<p>We need to find a way to see how your bit of change (literal or figurative) combines with that of others.  Not just for one or two charities at a time, but with all organizations. To show you that you really are making a difference, even just your little bit.  Because it gets added to your friends little bits, and everyone else&#8217;s little its.  This helps people to visualize the impact of their change.</p>
+<p>We need to find a way to see how your bit of change (literal or figurative) combines with that of others.  Not just for one or two charities at a time, but with all organizations. To show you that you really are making a difference, even just your little bit.  Because it gets added to your friends little bits, and everyone else&rsquo;s little its.  This helps people to visualize the impact of their change.</p>
 
 <p>Its the same mentality you see in a demonstration.  You get see the power of people coming together.  And reminded your not alone here.  You can make change when you all come together.</p>
 
@@ -154,31 +154,31 @@
     <id>http://dragonfax.github.com/blog/2013/05/06/trello</id>
     <content type="html"><![CDATA[<h2>The Search for Spock</h2>
 
-<p>I&#8217;m always looking for better ways to organizing my life and improving my personal productivity. One tool that has popped up in several discussion is Trello. I know a few people using it as a flexible online board for managing their workload, both professionally and personally. It seems like a great idea to work this into my own arsenal and see if its the godsend all the hype leads me to believe.</p>
+<p>I&rsquo;m always looking for better ways to organizing my life and improving my personal productivity. One tool that has popped up in several discussion is Trello. I know a few people using it as a flexible online board for managing their workload, both professionally and personally. It seems like a great idea to work this into my own arsenal and see if its the godsend all the hype leads me to believe.</p>
 
 <p>After a little research and toying around I did find it particularly flexible. But I also found that most examples on the web use Trello in the exact same way with the same pattern of usage.</p>
 
-<h2>&#8220;Trello&#8221;, by Trello</h2>
+<h2>&ldquo;Trello&rdquo;, by Trello</h2>
 
 <p>Trello provides the expected help documentation, describing the features, how to find them, add elements, and work with the widgets in the application.</p>
 
-<p>On the other hand what they don&#8217;t provide is specific usage patterns.  They don&#8217;t describe workflows or methods to use the product for various ends. Instead leaving that up to other online examples or for the user to figure it out on his/her own.</p>
+<p>On the other hand what they don&rsquo;t provide is specific usage patterns.  They don&rsquo;t describe workflows or methods to use the product for various ends. Instead leaving that up to other online examples or for the user to figure it out on his/her own.</p>
 
-<p>I&#8217;ve seen this before with online products and its always a point of annoyance for me.  While I understand leaving things open-ended so that users can find their own ways to take advantage of the product, and not pidgin-hole it into one niche.</p>
+<p>I&rsquo;ve seen this before with online products and its always a point of annoyance for me.  While I understand leaving things open-ended so that users can find their own ways to take advantage of the product, and not pidgin-hole it into one niche.</p>
 
 <p>But by not giving clear instructions or even just examples on how some people use it, or how you think it <strong>could</strong> be used for new users early on, you just make it difficult for users to get into the service in the first place.</p>
 
-<p>Twitter has the same issue. They refuse to clearly define the service and how it should be used.  And its a waste, as those who find new ways to use tools won&#8217;t be deterred by the predefinition of its use.  i.e. The hashtag would still have been invented, whether it was in the Twitter docs or not.</p>
+<p>Twitter has the same issue. They refuse to clearly define the service and how it should be used.  And its a waste, as those who find new ways to use tools won&rsquo;t be deterred by the predefinition of its use.  i.e. The hashtag would still have been invented, whether it was in the Twitter docs or not.</p>
 
 <h3>Vocabulary</h3>
 
-<p>Lets go over some Trello vocabulary quickly, or at least what they define for users. Teaching you how to use Trello is outside of the scope of this post, so I&#8217;m just going to review the terms.</p>
+<p>Lets go over some Trello vocabulary quickly, or at least what they define for users. Teaching you how to use Trello is outside of the scope of this post, so I&rsquo;m just going to review the terms.</p>
 
 <ul>
-<li><strong>Board</strong> - Groups Lists together.</li>
+<li><strong>Board</strong> &ndash; Groups Lists together.</li>
 <li><strong>List</strong> (of cards)</li>
-<li><strong>Card</strong> - Groups everything else together, a description with any number of <strong>comments</strong> and <strong>checklists</strong>.</li>
-<li><strong>Checklist</strong> - Works like a &#8220;Todo&#8221; list.</li>
+<li><strong>Card</strong> &ndash; Groups everything else together, a description with any number of <strong>comments</strong> and <strong>checklists</strong>.</li>
+<li><strong>Checklist</strong> &ndash; Works like a &ldquo;Todo&rdquo; list.</li>
 </ul>
 
 
@@ -216,18 +216,18 @@
 
 <h2>Board = Process/Workflow</h2>
 
-<p>The pattern I see most often used online for Trello is a simple board->workflow pattern, where a <strong>board</strong> represents one &#8220;workflow&#8221; which may have several &#8220;steps&#8221; within it. In this case each &#8220;step&#8221; is represented by a <strong>list</strong>.</p>
+<p>The pattern I see most often used online for Trello is a simple board->workflow pattern, where a <strong>board</strong> represents one &ldquo;workflow&rdquo; which may have several &ldquo;steps&rdquo; within it. In this case each &ldquo;step&rdquo; is represented by a <strong>list</strong>.</p>
 
-<p>In this system, the cards represent work items that are running through the &#8220;workflow&#8221;. They rest in the &#8220;list&#8221; that pertains to the step in the workflow where they currently reside.  This might be similar to a tool used for scrum tracking.</p>
+<p>In this system, the cards represent work items that are running through the &ldquo;workflow&rdquo;. They rest in the &ldquo;list&rdquo; that pertains to the step in the workflow where they currently reside.  This might be similar to a tool used for scrum tracking.</p>
 
 <ul>
-<li><strong>board</strong> -> &#8220;workflow&#8221; or process</li>
-<li><strong>list</strong> -> &#8220;step&#8221; within the &#8220;workflow&#8221;</li>
-<li><strong>card</strong> -> item (project/task/feature/workload) running through the &#8220;workflow&#8221;</li>
+<li><strong>board</strong> &ndash;> &ldquo;workflow&rdquo; or process</li>
+<li><strong>list</strong> &ndash;> &ldquo;step&rdquo; within the &ldquo;workflow&rdquo;</li>
+<li><strong>card</strong> &ndash;> item (project/task/feature/workload) running through the &ldquo;workflow&rdquo;</li>
 </ul>
 
 
-<p>Here, the details within the card are used for describing and tracking the item or project that&#8217;s running through the &#8220;workflow&#8221;.</p>
+<p>Here, the details within the card are used for describing and tracking the item or project that&rsquo;s running through the &ldquo;workflow&rdquo;.</p>
 
 <p><img src="http://dragonfax.github.com/images/posts/2013-05-06-trello_examples_khan_academy.png">_</p>
 
@@ -235,15 +235,15 @@
 
 <h2>Other Patterns</h2>
 
-<p>I do see a few other patterns in use but they&#8217;re rare.</p>
+<p>I do see a few other patterns in use but they&rsquo;re rare.</p>
 
-<h3>Categorized List of &#8220;Things&#8221;</h3>
+<h3>Categorized List of &ldquo;Things&rdquo;</h3>
 
-<p>This pattern uses the <strong>board</strong> as a single list of items, but with categories within that list.  Each <strong>card</strong> being one of the &#8220;things&#8221; that the <strong>board</strong> is listing.  And the different <strong>lists</strong> within the <strong>board</strong> are the categories.</p>
+<p>This pattern uses the <strong>board</strong> as a single list of items, but with categories within that list.  Each <strong>card</strong> being one of the &ldquo;things&rdquo; that the <strong>board</strong> is listing.  And the different <strong>lists</strong> within the <strong>board</strong> are the categories.</p>
 
-<p>Usually in this case the title of the <strong>card</strong> is all that&#8217;s needed to describe the &#8220;thing&#8221;.  And the comments within the <strong>cards</strong> are simply a running commentary from various users on the &#8220;thing&#8221; itself.</p>
+<p>Usually in this case the title of the <strong>card</strong> is all that&rsquo;s needed to describe the &ldquo;thing&rdquo;.  And the comments within the <strong>cards</strong> are simply a running commentary from various users on the &ldquo;thing&rdquo; itself.</p>
 
-<p>Trello&#8217;s own list of examples serves as a good representation of this pattern.</p>
+<p>Trello&rsquo;s own list of examples serves as a good representation of this pattern.</p>
 
 <p><img src="http://dragonfax.github.com/images/posts/2013-05-06-trello_examples_trello_resources.png">_</p>
 
@@ -251,9 +251,9 @@
 
 <h2>Missing Features</h2>
 
-<p>After trying to use Trello for my own todo list management I found it rather lacking (for my own purposes, that is). I&#8217;m still going to search for ways to use it for project planning and managing current work.</p>
+<p>After trying to use Trello for my own todo list management I found it rather lacking (for my own purposes, that is). I&rsquo;m still going to search for ways to use it for project planning and managing current work.</p>
 
-<p>My habit it to use a large a powerful todo list (toodledo) for tracking most of my work backlog. Even if I were to organize all my backlog in the form of boards, lists, and cards, I&#8217;d be missing important searching/sorting/categorization features that come along with the simple relational table model that online todo lists use.</p>
+<p>My habit it to use a large a powerful todo list (toodledo) for tracking most of my work backlog. Even if I were to organize all my backlog in the form of boards, lists, and cards, I&rsquo;d be missing important searching/sorting/categorization features that come along with the simple relational table model that online todo lists use.</p>
 
 <ul>
 <li><p>Merging and sorting all checklists in a board.</p>
@@ -266,13 +266,13 @@
 <p>  Such as tagging checklist items with labels, and including more info for each individual checklist item.</p></li>
 <li><p>Full-Text Search, across all text</p>
 
-<p>  It wasn&#8217;t too hard to find text elements that are not included in a Trello search. This is a little surprising.</p></li>
+<p>  It wasn&rsquo;t too hard to find text elements that are not included in a Trello search. This is a little surprising.</p></li>
 </ul>
 
 
 <h2>Call For Papers</h2>
 
-<p>I&#8217;d love to see some other Trello usage patterns if anyone out there has them.</p>
+<p>I&rsquo;d love to see some other Trello usage patterns if anyone out there has them.</p>
 ]]></content>
   </entry>
   
@@ -291,19 +291,19 @@
 
 <p>An ugly and useless yahoo search widget is added to my toolbar. It takes up precious real-estate.</p>
 
-<p>Worse, these changes seem to be permanent. Or at least damn close to it. After various fiddling and config settings, most of this remains. I&#8217;m unable to correct the hacking that was done to my computer.</p>
+<p>Worse, these changes seem to be permanent. Or at least damn close to it. After various fiddling and config settings, most of this remains. I&rsquo;m unable to correct the hacking that was done to my computer.</p>
 
 <p>Furthermore this takes up precious time, searching, fixing, searching some more.</p>
 
 <h2>The Culprit</h2>
 
-<p>Of course this was was all done by some third-party extension or product I don&#8217;t recall installing. I probably missed some tiny little button somewhere tha says, effectively, &#8220;Please don&#8217;t fuck up my computer.&#8221;</p>
+<p>Of course this was was all done by some third-party extension or product I don&rsquo;t recall installing. I probably missed some tiny little button somewhere tha says, effectively, &ldquo;Please don&rsquo;t fuck up my computer.&rdquo;</p>
 
 <p>But its all too late for that to matter now. The damage is already done.</p>
 
 <h2>The Blame</h2>
 
-<p>But who I&#8217;m really angry at is Yahoo.  The way I see it, Yahoo paid someone to fuck up my computer. And I take that personally.</p>
+<p>But who I&rsquo;m really angry at is Yahoo.  The way I see it, Yahoo paid someone to fuck up my computer. And I take that personally.</p>
 
 <p>They paid someone to break my computer, and waste my time trying to fix it. And they paid alot
 considering how hard it is to undo this mess.</p>
@@ -332,17 +332,17 @@ this dubochery.</p>
 
 <h3>IdeaVim</h3>
 
-<p>I&#8217;m also a heavy user of IdeaVim plugin for IntelliJ. I wouldn&#8217;t be able to use IDEs at all without those plugins that add VI operation modes to the built-in editors.</p>
+<p>I&rsquo;m also a heavy user of IdeaVim plugin for IntelliJ. I wouldn&rsquo;t be able to use IDEs at all without those plugins that add VI operation modes to the built-in editors.</p>
 
-<p>IdeaVim doesn&#8217;t document very well how it differs from true VIM. The project owner has taken the philosophy of building the project based on the original VIM documentation, and not the VIM source. So much so that the documentation for the plugin is just the VIM docs copied over.</p>
+<p>IdeaVim doesn&rsquo;t document very well how it differs from true VIM. The project owner has taken the philosophy of building the project based on the original VIM documentation, and not the VIM source. So much so that the documentation for the plugin is just the VIM docs copied over.</p>
 
-<p>Unfortunately they&#8217;ve taken no time to indicate how much of that documented behavior is implemented and how much isn&#8217;t yet.</p>
+<p>Unfortunately they&rsquo;ve taken no time to indicate how much of that documented behavior is implemented and how much isn&rsquo;t yet.</p>
 
 <h3>Settings</h3>
 
-<p>One important area where VIM and IdeaVim differ is their handling of settings. IdeaVim only supports a small subset of vim commands and settings variables. But it wants to provide some convenience and backwards compatibility for existing VIM users. Their solution is to read your ~/.vimrc anyways. It simply has the behavior of silently ignoring any settings it doesn&#8217;t understand.</p>
+<p>One important area where VIM and IdeaVim differ is their handling of settings. IdeaVim only supports a small subset of vim commands and settings variables. But it wants to provide some convenience and backwards compatibility for existing VIM users. Their solution is to read your ~/.vimrc anyways. It simply has the behavior of silently ignoring any settings it doesn&rsquo;t understand.</p>
 
-<p>Unfortunately IdeaVim doesn&#8217;t understand</p>
+<p>Unfortunately IdeaVim doesn&rsquo;t understand</p>
 
 <p><code>:set noerrorbells</code></p>
 
@@ -361,19 +361,19 @@ this dubochery.</p>
     <link href="http://dragonfax.github.com/blog/2013/04/10/comfortable-vim/"/>
     <updated>2013-04-10T10:54:00-07:00</updated>
     <id>http://dragonfax.github.com/blog/2013/04/10/comfortable-vim</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve been using Evernote for taking notes for a while now. But I really miss taking notes in VIM.</p>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been using Evernote for taking notes for a while now. But I really miss taking notes in VIM.</p>
 
 <h3>History</h3>
 
-<p>I&#8217;m a heavy VIM user. I use it for coding, through and though. So much so, that I use VIM-style editor wrapper plugins IDEs such as Eclipse and IntelliJ. Otherwise I find normal &#8216;editors&#8217; clunky and un-usable.</p>
+<p>I&rsquo;m a heavy VIM user. I use it for coding, through and though. So much so, that I use VIM-style editor wrapper plugins IDEs such as Eclipse and IntelliJ. Otherwise I find normal &lsquo;editors&rsquo; clunky and un-usable.</p>
 
-<p>When it comes to coding I&#8217;m clearly more productive, and happy in a VI like environment, with command modes, regular expressions, and no need for a mouse or arrow keys. It only made sense that I&#8217;d use VIM for taking notes and tracking my work.</p>
+<p>When it comes to coding I&rsquo;m clearly more productive, and happy in a VI like environment, with command modes, regular expressions, and no need for a mouse or arrow keys. It only made sense that I&rsquo;d use VIM for taking notes and tracking my work.</p>
 
-<p>But the pull of Evernote to manage all that non-coding work was very strong.  The convenience of having notes online, available on every platform including mobile and web, is just something I couldn&#8217;t resist.</p>
+<p>But the pull of Evernote to manage all that non-coding work was very strong.  The convenience of having notes online, available on every platform including mobile and web, is just something I couldn&rsquo;t resist.</p>
 
 <h3>My Solution</h3>
 
-<p>I&#8217;ve been working on an Evernote Command Line Client in ruby for a little while now.</p>
+<p>I&rsquo;ve been working on an Evernote Command Line Client in ruby for a little while now.</p>
 
 <p><a href="http://github.com/dragonfax/rnote">Rnote</a></p>
 
@@ -391,19 +391,19 @@ this dubochery.</p>
 
 <h3>Realization</h3>
 
-<p>The interesting thing I found, when returning to VIM after a long absense, was that I&#8217;m less afraid of change in the VIM world. Its not just a matter of simple productvity via keypress count and typing speed. But there&#8217;s apprehension when I&#8217;m working in an editor that&#8217;s buried in manyl layers of disparate applications.</p>
+<p>The interesting thing I found, when returning to VIM after a long absense, was that I&rsquo;m less afraid of change in the VIM world. Its not just a matter of simple productvity via keypress count and typing speed. But there&rsquo;s apprehension when I&rsquo;m working in an editor that&rsquo;s buried in manyl layers of disparate applications.</p>
 
-<p>When working in a text area in a browsoer, or in an editor embedded in a desktop app, there are several layers on top of that editor. Each providing their own &#8216;modes&#8217; and shortscuts and commands. Each taking priority over the other for different types of input. And each capable of changing the your entire world in the middle of an editing session, with one bad keypress.</p>
+<p>When working in a text area in a browsoer, or in an editor embedded in a desktop app, there are several layers on top of that editor. Each providing their own &lsquo;modes&rsquo; and shortscuts and commands. Each taking priority over the other for different types of input. And each capable of changing the your entire world in the middle of an editing session, with one bad keypress.</p>
 
-<p>If I fat finger a typing sequence in some custom editor, anything can happen. And the results, I&#8217;ve found, can be unexpected and incomprehensible. I&#8217;ve had experiences where the cursor leaps to a random location in the text, drops a few lines from the text, and starts adding new characters after breaking the formatting that was already there. Other situations have seen my input leap to another document, and start making changes there. And then there is the worse case scenerio of the window just closing altogether, lossing of editor history, and without any sort of save.</p>
+<p>If I fat finger a typing sequence in some custom editor, anything can happen. And the results, I&rsquo;ve found, can be unexpected and incomprehensible. I&rsquo;ve had experiences where the cursor leaps to a random location in the text, drops a few lines from the text, and starts adding new characters after breaking the formatting that was already there. Other situations have seen my input leap to another document, and start making changes there. And then there is the worse case scenerio of the window just closing altogether, lossing of editor history, and without any sort of save.</p>
 
-<p>VIM is an environment I can predict. And its only one environment providing the UI.  No matter what happens, I know all I have to do is hit &#8216;u&#8217; and magically any bad typing sequence is completely undone. And best of all, if I did type something wrong, I probably know what it was from the effects that occured. Because VIM has a consice and regular interface that hasn&#8217;t changed over the years, and doesn&#8217;t change between nvironments.</p>
+<p>VIM is an environment I can predict. And its only one environment providing the UI.  No matter what happens, I know all I have to do is hit &lsquo;u&rsquo; and magically any bad typing sequence is completely undone. And best of all, if I did type something wrong, I probably know what it was from the effects that occured. Because VIM has a consice and regular interface that hasn&rsquo;t changed over the years, and doesn&rsquo;t change between nvironments.</p>
 
-<p>Of course, I lose WYSIWYG formatting (do we still use that word?), such as bold, italic, and font sizes.  But I don&#8217;t really miss them.  And I get back indentation, a powerful organization tool. Just ask the python guys.</p>
+<p>Of course, I lose WYSIWYG formatting (do we still use that word?), such as bold, italic, and font sizes.  But I don&rsquo;t really miss them.  And I get back indentation, a powerful organization tool. Just ask the python guys.</p>
 
 <h3>Plans</h3>
 
-<p>I&#8217;m planning to add markdown support, so that I cna have the best of both worlds: pure text editing, but also allow for some formatting. I&#8217;m already used to markdown elsewhere in the web, such as octopress and github.</p>
+<p>I&rsquo;m planning to add markdown support, so that I cna have the best of both worlds: pure text editing, but also allow for some formatting. I&rsquo;m already used to markdown elsewhere in the web, such as octopress and github.</p>
 ]]></content>
   </entry>
   
@@ -429,13 +429,13 @@ this dubochery.</p>
 
 <p>I use RubyMine without doing any rails and doing just what you ask. I write a lot of simple scripts, and large applications, both often usable from a command line.</p>
 
-<p>I still organize my code into a &#8216;project directory&#8217;. And point RM at that directory. Instead of just working entirely in a file, and trying to point RM at the file alone. This seems to be what IDE&#8217;s prefer. This lets RM create its <code>.idea</code> directory to hold all of its project related settings.</p>
+<p>I still organize my code into a &lsquo;project directory&rsquo;. And point RM at that directory. Instead of just working entirely in a file, and trying to point RM at the file alone. This seems to be what IDE&rsquo;s prefer. This lets RM create its <code>.idea</code> directory to hold all of its project related settings.</p>
 
 <p>This may mean that some projects consist of nothing more than a directory (for the project) and a single file in that directory (the single script which is really the only content in that project).</p>
 
 <h2>Benefits of a Project Directory</h2>
 
-<p>You&#8217;ll soon find you add more files to any project anyways. Both additional coding and various utilities which are part of the great benefit of ruby.</p>
+<p>You&rsquo;ll soon find you add more files to any project anyways. Both additional coding and various utilities which are part of the great benefit of ruby.</p>
 
 <ul>
 <li>gem</li>
@@ -448,15 +448,15 @@ this dubochery.</p>
 
 <h2>Project Setup</h2>
 
-<p>I don&#8217;t bother with any sort of &#8220;project type&#8221;. In fact I don&#8217;t create projects from with RubyMine at all. I just create a directory, and then open that directory with RM (whether from the File Menu, or via the &#8220;mine&#8221; command line tool that RM installs).</p>
+<p>I don&rsquo;t bother with any sort of &ldquo;project type&rdquo;. In fact I don&rsquo;t create projects from with RubyMine at all. I just create a directory, and then open that directory with RM (whether from the File Menu, or via the &ldquo;mine&rdquo; command line tool that RM installs).</p>
 
 <p><code>project/</code></p>
 
-<p>Of course <code>project</code> isn&#8217;t the real name of the project, or the directory I create, I&#8217;m just using it as a generic name here. I would actually name the directory (and project) after the scripts or subject matter of the work they do.</p>
+<p>Of course <code>project</code> isn&rsquo;t the real name of the project, or the directory I create, I&rsquo;m just using it as a generic name here. I would actually name the directory (and project) after the scripts or subject matter of the work they do.</p>
 
-<p>NOTE: <em>currently there is a bug in the <code>mine</code> command in RM 5 where it won&#8217;t open a second project window.</em></p>
+<p>NOTE: <em>currently there is a bug in the <code>mine</code> command in RM 5 where it won&rsquo;t open a second project window.</em></p>
 
-<p>Obviously if this is a project that includes any command line scripts I&#8217;ll put those in a <code>bin</code> directory, just for organization purposes. I don&#8217;t like to clutter the root project directory with all sorts of things. There are too many tools that <em>require</em> their settings files in the project root, so the fewer the better.</p>
+<p>Obviously if this is a project that includes any command line scripts I&rsquo;ll put those in a <code>bin</code> directory, just for organization purposes. I don&rsquo;t like to clutter the root project directory with all sorts of things. There are too many tools that <em>require</em> their settings files in the project root, so the fewer the better.</p>
 
 <p><code>project/bin/</code></p>
 
@@ -470,7 +470,7 @@ project/.rdoc_options
 ...
 </code></pre>
 
-<p>As soon as I have some automated testing for the scripts (which I admit isn&#8217;t immediate) I put all test code under a <code>test</code> directory, but I further categorize those according to the scope of the tests or how often I would run them during development. And I&#8217;ll go so far as to add quck Rake tasks that are just aliases for the commands necessary to run the tests. So I dont&#8217; have to remember which test runner, or type the full paths each time.</p>
+<p>As soon as I have some automated testing for the scripts (which I admit isn&rsquo;t immediate) I put all test code under a <code>test</code> directory, but I further categorize those according to the scope of the tests or how often I would run them during development. And I&rsquo;ll go so far as to add quck Rake tasks that are just aliases for the commands necessary to run the tests. So I dont&#8217; have to remember which test runner, or type the full paths each time.</p>
 
 <pre><code>project/test/
 project/test/unit/
@@ -478,7 +478,7 @@ project/test/unit/some_component_test.rb
 project/test/integration/
 </code></pre>
 
-<p>Finally, as the project grows, and I add more scripts or want to reuse some of the code within external projects, I&#8217;ll add a <code>lib</code> directory, and use some standard practices for how to organize that.</p>
+<p>Finally, as the project grows, and I add more scripts or want to reuse some of the code within external projects, I&rsquo;ll add a <code>lib</code> directory, and use some standard practices for how to organize that.</p>
 
 <pre><code>project/lib/
 project/lib/project.rb
@@ -493,7 +493,7 @@ project/lib/project/cmd/one_command.rb
 project/lib/project/cmd/another_command.rb
 </code></pre>
 
-<p>Of course the original <code>project.rb</code> &#8216;requires&#8217; all of these lib files. Ruby loads pretty fast, so I don&#8217;t bother too much with managing dependencies between the ruby files within the same project. Its really all about code readability.</p>
+<p>Of course the original <code>project.rb</code> &lsquo;requires&rsquo; all of these lib files. Ruby loads pretty fast, so I don&rsquo;t bother too much with managing dependencies between the ruby files within the same project. Its really all about code readability.</p>
 
 <h2>Better Command Line Apps</h2>
 
@@ -525,13 +525,13 @@ exit(0)
 
 <p>Then as you build more code in your scripts you can graduate to a bit more infrastructure with a gem like <a href="https://github.com/davetron5000/methadone">Methadone</a></p>
 
-<p>Finally, when you&#8217;re writing full blown command line applications, with many &#8220;internal&#8221; commands like &#8220;git submodule init <repo>&#8221;, you can ascend to something much more heavy-weight like <a href="https://github.com/davetron5000/gli">GLI</a></p>
+<p>Finally, when you&rsquo;re writing full blown command line applications, with many &ldquo;internal&rdquo; commands like &ldquo;git submodule init <repo>&rdquo;, you can ascend to something much more heavy-weight like <a href="https://github.com/davetron5000/gli">GLI</a></p>
 
 <h2>Testing Command Line Apps</h2>
 
-<p>Unit testing is the pretty much the same, no matter what type of application your writing. You&#8217;re not using real services or combining components, but just isolating the internal components and using them in a purely internal manner. So not much changes there for command line tools.</p>
+<p>Unit testing is the pretty much the same, no matter what type of application your writing. You&rsquo;re not using real services or combining components, but just isolating the internal components and using them in a purely internal manner. So not much changes there for command line tools.</p>
 
-<p>But when it comes to integration or full command-line testing of my scripts, I&#8217;m actually a big fan of <code>cucumber/aruba</code>. I&#8217;m not big on TDD, I&#8217;m a bit too pragmatic for that. But for command line tools, the series of use cases is already laid out pretty plainly in the set of options available. Even for interactive commands this makes a series of <code>feature</code> files conveniently double as documentation for the tool.</p>
+<p>But when it comes to integration or full command-line testing of my scripts, I&rsquo;m actually a big fan of <code>cucumber/aruba</code>. I&rsquo;m not big on TDD, I&rsquo;m a bit too pragmatic for that. But for command line tools, the series of use cases is already laid out pretty plainly in the set of options available. Even for interactive commands this makes a series of <code>feature</code> files conveniently double as documentation for the tool.</p>
 
 <pre><code>Feature:
   Create and manipulate notes in Evernote.
@@ -554,7 +554,7 @@ exit(0)
 
 <h2>Installation</h2>
 
-<p>As for installation and packaging for your scripts, so that they can be shared and reused by the rest of the world, look no further than the same &#8216;gem&#8217; utility that you&#8217;ve already been using all along in ruby for depenencies.</p>
+<p>As for installation and packaging for your scripts, so that they can be shared and reused by the rest of the world, look no further than the same &lsquo;gem&rsquo; utility that you&rsquo;ve already been using all along in ruby for depenencies.</p>
 
 <p>The <code>gemspec</code> you create when writing a new gem to share, can be told about your scripts and other command line utilities. It will then wrap them up with the rest of your code, install them in a good location, and even fix up the PATH so the user can find them when the time comes.</p>
 
@@ -564,9 +564,9 @@ exit(0)
 
 <h2>Ruby Without Rails</h2>
 
-<p>I&#8217;ve run into a lot of Rails developers who aren&#8217;t cognisant of what <em>is</em> Rails and what <em>is</em> ruby. i.e. what you&#8217;re left with when you remove the Rails. Obviously the server and templating, databasing, MVC are all gone, as are a portion of convenience methods added to every-day objects.</p>
+<p>I&rsquo;ve run into a lot of Rails developers who aren&rsquo;t cognisant of what <em>is</em> Rails and what <em>is</em> ruby. i.e. what you&rsquo;re left with when you remove the Rails. Obviously the server and templating, databasing, MVC are all gone, as are a portion of convenience methods added to every-day objects.</p>
 
-<p>The goods new is that you&#8217;re still left with quite a lot. And if you find you miss something, its easy to add it back in with by including a gem or two. For instance, if you enjoy using an ORM like active-record it can be included back into your application, without rails, with little fuss.</p>
+<p>The goods new is that you&rsquo;re still left with quite a lot. And if you find you miss something, its easy to add it back in with by including a gem or two. For instance, if you enjoy using an ORM like active-record it can be included back into your application, without rails, with little fuss.</p>
 
 <pre><code>require 'activerecord'
 </code></pre>
@@ -576,7 +576,7 @@ exit(0)
 <p>Finally, using RubyMine features more heavily during development. Everything available when working with rails is available for command line applications.</p>
 
 <p>You can run your commands from RM and use its debugger just the same as rails.
-Just like any IDE you can set up &#8220;run&#8221; profiles with the arguments you want to test the script on, and run or debug the script through the IDE. Personally, I never use a command-line debugger. If I need to fire up a debugger to troubleshoot some issue, then I&#8217;ll launch the program in an IDE. The benefits of an IDE debugger with &#8220;heads-up&#8221; display of all the pertinent details, and visually following the script through execution, is just irreplaceable.</p>
+Just like any IDE you can set up &ldquo;run&rdquo; profiles with the arguments you want to test the script on, and run or debug the script through the IDE. Personally, I never use a command-line debugger. If I need to fire up a debugger to troubleshoot some issue, then I&rsquo;ll launch the program in an IDE. The benefits of an IDE debugger with &ldquo;heads-up&rdquo; display of all the pertinent details, and visually following the script through execution, is just irreplaceable.</p>
 ]]></content>
   </entry>
   
@@ -617,7 +617,7 @@ New hammers and tools to put on my belt.</p>
 
 <p>An important part of this was how I went about
 choosing what technologies to associate myself with.
-I didn&#8217;t just let people set things down in front of me, and choose my paths for me.
+I didn&rsquo;t just let people set things down in front of me, and choose my paths for me.
 I constantly researched and pro-actively vetted technological choices.
 Its been a constant daily regimine.</p>
 
@@ -634,8 +634,8 @@ And this serves, ideally, as a great example to show how these patterns have cha
 but also what forced me to absorb new ideas and concepts.
 What allowed for my personal productivity, but also my personal growth.</p>
 
-<p>Also, at this stage it was all about what the &#8220;best langugae&#8221; was.
-As opinionated as I was, I never considered adding a &#8220;for me&#8221; to the end of that
+<p>Also, at this stage it was all about what the &ldquo;best langugae&rdquo; was.
+As opinionated as I was, I never considered adding a &ldquo;for me&rdquo; to the end of that
 statement to better qualify it as purely a personal journey.
 I was in a world of absolutes, and languages were something I could qualitatively compare.</p>
 
@@ -659,7 +659,7 @@ but performing poorly with others.</p>
 
 <h2>Deep into my career</h2>
 
-<p>Years later, as I&#8217;ve touched on most major technologies my world view has shifted yet again.</p>
+<p>Years later, as I&rsquo;ve touched on most major technologies my world view has shifted yet again.</p>
 
 <p>Truth be told, you can do pretty much anything with any programming language.</p>
 
@@ -667,7 +667,7 @@ but performing poorly with others.</p>
 There are differences in availablity and quality of 3rd party libraries and even in the communities
 that follow them.</p>
 
-<p>But what it really comes down to is not how <em>I&#8217;m</em> going to use the language,
+<p>But what it really comes down to is not how <em>I&rsquo;m</em> going to use the language,
 Or even how the project is going to use the language.
 But, rather, how the people are going to use the language.</p>
 

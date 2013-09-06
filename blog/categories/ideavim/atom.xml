@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IdeaVim | Den of Antiquity]]></title>
   <link href="http://dragonfax.github.com/blog/categories/ideavim/atom.xml" rel="self"/>
   <link href="http://dragonfax.github.com/"/>
-  <updated>2013-08-28T18:43:17-07:00</updated>
+  <updated>2013-09-06T14:53:10-07:00</updated>
   <id>http://dragonfax.github.com/</id>
   <author>
     <name><![CDATA[Jason Stillwell]]></name>
@@ -24,17 +24,17 @@
 
 <h3>IdeaVim</h3>
 
-<p>I'm also a heavy user of IdeaVim plugin for IntelliJ. I wouldn't be able to use IDEs at all without those plugins that add VI operation modes to the built-in editors.</p>
+<p>I&rsquo;m also a heavy user of IdeaVim plugin for IntelliJ. I wouldn&rsquo;t be able to use IDEs at all without those plugins that add VI operation modes to the built-in editors.</p>
 
-<p>IdeaVim doesn't document very well how it differs from true VIM. The project owner has taken the philosophy of building the project based on the original VIM documentation, and not the VIM source. So much so that the documentation for the plugin is just the VIM docs copied over.</p>
+<p>IdeaVim doesn&rsquo;t document very well how it differs from true VIM. The project owner has taken the philosophy of building the project based on the original VIM documentation, and not the VIM source. So much so that the documentation for the plugin is just the VIM docs copied over.</p>
 
-<p>Unfortunately they've taken no time to indicate how much of that documented behavior is implemented and how much isn't yet.</p>
+<p>Unfortunately they&rsquo;ve taken no time to indicate how much of that documented behavior is implemented and how much isn&rsquo;t yet.</p>
 
 <h3>Settings</h3>
 
-<p>One important area where VIM and IdeaVim differ is their handling of settings. IdeaVim only supports a small subset of vim commands and settings variables. But it wants to provide some convenience and backwards compatibility for existing VIM users. Their solution is to read your ~/.vimrc anyways. It simply has the behavior of silently ignoring any settings it doesn't understand.</p>
+<p>One important area where VIM and IdeaVim differ is their handling of settings. IdeaVim only supports a small subset of vim commands and settings variables. But it wants to provide some convenience and backwards compatibility for existing VIM users. Their solution is to read your ~/.vimrc anyways. It simply has the behavior of silently ignoring any settings it doesn&rsquo;t understand.</p>
 
-<p>Unfortunately IdeaVim doesn't understand</p>
+<p>Unfortunately IdeaVim doesn&rsquo;t understand</p>
 
 <p><code>:set noerrorbells</code></p>
 

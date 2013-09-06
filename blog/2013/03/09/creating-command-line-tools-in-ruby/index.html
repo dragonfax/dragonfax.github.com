@@ -107,13 +107,13 @@
 
 <p>I use RubyMine without doing any rails and doing just what you ask. I write a lot of simple scripts, and large applications, both often usable from a command line.</p>
 
-<p>I still organize my code into a &#8216;project directory&#8217;. And point RM at that directory. Instead of just working entirely in a file, and trying to point RM at the file alone. This seems to be what IDE&#8217;s prefer. This lets RM create its <code>.idea</code> directory to hold all of its project related settings.</p>
+<p>I still organize my code into a &lsquo;project directory&rsquo;. And point RM at that directory. Instead of just working entirely in a file, and trying to point RM at the file alone. This seems to be what IDE&rsquo;s prefer. This lets RM create its <code>.idea</code> directory to hold all of its project related settings.</p>
 
 <p>This may mean that some projects consist of nothing more than a directory (for the project) and a single file in that directory (the single script which is really the only content in that project).</p>
 
 <h2>Benefits of a Project Directory</h2>
 
-<p>You&#8217;ll soon find you add more files to any project anyways. Both additional coding and various utilities which are part of the great benefit of ruby.</p>
+<p>You&rsquo;ll soon find you add more files to any project anyways. Both additional coding and various utilities which are part of the great benefit of ruby.</p>
 
 <ul>
 <li>gem</li>
@@ -126,15 +126,15 @@
 
 <h2>Project Setup</h2>
 
-<p>I don&#8217;t bother with any sort of &#8220;project type&#8221;. In fact I don&#8217;t create projects from with RubyMine at all. I just create a directory, and then open that directory with RM (whether from the File Menu, or via the &#8220;mine&#8221; command line tool that RM installs).</p>
+<p>I don&rsquo;t bother with any sort of &ldquo;project type&rdquo;. In fact I don&rsquo;t create projects from with RubyMine at all. I just create a directory, and then open that directory with RM (whether from the File Menu, or via the &ldquo;mine&rdquo; command line tool that RM installs).</p>
 
 <p><code>project/</code></p>
 
-<p>Of course <code>project</code> isn&#8217;t the real name of the project, or the directory I create, I&#8217;m just using it as a generic name here. I would actually name the directory (and project) after the scripts or subject matter of the work they do.</p>
+<p>Of course <code>project</code> isn&rsquo;t the real name of the project, or the directory I create, I&rsquo;m just using it as a generic name here. I would actually name the directory (and project) after the scripts or subject matter of the work they do.</p>
 
-<p>NOTE: <em>currently there is a bug in the <code>mine</code> command in RM 5 where it won&#8217;t open a second project window.</em></p>
+<p>NOTE: <em>currently there is a bug in the <code>mine</code> command in RM 5 where it won&rsquo;t open a second project window.</em></p>
 
-<p>Obviously if this is a project that includes any command line scripts I&#8217;ll put those in a <code>bin</code> directory, just for organization purposes. I don&#8217;t like to clutter the root project directory with all sorts of things. There are too many tools that <em>require</em> their settings files in the project root, so the fewer the better.</p>
+<p>Obviously if this is a project that includes any command line scripts I&rsquo;ll put those in a <code>bin</code> directory, just for organization purposes. I don&rsquo;t like to clutter the root project directory with all sorts of things. There are too many tools that <em>require</em> their settings files in the project root, so the fewer the better.</p>
 
 <p><code>project/bin/</code></p>
 
@@ -148,7 +148,7 @@ project/.rdoc_options
 ...
 </code></pre>
 
-<p>As soon as I have some automated testing for the scripts (which I admit isn&#8217;t immediate) I put all test code under a <code>test</code> directory, but I further categorize those according to the scope of the tests or how often I would run them during development. And I&#8217;ll go so far as to add quck Rake tasks that are just aliases for the commands necessary to run the tests. So I dont&#8217; have to remember which test runner, or type the full paths each time.</p>
+<p>As soon as I have some automated testing for the scripts (which I admit isn&rsquo;t immediate) I put all test code under a <code>test</code> directory, but I further categorize those according to the scope of the tests or how often I would run them during development. And I&rsquo;ll go so far as to add quck Rake tasks that are just aliases for the commands necessary to run the tests. So I dont&#8217; have to remember which test runner, or type the full paths each time.</p>
 
 <pre><code>project/test/
 project/test/unit/
@@ -156,7 +156,7 @@ project/test/unit/some_component_test.rb
 project/test/integration/
 </code></pre>
 
-<p>Finally, as the project grows, and I add more scripts or want to reuse some of the code within external projects, I&#8217;ll add a <code>lib</code> directory, and use some standard practices for how to organize that.</p>
+<p>Finally, as the project grows, and I add more scripts or want to reuse some of the code within external projects, I&rsquo;ll add a <code>lib</code> directory, and use some standard practices for how to organize that.</p>
 
 <pre><code>project/lib/
 project/lib/project.rb
@@ -171,7 +171,7 @@ project/lib/project/cmd/one_command.rb
 project/lib/project/cmd/another_command.rb
 </code></pre>
 
-<p>Of course the original <code>project.rb</code> &#8216;requires&#8217; all of these lib files. Ruby loads pretty fast, so I don&#8217;t bother too much with managing dependencies between the ruby files within the same project. Its really all about code readability.</p>
+<p>Of course the original <code>project.rb</code> &lsquo;requires&rsquo; all of these lib files. Ruby loads pretty fast, so I don&rsquo;t bother too much with managing dependencies between the ruby files within the same project. Its really all about code readability.</p>
 
 <h2>Better Command Line Apps</h2>
 
@@ -203,13 +203,13 @@ exit(0)
 
 <p>Then as you build more code in your scripts you can graduate to a bit more infrastructure with a gem like <a href="https://github.com/davetron5000/methadone">Methadone</a></p>
 
-<p>Finally, when you&#8217;re writing full blown command line applications, with many &#8220;internal&#8221; commands like &#8220;git submodule init <repo>&#8221;, you can ascend to something much more heavy-weight like <a href="https://github.com/davetron5000/gli">GLI</a></p>
+<p>Finally, when you&rsquo;re writing full blown command line applications, with many &ldquo;internal&rdquo; commands like &ldquo;git submodule init <repo>&rdquo;, you can ascend to something much more heavy-weight like <a href="https://github.com/davetron5000/gli">GLI</a></p>
 
 <h2>Testing Command Line Apps</h2>
 
-<p>Unit testing is the pretty much the same, no matter what type of application your writing. You&#8217;re not using real services or combining components, but just isolating the internal components and using them in a purely internal manner. So not much changes there for command line tools.</p>
+<p>Unit testing is the pretty much the same, no matter what type of application your writing. You&rsquo;re not using real services or combining components, but just isolating the internal components and using them in a purely internal manner. So not much changes there for command line tools.</p>
 
-<p>But when it comes to integration or full command-line testing of my scripts, I&#8217;m actually a big fan of <code>cucumber/aruba</code>. I&#8217;m not big on TDD, I&#8217;m a bit too pragmatic for that. But for command line tools, the series of use cases is already laid out pretty plainly in the set of options available. Even for interactive commands this makes a series of <code>feature</code> files conveniently double as documentation for the tool.</p>
+<p>But when it comes to integration or full command-line testing of my scripts, I&rsquo;m actually a big fan of <code>cucumber/aruba</code>. I&rsquo;m not big on TDD, I&rsquo;m a bit too pragmatic for that. But for command line tools, the series of use cases is already laid out pretty plainly in the set of options available. Even for interactive commands this makes a series of <code>feature</code> files conveniently double as documentation for the tool.</p>
 
 <pre><code>Feature:
   Create and manipulate notes in Evernote.
@@ -232,7 +232,7 @@ exit(0)
 
 <h2>Installation</h2>
 
-<p>As for installation and packaging for your scripts, so that they can be shared and reused by the rest of the world, look no further than the same &#8216;gem&#8217; utility that you&#8217;ve already been using all along in ruby for depenencies.</p>
+<p>As for installation and packaging for your scripts, so that they can be shared and reused by the rest of the world, look no further than the same &lsquo;gem&rsquo; utility that you&rsquo;ve already been using all along in ruby for depenencies.</p>
 
 <p>The <code>gemspec</code> you create when writing a new gem to share, can be told about your scripts and other command line utilities. It will then wrap them up with the rest of your code, install them in a good location, and even fix up the PATH so the user can find them when the time comes.</p>
 
@@ -242,9 +242,9 @@ exit(0)
 
 <h2>Ruby Without Rails</h2>
 
-<p>I&#8217;ve run into a lot of Rails developers who aren&#8217;t cognisant of what <em>is</em> Rails and what <em>is</em> ruby. i.e. what you&#8217;re left with when you remove the Rails. Obviously the server and templating, databasing, MVC are all gone, as are a portion of convenience methods added to every-day objects.</p>
+<p>I&rsquo;ve run into a lot of Rails developers who aren&rsquo;t cognisant of what <em>is</em> Rails and what <em>is</em> ruby. i.e. what you&rsquo;re left with when you remove the Rails. Obviously the server and templating, databasing, MVC are all gone, as are a portion of convenience methods added to every-day objects.</p>
 
-<p>The goods new is that you&#8217;re still left with quite a lot. And if you find you miss something, its easy to add it back in with by including a gem or two. For instance, if you enjoy using an ORM like active-record it can be included back into your application, without rails, with little fuss.</p>
+<p>The goods new is that you&rsquo;re still left with quite a lot. And if you find you miss something, its easy to add it back in with by including a gem or two. For instance, if you enjoy using an ORM like active-record it can be included back into your application, without rails, with little fuss.</p>
 
 <pre><code>require 'activerecord'
 </code></pre>
@@ -254,7 +254,7 @@ exit(0)
 <p>Finally, using RubyMine features more heavily during development. Everything available when working with rails is available for command line applications.</p>
 
 <p>You can run your commands from RM and use its debugger just the same as rails.
-Just like any IDE you can set up &#8220;run&#8221; profiles with the arguments you want to test the script on, and run or debug the script through the IDE. Personally, I never use a command-line debugger. If I need to fire up a debugger to troubleshoot some issue, then I&#8217;ll launch the program in an IDE. The benefits of an IDE debugger with &#8220;heads-up&#8221; display of all the pertinent details, and visually following the script through execution, is just irreplaceable.</p>
+Just like any IDE you can set up &ldquo;run&rdquo; profiles with the arguments you want to test the script on, and run or debug the script through the IDE. Personally, I never use a command-line debugger. If I need to fire up a debugger to troubleshoot some issue, then I&rsquo;ll launch the program in an IDE. The benefits of an IDE debugger with &ldquo;heads-up&rdquo; display of all the pertinent details, and visually following the script through execution, is just irreplaceable.</p>
 </div>
 
 
@@ -285,7 +285,7 @@ Just like any IDE you can set up &#8220;run&#8221; profiles with the arguments y
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2013/03/09/creating-command-line-tools-in-ruby/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2013/03/09/creating-command-line-tools-in-ruby/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dragonfax.github.com/blog/2013/03/09/creating-command-line-tools-in-ruby/" data-via="dragonfax" data-counturl="http://dragonfax.github.com/blog/2013/03/09/creating-command-line-tools-in-ruby/" >Tweet</a>
   
   
   
@@ -328,23 +328,23 @@ Just like any IDE you can set up &#8220;run&#8221; profiles with the arguments y
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/08/28/migrating-from-toodledo-to-asana/">migrating from toodledo to asana</a>
+        <a href="/blog/2013/08/28/migrating-from-toodledo-to-asana/">Migrating From Toodledo to Asana</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/08/04/install-perl/">install perl</a>
+        <a href="/blog/2013/08/04/install-perl/">Install Perl</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/30/legislature/">legislature</a>
+        <a href="/blog/2013/06/30/legislature/">Legislature</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/30/disillusionment/">disillusionment</a>
+        <a href="/blog/2013/06/30/disillusionment/">Disillusionment</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/23/make-pre-commit-hook-default/">Make pre-commit Hook Default</a>
+        <a href="/blog/2013/06/23/make-pre-commit-hook-default/">Make Pre-commit Hook Default</a>
       </li>
     
   </ul>
@@ -426,7 +426,7 @@ Just like any IDE you can set up &#8220;run&#8221; profiles with the arguments y
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
