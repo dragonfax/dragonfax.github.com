@@ -1,6 +1,6 @@
 baseURL = "https://jason-stillwell.com/"
 languageCode = "en-us"
-title = "Zero but True"
+title = "Zero, but True"
 theme = "PaperMod"
 paginate = 10
 
