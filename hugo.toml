@@ -1,6 +1,6 @@
 baseURL = "https://jason-stillwell.com/"
 languageCode = "en-us"
-title = "Den of Antiquity"
+title = "Zero but True"
 theme = "PaperMod"
 paginate = 10
 
@@ -41,6 +41,10 @@ paginate = 10
   [[params.socialIcons]]
     name = "stackoverflow"
     url = "https://stackoverflow.com/users/92694/dragonfax"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/jason-m-stillwell/"
 
   [[params.socialIcons]]
     name = "rss"
