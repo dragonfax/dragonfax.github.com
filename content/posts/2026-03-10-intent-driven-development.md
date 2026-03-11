@@ -9,9 +9,9 @@ As software engineers, I get the feeling we're moving almost entirely away from 
 
 But even further, maintaining just a system of prompts that describes the software. Treating the agents as some kind of modern compiler that compiles English into code. The natural language becomes the "code base".
 
-When we hold these imperative conversations with agents, tell them what we want, watch them write code, we review it, and then close out the session, starting all over from scratch next time. We lose so much at this time.
+When we hold these imperative conversations with agents, tell them what we want, watch them write code, we review it, and then close out the session, starting all over from scratch next time. We lose so much each time.
 
-Consider an almost declarative switch to how we treat software developments with agents.
+Consider an almost declarative switch to how we treat software development with agents.
 
 ## The Idea
 
