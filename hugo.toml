@@ -1,0 +1,93 @@
+baseURL = "https://jason-stillwell.com/"
+languageCode = "en-us"
+title = "Den of Antiquity"
+theme = "PaperMod"
+paginate = 10
+
+[permalinks]
+  [permalinks.page]
+    posts = "/blog/:year/:month/:day/:slug/"
+  [permalinks.section]
+    posts = "/blog/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  author = "Jason Stillwell"
+  description = "Dusting off old ideas and passing them off as new."
+  defaultTheme = "light"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+  [params.homeInfoParams]
+    Title = "Den of Antiquity"
+    Content = "Dusting off old ideas and passing them off as new."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/dragonfax"
+
+  [[params.socialIcons]]
+    name = "x"
+    url = "https://x.com/dragonfax"
+
+  [[params.socialIcons]]
+    name = "stackoverflow"
+    url = "https://stackoverflow.com/users/92694/dragonfax"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  comments = true
+
+  # Giscus comments - requires GitHub App install and Discussions enabled
+  # After installing Giscus (https://github.com/apps/giscus), update repoID and categoryID
+  # by visiting https://giscus.app and entering your repo details
+  [params.giscus]
+    repo = "dragonfax/dragonfax.github.com"
+    repoID = "MDEwOlJlcG9zaXRvcnk4Mzg4ODA3"
+    category = "Announcements"
+    categoryID = "DIC_kwDOAIAAx84C4Ijs"
+    mapping = "pathname"
+    theme = "light"
+    lang = "en"
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 1
+
+[[menu.main]]
+  name = "Archive"
+  url = "/archives/"
+  weight = 5
+
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 10
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 15

@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://dragonfax.github.com/sitemap.xml 
