@@ -23,6 +23,12 @@
     --border: rgb(51, 65, 85);
 }
 
+/* Reduce hero section vertical whitespace */
+.first-entry.home-info {
+    min-height: 120px;
+    padding: 20px 0;
+}
+
 /* Blue accent for links */
 .post-content a,
 .entry-link,

@@ -27,7 +27,7 @@ paginate = 10
   ShowToc = true
 
   [params.homeInfoParams]
-    Title = "Den of Antiquity"
+    Title = ""
     Content = "Dusting off old ideas and passing them off as new."
 
   [[params.socialIcons]]
