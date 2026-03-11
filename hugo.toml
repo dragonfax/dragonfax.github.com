@@ -18,7 +18,7 @@ paginate = 10
 [params]
   author = "Jason Stillwell"
   description = "Dusting off old ideas and passing them off as new."
-  defaultTheme = "light"
+  defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = false
   ShowPostNavLinks = true
