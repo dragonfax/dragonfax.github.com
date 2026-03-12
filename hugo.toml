@@ -25,6 +25,7 @@ paginate = 10
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowToc = true
+  comments = true
 
   [params.homeInfoParams]
     Title = ""
@@ -49,8 +50,6 @@ paginate = 10
   [[params.socialIcons]]
     name = "rss"
     url = "/index.xml"
-
-  comments = true
 
   # Giscus comments - requires GitHub App install and Discussions enabled
   # After installing Giscus (https://github.com/apps/giscus), update repoID and categoryID

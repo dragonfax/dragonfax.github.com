@@ -2,7 +2,7 @@
 
 ## What This Repository Is
 
-This is the source for "Den of Antiquity", a personal blog by Jason Stillwell, served via GitHub Pages at jason-stillwell.com. It uses **Hugo** with the **PaperMod** theme.
+This is the source for "Zero, but True", a personal blog by Jason Stillwell, served via GitHub Pages at jason-stillwell.com. It uses **Hugo** with the **PaperMod** theme.
 
 ## Build & Preview
 
